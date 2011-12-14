@@ -55,7 +55,7 @@ void set_layout_and_variant(GSList *preferences) {
  * Output: Nothing.
  */
 void
-set_user_kb_preferences(Preferences_List *prefs) {
+set_user_kb_preferences(XKB_Preferences *prefs) {
 
     char *command = malloc(sizeof (char) * 2048);
     memset(command, 0, sizeof (sizeof (char) * 50));
@@ -148,10 +148,10 @@ remove_parentheses(gchar *str, gchar *layout, gchar *variant) {
  * Output: Structure containing the user preferences.
  */
 
-Preferences_List *
+XKB_Preferences *
 get_user_kb_preferences() {
     FILE *setxbkmap_output = popen("setxkbmap -v 10", "r");
-    Preferences_List *prefs = g_slice_alloc0(sizeof (Preferences_List));
+    XKB_Preferences *prefs = g_slice_alloc0(sizeof (XKB_Preferences));
 
     gchar *buff = g_slice_alloc0(sizeof (char) * 1024);
 
