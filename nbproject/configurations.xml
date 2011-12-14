@@ -7,8 +7,8 @@
       <itemPath>gtk+2.x.h</itemPath>
       <itemPath>gui_gtk.h</itemPath>
       <itemPath>local_structures.h</itemPath>
+      <itemPath>manage_rules.h</itemPath>
       <itemPath>manage_user_preferences.h</itemPath>
-      <itemPath>rules_parser.h</itemPath>
       <itemPath>setxkbmap_interface.h</itemPath>
       <itemPath>system.h</itemPath>
     </logicalFolder>
@@ -30,8 +30,8 @@
                    projectFiles="true">
       <logicalFolder name="f2" displayName="DATA_ACCESS" projectFiles="true">
         <itemPath>RESOURCES/manage_global_preferences.c</itemPath>
+        <itemPath>manage_rules.c</itemPath>
         <itemPath>manage_user_preferences.c</itemPath>
-        <itemPath>parse_xml_rules.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="PRESENTATION" projectFiles="true">
         <itemPath>gtk+2.x.c</itemPath>

@@ -38,12 +38,6 @@ typedef struct opt {
 } OptionGroup;
 
 
-/* Holds the data that is shown 
- * in the menu and saved as user
- * preferences.
- *
- */
-
 /**
  * Stores a set of preferences.
  * Inner lists contains must contains
@@ -54,7 +48,7 @@ typedef struct {
     GSList *layouts;
     GSList *variants;
     GSList *options;
-} Preferences_List;
+} XKB_Preferences;
 
 /** 
  * Stores all the information from rules_path.
@@ -64,9 +58,8 @@ typedef struct {
 typedef struct {
     GSList *modules;
     GSList *layouts;
-    GSList *variants;
     GSList *options;
-} KB_Rules;
+} XKB_Rules;
 
 
 /* Holds the data that is shown 
@@ -83,7 +76,7 @@ typedef struct {
 /* INPUT: KB_Rules structure, a layout description 
  * OUTPUT: void
  * DESCRIPTION: Adds a layout to the list */
-void add_layout(KB_Rules *rules, Layout *l);
+void add_layout(XKB_Rules *rules, Layout *l);
 
 
 #endif	/* LOCAL_STRUCTURES_H */

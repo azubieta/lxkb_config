@@ -5,20 +5,20 @@
 #include "system.h"
 #include "local_structures.h"
 #include "manage_user_preferences.h"
-#include "rules_parser.h"
+#include "manage_rules.h"
 #include "setxkbmap_interface.h"
 #include "gtk+2.x.h"
 
 
 extern GSList *preferences;
-extern Preferences_List *prefs;
-extern KB_Rules *rules;
+extern XKB_Preferences *user_prefs;
+extern XKB_Rules *rules;
 
 /* Sets data to the variants combo box */
 void
 fill_cbox_variants(GtkWidget *combo, gchar *layout) {
     if (rules == NULL) {
-        rules = load_KB_rules();
+        rules = xkb_rules_load();
     }
 
     int nelemnts = gtk_tree_model_iter_n_children(
@@ -66,7 +66,7 @@ combo_selected(GtkWidget *widget, GtkWidget *cbox) {
 void
 fill_cbox_layouts(GtkWidget *combo) {
     if (rules == NULL) {
-        rules = load_KB_rules();
+        rules = xkb_rules_load();
     }
     GSList *it = rules->layouts;
     Layout *l;
@@ -118,23 +118,29 @@ signal_handler_event(GtkWidget *widget, GdkEventButton *event, gpointer func_dat
 /* Updates the data contained by list store */
 
 void
-update_list_store(GtkListStore *store) {
+list_store_update(GtkListStore *store) {
 
     gtk_list_store_clear(store);
 
-
     GtkTreeIter iter;
 
-    PairLayoutVariant *data;
+    GSList *lay_it = user_prefs->layouts;
+    GSList *var_it = user_prefs->variants;
 
-    GSList *it = preferences;
-    while (it != NULL) {
-        data = it->data;
+    Layout *layout;
+    Variant *variant;
+
+    while (lay_it != NULL) {
+        layout = xkb_rules_get_layout(rules, lay_it->data, NULL);
+        variant = xkb_rules_layout_get_variant(layout, var_it->data, NULL);
+
         gtk_list_store_append(store, &iter);
-        gtk_list_store_set(store, &iter, LAYOUT, data->layoutDesc,
-                VARIANT, data->variantDesc, -1);
+        gtk_list_store_set(store, &iter,
+                LAYOUT, layout->description,
+                VARIANT, variant->description, -1);
 
-        it = it->next;
+        lay_it = lay_it->next;
+        var_it = var_it->next;
     }
 }
 
@@ -148,11 +154,11 @@ button_add_config_callback(GtkWidget *widget, gpointer data) {
     if (layoutDesc == NULL || variantDesc == NULL)
         return;
 
-    PairLayoutVariant *element;
-    element = config_get_by_descriptions(rules, layoutDesc, variantDesc);
+    Layout *layout = xkb_rules_get_layout(rules, NULL, layoutDesc);
+    Variant *variant = xkb_rules_layout_get_variant(layout, NULL, variantDesc);
 
-    preferences = config_add_element(preferences, element);
-    update_list_store(tab->store);
+    xkb_preferences_layout_variant_append(user_prefs, layout->id, variant->id);
+    list_store_update(tab->store);
 }
 
 void
@@ -171,10 +177,11 @@ button_delete_callback(GtkWidget *widget, gpointer data) {
         gtk_tree_model_get(model, &iter, 0, &layoutDesc, -1);
         gtk_tree_model_get(model, &iter, 1, &variantDesc, -1);
 
-        PairLayoutVariant *lv = config_get_by_descriptions(rules, layoutDesc, variantDesc);
+        Layout *layout = xkb_rules_get_layout(rules, NULL, layoutDesc);
+        Variant *variant = xkb_rules_layout_get_variant(layout, NULL, variantDesc);
 
-        preferences = config_remove_element(preferences, lv);
-        update_list_store(w->store);
+        xkb_preferences_layout_variant_remove(user_prefs, layout->id, variant->id);
+        list_store_update(w->store);
 
         //g_print("selected row is: %s %s\n", layoutDesc, variantDesc);
 
@@ -201,11 +208,12 @@ button_default_callback(GtkWidget *widget, gpointer data) {
         gtk_tree_model_get(model, &iter, 0, &layoutDesc, -1);
         gtk_tree_model_get(model, &iter, 1, &variantDesc, -1);
 
-        PairLayoutVariant *lv = config_get_by_descriptions(rules, layoutDesc, variantDesc);
+        Layout *layout = xkb_rules_get_layout(rules, NULL, layoutDesc);
+        Variant *variant = xkb_rules_layout_get_variant(layout, NULL, variantDesc);
 
-        preferences = config_remove_element(preferences, lv);
-        preferences = config_add_element_in_top(preferences, lv);
-        update_list_store(w->store);
+        xkb_preferences_layout_variant_set_main(user_prefs, layout->id, variant->id);
+        
+        list_store_update(w->store);
 
         //g_print("selected row is: %s %s\n", layoutDesc, variantDesc);
 
@@ -216,14 +224,14 @@ button_default_callback(GtkWidget *widget, gpointer data) {
 
 void
 button_aplic_callback(GtkWidget *widget, gpointer data) {
-    set_layout_and_variant(preferences);
-    save_user_preferences(preferences);
+    xkb_preferences_set_to_system(user_prefs);
+    xkb_preferences_save_to_gconf(user_prefs);
 }
 
 void
 button_acept_callback(GtkWidget *widget, gpointer data) {
-    set_layout_and_variant(preferences);
-    save_user_preferences(preferences);
+    xkb_preferences_set_to_system(user_prefs);
+    xkb_preferences_save_to_gconf(user_prefs);
     gtk_main_quit();
 }
 
@@ -252,7 +260,7 @@ build_distribution_tab() {
     gtk_widget_set_size_request(tab->treeview, 300, 200);
 
     tab->store = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_STRING);
-    update_list_store(tab->store);
+    list_store_update(tab->store);
 
     gtk_tree_view_set_model(GTK_TREE_VIEW(tab->treeview), GTK_TREE_MODEL(tab->store));
     g_object_unref(tab->store);
@@ -268,7 +276,7 @@ build_distribution_tab() {
             G_CALLBACK(button_default_callback), tab);
     g_signal_connect(tab->button_delete, "clicked",
             G_CALLBACK(button_delete_callback), tab);
- 
+
     span = gtk_label_new("");
     gtk_widget_set_size_request(span, 200, 25);
     gtk_container_add(GTK_CONTAINER(hbox), span);
@@ -303,7 +311,7 @@ build_distribution_tab() {
     hbox = gtk_hbox_new(FALSE, INNER_SPACE);
     gtk_container_add(GTK_CONTAINER(hbox), tab->layout_cbox);
     gtk_container_add(GTK_CONTAINER(hbox), tab->variant_cbox);
-    
+
     gtk_widget_set_size_request(tab->layout_cbox, 70, 30);
     gtk_widget_set_size_request(tab->variant_cbox, 70, 30);
 

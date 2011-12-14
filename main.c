@@ -3,7 +3,7 @@
 #include <getopt.h>
 #include <stdlib.h>
 #include "local_structures.h"
-#include "rules_parser.h"
+#include "manage_rules.h"
 #include "manage_user_preferences.h"
 #include "setxkbmap_interface.h"
 #include "gui_gtk.h"
@@ -11,7 +11,8 @@
 #include "system.h"
 
 GSList *preferences = NULL;
-KB_Rules *rules = NULL;
+XKB_Rules *rules = NULL;
+XKB_Preferences *user_prefs;
 
 const char* program_name;
 void print_usage(FILE* stream, int exit_code);
@@ -76,13 +77,13 @@ int main(int argc, char** argv) {
     /** End arguments parsing **/
 
     if (setup) {
-        preferences = quick_load_user_preferences();
+        user_prefs = xkb_preferences_load_from_gconf();
 
-        set_layout_and_variant(preferences);
+        xkb_preferences_set_to_system(user_prefs);
         exit(EXIT_SUCCESS);
     } else {
-        rules = load_KB_rules();
-        preferences = load_user_preferences(rules);
+        rules = xkb_rules_load();
+        user_prefs = xkb_preferences_load_from_gconf();
         showMainWindow(argc, argv);
         return (EXIT_SUCCESS);
     }

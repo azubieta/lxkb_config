@@ -18,7 +18,7 @@
  *              the user preferences.
  */
 XKB_Preferences * 
-load_user_preferences() ;
+xkb_preferences_load_from_gconf() ;
 
 
 /* 
@@ -28,7 +28,7 @@ load_user_preferences() ;
  * DESCRIPTION: Stores the user preferences
  *              in using gconf.
  */
-void save_user_preferences(XKB_Preferences *prefs);
+void xkb_preferences_save_to_gconf(XKB_Preferences *prefs);
 
 /* IN: List of preferences, structure of rules
  *      part of the new configuration: layout
@@ -130,13 +130,13 @@ config_get_by_ids(XKB_Rules *rules, gchar *layoutId, gchar *variantId);
  */
 
 gboolean
-prefs_layout_variant_remove(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
+xkb_preferences_layout_variant_remove(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
 
 gboolean
-prefs_layout_variant_set_main(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
+xkb_preferences_layout_variant_set_main(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
 
 gboolean
-prefs_layout_variant_add(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
+xkb_preferences_layout_variant_append(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
 
 gboolean
-prefs_layout_variant_contains(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
+xkb_preferences_layout_variant_contains(XKB_Preferences *user_prefs, gchar *lay, gchar *var);

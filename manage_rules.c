@@ -5,11 +5,10 @@
 #include <glib-2.0/glib/gstring.h>
 
 
-#include "rules_parser.h"
+#include "manage_rules.h"
 #include "local_structures.h"
 
 #include "system.h"
-
 
 void
 parse_variant(xmlDocPtr doc, xmlNodePtr cur, Layout *l) {
@@ -39,8 +38,8 @@ parse_variant(xmlDocPtr doc, xmlNodePtr cur, Layout *l) {
         }
         cur = cur->next;
     }
-    
-    
+
+
     if (v->id != NULL && v->description != NULL)
         l->variant = g_slist_append(l->variant, (gpointer) v);
     else
@@ -54,7 +53,7 @@ parse_variants_list(xmlDocPtr doc, xmlNodePtr cur, Layout *l) {
     v->id = "";
     v->description = _("Default");
     l->variant = g_slist_append(l->variant, v);
-    
+
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "variant"))) {
@@ -65,7 +64,7 @@ parse_variants_list(xmlDocPtr doc, xmlNodePtr cur, Layout *l) {
 }
 
 void
-parse_layout(xmlDocPtr doc, xmlNodePtr cur, KB_Rules *rules) {
+parse_layout(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
     xmlNodePtr parent = cur->xmlChildrenNode;
     cur = parent;
     // Go into config item section
@@ -110,7 +109,7 @@ parse_layout(xmlDocPtr doc, xmlNodePtr cur, KB_Rules *rules) {
 }
 
 void
-parse_layout_list(xmlDocPtr doc, xmlNodePtr cur, KB_Rules *rules) {
+parse_layout_list(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
 
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
@@ -121,8 +120,8 @@ parse_layout_list(xmlDocPtr doc, xmlNodePtr cur, KB_Rules *rules) {
     }
 }
 
-KB_Rules*
-load_KB_rules() {
+XKB_Rules*
+xkb_rules_load() {
 
     xmlDocPtr doc;
     xmlNodePtr cur;
@@ -150,8 +149,8 @@ load_KB_rules() {
 
     cur = cur->xmlChildrenNode;
 
-    KB_Rules *rules = malloc(sizeof (KB_Rules));
-    memset(rules, 0, sizeof (KB_Rules));
+    XKB_Rules *rules = malloc(sizeof (XKB_Rules));
+    memset(rules, 0, sizeof (XKB_Rules));
 
 
     while (cur != NULL) {
@@ -166,3 +165,52 @@ load_KB_rules() {
     return rules;
 }
 
+
+Layout *
+xkb_rules_get_layout(XKB_Rules *rules, gchar *lay_id, gchar *lay_desc) {
+    if ((lay_id == NULL) && (lay_desc == NULL)) {
+        return NULL;
+    }
+
+    GSList *lay_it = rules->layouts;
+    Layout *layout;
+
+    while (lay_it != NULL) {
+        layout = lay_it->data;
+
+        if ((lay_id != NULL) && (strcmp(layout->id, lay_id)) == 0)
+            return layout;
+
+        if ((lay_desc != NULL) && (strcmp(layout->description, lay_desc)) == 0)
+            return layout;
+
+        lay_it = lay_it->next;
+    }
+    return NULL;
+}
+
+
+
+Variant *
+xkb_rules_layout_get_variant(Layout *layout, gchar *var_id, gchar *var_desc) {
+    if ((var_id == NULL) && (var_desc == NULL)) {
+        return NULL;
+    }
+
+    GSList *var_it = layout->variant;
+    Variant *variant;
+
+    while (var_it != NULL) {
+        variant = var_it->data;
+
+        if ((var_id != NULL) && (strcmp(variant->id, var_id)) == 0)
+            return variant;
+
+        if ((var_desc != NULL) && (strcmp(variant->description, var_desc)) == 0)
+            return variant;
+
+
+        var_it = var_it->next;
+    }
+    return NULL;
+}

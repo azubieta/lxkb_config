@@ -36,7 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/gtk+2.x.o \
 	${OBJECTDIR}/setxkbmap_interface.o \
-	${OBJECTDIR}/parse_xml_rules.o \
+	${OBJECTDIR}/manage_rules.o \
 	${OBJECTDIR}/RESOURCES/manage_global_preferences.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/manage_user_preferences.o
@@ -82,10 +82,10 @@ ${OBJECTDIR}/setxkbmap_interface.o: setxkbmap_interface.c
 	${RM} $@.d
 	$(COMPILE.c) -g `pkg-config --cflags libxml-2.0` `pkg-config --cflags gconf-2.0` `pkg-config --cflags gtk+-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/setxkbmap_interface.o setxkbmap_interface.c
 
-${OBJECTDIR}/parse_xml_rules.o: parse_xml_rules.c 
+${OBJECTDIR}/manage_rules.o: manage_rules.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.c) -g `pkg-config --cflags libxml-2.0` `pkg-config --cflags gconf-2.0` `pkg-config --cflags gtk+-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/parse_xml_rules.o parse_xml_rules.c
+	$(COMPILE.c) -g `pkg-config --cflags libxml-2.0` `pkg-config --cflags gconf-2.0` `pkg-config --cflags gtk+-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/manage_rules.o manage_rules.c
 
 ${OBJECTDIR}/RESOURCES/manage_global_preferences.o: RESOURCES/manage_global_preferences.c 
 	${MKDIR} -p ${OBJECTDIR}/RESOURCES
@@ -144,17 +144,17 @@ ${OBJECTDIR}/setxkbmap_interface_nomain.o: ${OBJECTDIR}/setxkbmap_interface.o se
 	    ${CP} ${OBJECTDIR}/setxkbmap_interface.o ${OBJECTDIR}/setxkbmap_interface_nomain.o;\
 	fi
 
-${OBJECTDIR}/parse_xml_rules_nomain.o: ${OBJECTDIR}/parse_xml_rules.o parse_xml_rules.c 
+${OBJECTDIR}/manage_rules_nomain.o: ${OBJECTDIR}/manage_rules.o manage_rules.c 
 	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/parse_xml_rules.o`; \
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/manage_rules.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.c) -g `pkg-config --cflags libxml-2.0` `pkg-config --cflags gconf-2.0` `pkg-config --cflags gtk+-2.0`    -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/parse_xml_rules_nomain.o parse_xml_rules.c;\
+	    $(COMPILE.c) -g `pkg-config --cflags libxml-2.0` `pkg-config --cflags gconf-2.0` `pkg-config --cflags gtk+-2.0`    -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/manage_rules_nomain.o manage_rules.c;\
 	else  \
-	    ${CP} ${OBJECTDIR}/parse_xml_rules.o ${OBJECTDIR}/parse_xml_rules_nomain.o;\
+	    ${CP} ${OBJECTDIR}/manage_rules.o ${OBJECTDIR}/manage_rules_nomain.o;\
 	fi
 
 ${OBJECTDIR}/RESOURCES/manage_global_preferences_nomain.o: ${OBJECTDIR}/RESOURCES/manage_global_preferences.o RESOURCES/manage_global_preferences.c 

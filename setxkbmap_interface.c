@@ -1,6 +1,6 @@
 /* 
  * File:   setxkbmap_interface.c
- * Author: alexis
+ * Author: Alexis López Zubieta
  *
  * Created on 9 de octubre de 2011, 18:52
  */
@@ -55,7 +55,7 @@ void set_layout_and_variant(GSList *preferences) {
  * Output: Nothing.
  */
 void
-set_user_kb_preferences(XKB_Preferences *prefs) {
+xkb_preferences_set_to_system(XKB_Preferences *prefs) {
 
     char *command = malloc(sizeof (char) * 2048);
     memset(command, 0, sizeof (sizeof (char) * 50));
@@ -111,8 +111,8 @@ set_user_kb_preferences(XKB_Preferences *prefs) {
         }
         strcat(command, "\"");
     }
-
-
+    
+    
     // This argument must be the last
     if (prefs->model != NULL) {
         strcat(command, " -model ");
@@ -121,7 +121,7 @@ set_user_kb_preferences(XKB_Preferences *prefs) {
 
     
 
-    printf("%s\n", command);
+    //printf("%s\n", command);
     system(command);
 }
 
@@ -149,7 +149,7 @@ remove_parentheses(gchar *str, gchar *layout, gchar *variant) {
  */
 
 XKB_Preferences *
-get_user_kb_preferences() {
+xkb_preferences_load_from_system() {
     FILE *setxbkmap_output = popen("setxkbmap -v 10", "r");
     XKB_Preferences *prefs = g_slice_alloc0(sizeof (XKB_Preferences));
 

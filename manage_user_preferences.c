@@ -6,11 +6,10 @@
 
 #include "manage_user_preferences.h"
 #include "local_structures.h"
-#include "rules_parser.h"
-
+#include "manage_rules.h"
 
 XKB_Preferences *
-load_user_preferences() {
+xkb_preferences_load_from_gconf() {
     GConfEngine *engine;
     GError *error = NULL;
 
@@ -48,34 +47,38 @@ load_user_preferences() {
 }
 
 void
-save_user_preferences(XKB_Preferences * prefs) {
+xkb_preferences_save_to_gconf(XKB_Preferences * prefs) {
     GConfEngine *engine;
     g_type_init();
     engine = gconf_engine_get_default();
     GError *error = NULL;
 
-    gconf_engine_set_string(engine, "/desktop/lxde/xkeyboard/model", prefs->model, &error);
-    if (error != NULL) {
-        fprintf(stderr, "ERROR while writing \"xkeyboard/model\": %s", error->message);
-        return;
+    if (prefs->model != NULL) {
+        gconf_engine_set_string(engine, "/desktop/lxde/xkeyboard/model", prefs->model, &error);
+        if (error != NULL) {
+            fprintf(stderr, "ERROR while writing \"xkeyboard/model\": %s", error->message);
+            return;
+        }
     }
+    if ((prefs->variants != NULL) && (prefs->layouts != NULL)) {
+        gconf_engine_set_list(engine, "/desktop/lxde/xkeyboard/layouts", GCONF_VALUE_STRING, prefs->layouts, &error);
+        if (error != NULL) {
+            fprintf(stderr, "ERROR while writing \"xkeyboard/layouts\": %s", error->message);
+            return;
+        }
 
-    gconf_engine_set_list(engine, "/desktop/lxde/xkeyboard/layouts", GCONF_VALUE_STRING, prefs->layouts, &error);
-    if (error != NULL) {
-        fprintf(stderr, "ERROR while writing \"xkeyboard/layouts\": %s", error->message);
-        return;
+        gconf_engine_set_list(engine, "/desktop/lxde/xkeyboard/variants", GCONF_VALUE_STRING, prefs->variants, &error);
+        if (error != NULL) {
+            fprintf(stderr, "ERROR while writing \"xkeyboard/variants\": %s", error->message);
+            return;
+        }
     }
-
-    gconf_engine_set_list(engine, "/desktop/lxde/xkeyboard/variants", GCONF_VALUE_STRING, prefs->variants, &error);
-    if (error != NULL) {
-        fprintf(stderr, "ERROR while writing \"xkeyboard/variants\": %s", error->message);
-        return;
-    }
-
-    gconf_engine_set_list(engine, "/desktop/lxde/xkeyboard/options", GCONF_VALUE_STRING, prefs->options, &error);
-    if (error != NULL) {
-        fprintf(stderr, "ERROR while writing \"xkeyboard/options\": %s", error->message);
-        return;
+    if (prefs->options != NULL) {
+        gconf_engine_set_list(engine, "/desktop/lxde/xkeyboard/options", GCONF_VALUE_STRING, prefs->options, &error);
+        if (error != NULL) {
+            fprintf(stderr, "ERROR while writing \"xkeyboard/options\": %s", error->message);
+            return;
+        }
     }
 }
 
@@ -214,7 +217,7 @@ config_contain_element(GSList *preferences, PairLayoutVariant *element) {
 }
 
 gboolean
-prefs_layout_variant_remove(XKB_Preferences *user_prefs, gchar *lay, gchar *var) {
+xkb_preferences_layout_variant_remove(XKB_Preferences *user_prefs, gchar *lay, gchar *var) {
     GSList *lay_ptr = user_prefs->layouts;
     GSList *var_ptr = user_prefs->variants;
 
@@ -235,10 +238,10 @@ prefs_layout_variant_remove(XKB_Preferences *user_prefs, gchar *lay, gchar *var)
 }
 
 gboolean
-prefs_layout_variant_set_main(XKB_Preferences *user_prefs, gchar *lay, gchar *var) {
+xkb_preferences_layout_variant_set_main(XKB_Preferences *user_prefs, gchar *lay, gchar *var) {
     GSList *lay_ptr = user_prefs->layouts;
     GSList *var_ptr = user_prefs->variants;
-    
+
     while (lay_ptr != NULL) {
         if ((strcmp(lay_ptr->data, lay) == 0) &&
                 (strcmp(var_ptr->data, var) == 0)) {
@@ -260,8 +263,8 @@ prefs_layout_variant_set_main(XKB_Preferences *user_prefs, gchar *lay, gchar *va
 }
 
 gboolean
-prefs_layout_variant_add(XKB_Preferences *user_prefs, gchar *lay, gchar *var) {
-    if (!prefs_layout_variant_contains(user_prefs, lay, var)) {
+xkb_preferences_layout_variant_append(XKB_Preferences *user_prefs, gchar *lay, gchar *var) {
+    if (!xkb_preferences_layout_variant_contains(user_prefs, lay, var)) {
 
         user_prefs->layouts = g_slist_append(user_prefs->layouts, lay);
         user_prefs->variants = g_slist_append(user_prefs->variants, var);
@@ -271,7 +274,7 @@ prefs_layout_variant_add(XKB_Preferences *user_prefs, gchar *lay, gchar *var) {
 }
 
 gboolean
-prefs_layout_variant_contains(XKB_Preferences *user_prefs, gchar *lay, gchar *var) {
+xkb_preferences_layout_variant_contains(XKB_Preferences *user_prefs, gchar *lay, gchar *var) {
     GSList *lay_ptr = user_prefs->layouts;
     GSList *var_ptr = user_prefs->variants;
 
