@@ -10,25 +10,16 @@
 #define	MANAGE_USER_PREFERENCES_H
 
 /* 
- * IN: Struct of rules.
- * OUT: GLIST of PairLayoutVariant structure
+ * IN: Nothing.
+ * OUT: Structure XKB_Preferences containing
+ *      the stored preferences.
  * 
  * DESCRIPTION: Loads usign gconf 
  *              the user preferences.
  */
-GSList * 
-load_user_preferences(KB_Rules *rules) ;
+XKB_Preferences * 
+load_user_preferences() ;
 
-/* 
- * IN: Struct of rules.
- * OUT: GLIST of incomplete's 
- *      PairLayoutVariant structures
- * 
- * DESCRIPTION: Loads usign gconf only the 
- *              ids ofthe user preferences.
- */
-GSList *
-quick_load_user_preferences() ;
 
 /* 
  * IN: GLIST of PairLayoutVariant structure
@@ -37,7 +28,7 @@ quick_load_user_preferences() ;
  * DESCRIPTION: Stores the user preferences
  *              in using gconf.
  */
-void save_user_preferences(GSList *preferences);
+void save_user_preferences(XKB_Preferences *prefs);
 
 /* IN: List of preferences, structure of rules
  *      part of the new configuration: layout
@@ -48,7 +39,7 @@ void save_user_preferences(GSList *preferences);
  * DESCRIPTION: Checks that the new configuration
  *      is not already in the list and adds it.
  *     
- *      You have to be aware to pass a valid 
+ *      You have to be aware of pass a valid 
  *      configuration !!!
  */
 GSList *config_add_element(GSList *preferences, PairLayoutVariant *newconf);
@@ -117,7 +108,7 @@ config_contain_element(GSList *preferences, PairLayoutVariant *element);
  *      suplied.
  */
 PairLayoutVariant *
-config_get_by_descriptions(KB_Rules *rules, gchar *layoutDesc, gchar *variantDesc);
+config_get_by_descriptions(XKB_Rules *rules, gchar *layoutDesc, gchar *variantDesc);
 
 /* IN: - Struct of rules,
  *     - ID of the layout
@@ -131,6 +122,21 @@ config_get_by_descriptions(KB_Rules *rules, gchar *layoutDesc, gchar *variantDes
  *      suplied.
  */
 PairLayoutVariant *
-config_get_by_ids(KB_Rules *rules, gchar *layoutId, gchar *variantId);
+config_get_by_ids(XKB_Rules *rules, gchar *layoutId, gchar *variantId);
 #endif	/* MANAGE_USER_PREFERENCES_H */
 
+/* 
+ * Methods over layouts and variants 
+ */
+
+gboolean
+prefs_layout_variant_remove(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
+
+gboolean
+prefs_layout_variant_set_main(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
+
+gboolean
+prefs_layout_variant_add(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
+
+gboolean
+prefs_layout_variant_contains(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
