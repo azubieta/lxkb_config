@@ -31,7 +31,7 @@ DEFAULTCONF=Debug
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Debug Release gtk-gui 
+ALLCONFS=Debug Release 
 
 
 # build

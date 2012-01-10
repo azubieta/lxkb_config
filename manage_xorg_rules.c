@@ -6,9 +6,13 @@
 
 
 #include "manage_rules.h"
-#include "local_structures.h"
+#include "data_structures.h"
 
 #include "system.h"
+
+/* Default path for rules*/
+#define rules_path_lst "/usr/share/X11/xkb/rules/xfree86.lst"
+#define rules_path_xml "/usr/share/X11/xkb/rules/xfree86.xml"
 
 void
 parse_variant(xmlDocPtr doc, xmlNodePtr cur, Layout *l) {
@@ -48,11 +52,6 @@ parse_variant(xmlDocPtr doc, xmlNodePtr cur, Layout *l) {
 
 void
 parse_variants_list(xmlDocPtr doc, xmlNodePtr cur, Layout *l) {
-    // Adding the default variant "" 
-    Variant *v = g_slice_new0(Variant);
-    v->id = "";
-    v->description = _("Default");
-    l->variant = g_slist_append(l->variant, v);
 
     cur = cur->xmlChildrenNode;
     while (cur != NULL) {
@@ -92,6 +91,12 @@ parse_layout(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
         }
         cur = cur->next;
     }
+
+    // Adding the default variant "" 
+    Variant *v = g_slice_new0(Variant);
+    v->id = "";
+    v->description = _("Default");
+    l->variant = g_slist_append(l->variant, v);
 
     cur = parent;
     while (cur != NULL) {
@@ -165,7 +170,6 @@ xkb_rules_load() {
     return rules;
 }
 
-
 Layout *
 xkb_rules_get_layout(XKB_Rules *rules, gchar *lay_id, gchar *lay_desc) {
     if ((lay_id == NULL) && (lay_desc == NULL)) {
@@ -189,12 +193,10 @@ xkb_rules_get_layout(XKB_Rules *rules, gchar *lay_id, gchar *lay_desc) {
     return NULL;
 }
 
-
-
 Variant *
 xkb_rules_layout_get_variant(Layout *layout, gchar *var_id, gchar *var_desc) {
     if ((var_id == NULL) && (var_desc == NULL)) {
-        return NULL;
+        return layout->variant->data;
     }
 
     GSList *var_it = layout->variant;

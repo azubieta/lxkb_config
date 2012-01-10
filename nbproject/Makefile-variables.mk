@@ -22,14 +22,6 @@ CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/lxkb-config
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
 CND_PACKAGE_NAME_Release=lxkb-config.deb
 CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/lxkb-config.deb
-# gtk-gui configuration
-CND_PLATFORM_gtk-gui=GNU-Linux-x86
-CND_ARTIFACT_DIR_gtk-gui=dist/gtk-gui/GNU-Linux-x86
-CND_ARTIFACT_NAME_gtk-gui=lxkb-config
-CND_ARTIFACT_PATH_gtk-gui=dist/gtk-gui/GNU-Linux-x86/lxkb-config
-CND_PACKAGE_DIR_gtk-gui=dist/gtk-gui/GNU-Linux-x86/package
-CND_PACKAGE_NAME_gtk-gui=lxkb-config.tar
-CND_PACKAGE_PATH_gtk-gui=dist/gtk-gui/GNU-Linux-x86/package/lxkb-config.tar
 #
 # include compiler specific variables
 #

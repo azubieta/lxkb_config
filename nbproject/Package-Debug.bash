@@ -64,7 +64,11 @@ copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BA
 
 cd "${TOP}"
 makeDirectory "${NBTMPDIR}//usr/share/applications"
-copyFileToTmpDir "RESOURCES/keyboard.desktop.in.in" "${NBTMPDIR}//usr/share/applications/keyboard.desktop.in" 0644
+copyFileToTmpDir "RESOURCES/keyboard.desktop.in.in" "${NBTMPDIR}//usr/share/applications/keyboard.desktop" 0644
+
+cd "${TOP}"
+makeDirectory "${NBTMPDIR}//etc/xdg/autostart"
+copyFileToTmpDir "RESOURCES/keyboard.desktop.startup.in" "${NBTMPDIR}//etc/xdg/autostart/keyboard.desktop.startup" 0444
 
 
 # Create control file
@@ -75,10 +79,12 @@ mkdir -p ${NBTMPDIR}/DEBIAN
 
 cd "${TOP}"
 echo 'Package: lxkb-config' >> ${CONTROL_FILE}
-echo 'Version: 1.0' >> ${CONTROL_FILE}
+echo 'Version: 0.2' >> ${CONTROL_FILE}
 echo 'Architecture: i386' >> ${CONTROL_FILE}
 echo 'Maintainer: Alexis López Zubieta' >> ${CONTROL_FILE}
-echo 'Description: Tool to manage the keyboard configuration.' >> ${CONTROL_FILE}
+echo 'email: azubieta@estudiantes.uci.cu' >> ${CONTROL_FILE}
+echo 'Description: Tool to configure the keyboard preferences.   Functionalities:    - Select keyboard layout and variant.    - Test keyboard layout and variant before set it.    - Set a configuration to the global sistem  (writing the .xorg configuaration files).    - Remember configurations between sessions.      Advice:    - Probably you must add this command to your startup secuence in      order to set up the stored configuration.   lxkb-config -s     Contact info:   Alexis López Zubieta  azubieta@estudiantes.uci.cu  ' >> ${CONTROL_FILE}
+echo 'Depends: libglib2.0-0 (>= 2.16.0), libgtk2.0-0 (>= 2.8.0), libpango1.0-0 (>= 1.14.0), libpng12-0 (>= 1.2.13-4), libxml2 (>= 2.7.4), dpkg (>= 1.15.4)' >> ${CONTROL_FILE}
 
 # Create Debian Package
 cd "${TOP}"

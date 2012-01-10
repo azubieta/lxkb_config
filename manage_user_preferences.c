@@ -5,7 +5,7 @@
 #include <string.h>
 
 #include "manage_user_preferences.h"
-#include "local_structures.h"
+#include "data_structures.h"
 #include "manage_rules.h"
 
 XKB_Preferences *
@@ -22,31 +22,35 @@ xkb_preferences_load_from_gconf() {
     prefs->model = gconf_engine_get_string(engine, "/desktop/lxde/xkeyboard/model", &error);
     if (error != NULL) {
         fprintf(stderr, "ERROR while reading \"xkeyboard/model\" :%s", error->message);
+        g_slice_free1(sizeof(prefs), prefs);
         return NULL;
     }
 
     prefs->layouts = gconf_engine_get_list(engine, "/desktop/lxde/xkeyboard/layouts", GCONF_VALUE_STRING, &error);
     if (error != NULL) {
         fprintf(stderr, "ERROR while reading \"xkeyboard/layouts\" :%s", error->message);
+        g_slice_free1(sizeof(prefs), prefs);
         return NULL;
     }
 
     prefs->variants = gconf_engine_get_list(engine, "/desktop/lxde/xkeyboard/variants", GCONF_VALUE_STRING, &error);
     if (error != NULL) {
         fprintf(stderr, "ERROR while reading \"xkeyboard/variants\" :%s", error->message);
+        g_slice_free1(sizeof(prefs), prefs);
         return NULL;
     }
 
     prefs->options = gconf_engine_get_list(engine, "/desktop/lxde/xkeyboard/options", GCONF_VALUE_STRING, &error);
     if (error != NULL) {
         fprintf(stderr, "ERROR while reading \"xkeyboard/options\" :%s", error->message);
+        g_slice_free1(sizeof(prefs), prefs);
         return NULL;
     }
 
     return prefs;
 }
 
-void
+gboolean
 xkb_preferences_save_to_gconf(XKB_Preferences * prefs) {
     GConfEngine *engine;
     g_type_init();
@@ -57,163 +61,31 @@ xkb_preferences_save_to_gconf(XKB_Preferences * prefs) {
         gconf_engine_set_string(engine, "/desktop/lxde/xkeyboard/model", prefs->model, &error);
         if (error != NULL) {
             fprintf(stderr, "ERROR while writing \"xkeyboard/model\": %s", error->message);
-            return;
+            return FALSE;
         }
     }
     if ((prefs->variants != NULL) && (prefs->layouts != NULL)) {
         gconf_engine_set_list(engine, "/desktop/lxde/xkeyboard/layouts", GCONF_VALUE_STRING, prefs->layouts, &error);
         if (error != NULL) {
             fprintf(stderr, "ERROR while writing \"xkeyboard/layouts\": %s", error->message);
-            return;
+            return FALSE;
         }
 
         gconf_engine_set_list(engine, "/desktop/lxde/xkeyboard/variants", GCONF_VALUE_STRING, prefs->variants, &error);
         if (error != NULL) {
             fprintf(stderr, "ERROR while writing \"xkeyboard/variants\": %s", error->message);
-            return;
+            return FALSE;
         }
     }
+    
     if (prefs->options != NULL) {
         gconf_engine_set_list(engine, "/desktop/lxde/xkeyboard/options", GCONF_VALUE_STRING, prefs->options, &error);
         if (error != NULL) {
             fprintf(stderr, "ERROR while writing \"xkeyboard/options\": %s", error->message);
-            return;
+            return FALSE;
         }
     }
-}
-
-PairLayoutVariant *
-config_get_by_ids(XKB_Rules *rules, gchar *layoutId, gchar *variantId) {
-    GSList *it = rules->layouts;
-    Layout *l = it != NULL ? it->data : NULL;
-
-    while (it != NULL &&
-            (strcmp(l->id, layoutId) != 0)) {
-        it = it ->next;
-        l = it != NULL ? it->data : NULL;
-    }
-
-    if (l == NULL)
-        return NULL;
-
-    it = l->variant;
-    Variant *v = (it != NULL) ? it->data : NULL;
-    while (it != NULL &&
-            (strcmp(v->id, variantId) != 0)) {
-        it = it ->next;
-        v = (it != NULL) ? it->data : NULL;
-    }
-
-    if (v == NULL)
-        return NULL;
-
-    PairLayoutVariant *out = g_slice_new0(PairLayoutVariant);
-
-    out->layoutId = l->id;
-    out->layoutDesc = l->description;
-    out->variantId = v->id;
-    out->variantDesc = v->description;
-
-    return out;
-}
-
-PairLayoutVariant *
-config_get_by_descriptions(XKB_Rules *rules, gchar *layoutDesc, gchar *variantDesc) {
-    GSList *it = rules->layouts;
-    Layout *l = it != NULL ? it->data : NULL;
-
-    while (it != NULL &&
-            (strcmp(l->description, layoutDesc) != 0)) {
-        it = it ->next;
-        l = it != NULL ? it->data : NULL;
-    }
-
-    if (l == NULL)
-        return NULL;
-
-    it = l->variant;
-    Variant *v = (it != NULL) ? it->data : NULL;
-    while (it != NULL &&
-            (strcmp(v->description, variantDesc) != 0)) {
-        it = it ->next;
-        v = (it != NULL) ? it->data : NULL;
-    }
-
-    if (v == NULL)
-        return NULL;
-
-    PairLayoutVariant *out = g_slice_new0(PairLayoutVariant);
-
-    out->layoutId = l->id;
-    out->layoutDesc = l->description;
-    out->variantId = v->id;
-    out->variantDesc = v->description;
-
-    return out;
-}
-
-GSList *
-config_add_element(GSList *preferences, PairLayoutVariant *newconf) {
-    if (config_contain_element(preferences, newconf) == FALSE)
-        return g_slist_append(preferences, newconf);
-    else
-        return preferences;
-}
-
-GSList *
-config_add_element_in_top(GSList *preferences, PairLayoutVariant *newconf) {
-    if (config_contain_element(preferences, newconf) == FALSE)
-        return g_slist_insert(preferences, newconf, 0);
-    else
-        return preferences;
-}
-
-GSList *
-config_remove_element(GSList *preferences, PairLayoutVariant *element) {
-    GSList *it = preferences;
-    PairLayoutVariant *data = it->data;
-
-    while (it != NULL &&
-            ((strcmp(data->layoutId, element->layoutId) != 0) ||
-            (strcmp(data->variantId, element->variantId) != 0))) {
-        it = it->next;
-        data = it != NULL ? it->data : NULL;
-    }
-    if (it != NULL)
-        return g_slist_delete_link(preferences, it);
-    else
-        return preferences;
-}
-
-GSList *
-config_remove_element_by_position(GSList *preferences, guint pos) {
-    GSList *it = preferences;
-    while (it != NULL && pos > 0) {
-        it = it->next;
-    }
-    if (it != NULL)
-        return g_slist_delete_link(preferences, it);
-    else
-        return preferences;
-}
-
-gboolean
-config_contain_element(GSList *preferences, PairLayoutVariant *element) {
-    GSList *it = preferences;
-    if (it == NULL)
-        return FALSE;
-    PairLayoutVariant *data = it->data;
-
-    while (it != NULL &&
-            ((strcmp(data->layoutId, element->layoutId) != 0) ||
-            (strcmp(data->variantId, element->variantId) != 0))) {
-        it = it->next;
-        data = it != NULL ? it->data : NULL;
-    }
-    if (it == NULL)
-        return FALSE;
-    else
-        return TRUE;
+    return TRUE;
 }
 
 gboolean

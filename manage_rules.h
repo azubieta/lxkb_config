@@ -4,13 +4,11 @@
  * e-mail: azubieta@estudiantes.uci.cu
  *
  */
-#include "local_structures.h"
+#include "data_structures.h"
 
 #ifndef RULES_PARSER_H
 #define	RULES_PARSER_H
-/* Default path for rules*/
-#define rules_path_lst "/usr/share/X11/xkb/rules/xfree86.lst"
-#define rules_path_xml "/usr/share/X11/xkb/rules/xfree86.xml"
+
 
 /* 
  * Loads the data stored in rules_path:

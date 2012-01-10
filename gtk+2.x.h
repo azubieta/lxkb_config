@@ -8,22 +8,31 @@
 #define	GTK_2_X
 
 #include <gtk/gtk.h>
+#include "data_structures.h"
 
 typedef struct {
-    GtkWidget *tab_name; 
+    GtkWidget *tab_name;
     GtkWidget *tab_content;
-    
+
     GtkWidget *prefered_dist_label;
     GtkWidget *treeview;
     GtkListStore *store;
-    
-    GtkWidget *button_default, * button_delete;
-    GtkWidget *layout_cbox, *variant_cbox;
-    
+
+    GtkWidget *button_default, * button_delete, *button_new, *button_edit;
+
+
     GtkWidget *button_add_config;
 } Distribution_Tab;
 
-
+typedef struct {
+    GtkWidget *name;
+    GtkWidget *content;
+    gchar *active_layout, *active_variant;
+    GtkWidget *test_field;
+    GtkWidget *layout_cbox, *variant_cbox;
+    
+    XKB_Preferences * tmp_prefs;
+} Distribution_Dialog;
 
 
 extern void

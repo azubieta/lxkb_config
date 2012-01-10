@@ -11,42 +11,7 @@
 #include <glib-2.0/glib/gslice.h>
 #include <string.h>
 
-#include "local_structures.h"
-
-void set_layout_and_variant(GSList *preferences) {
-
-    char *command = malloc(sizeof (char) * 500);
-    memset(command, 0, sizeof (sizeof (char) * 50));
-    strcat(command, "setxkbmap \"");
-
-    GSList *it = preferences;
-    if (it == NULL)
-        return;
-
-    PairLayoutVariant *lv = it->data;
-    strcat(command, lv->layoutId);
-    if (strcmp(lv->variantId, "") != 0) {
-        strcat(command, "(");
-        strcat(command, lv->variantId);
-        strcat(command, ")");
-    }
-
-    it = it->next;
-
-    while (it != NULL) {
-        lv = it->data;
-        strcat(command, ",");
-        strcat(command, lv->layoutId);
-        if (strcmp(lv->variantId, "") != 0) {
-            strcat(command, "(");
-            strcat(command, lv->variantId);
-            strcat(command, ")");
-        }
-        it = it->next;
-    }
-    strcat(command, "\"");
-    system(command);
-}
+#include "data_structures.h"
 
 /* Description: This method calls setxkbmap whit the 
  *              specific arguments to set the keyboard
@@ -54,11 +19,10 @@ void set_layout_and_variant(GSList *preferences) {
  * Input: Struct with the user preferences.
  * Output: Nothing.
  */
-void
+gboolean
 xkb_preferences_set_to_system(XKB_Preferences *prefs) {
 
-    char *command = malloc(sizeof (char) * 2048);
-    memset(command, 0, sizeof (sizeof (char) * 50));
+    char *command = g_slice_alloc0(sizeof (char) * 2048);
     strcat(command, "setxkbmap ");
 
     // Adding options
@@ -111,18 +75,22 @@ xkb_preferences_set_to_system(XKB_Preferences *prefs) {
         }
         strcat(command, "\"");
     }
-    
-    
+
+
     // This argument must be the last
     if (prefs->model != NULL) {
         strcat(command, " -model ");
         strcat(command, prefs-> model);
     }
 
-    
+
 
     //printf("%s\n", command);
-    system(command);
+    int result = system(command);
+    if (result == -1)
+        return FALSE;
+    else 
+        return TRUE;
 }
 
 void
@@ -149,7 +117,7 @@ remove_parentheses(gchar *str, gchar *layout, gchar *variant) {
  */
 
 XKB_Preferences *
-xkb_preferences_load_from_system() {
+xkb_preferences_load_from_env() {
     FILE *setxbkmap_output = popen("setxkbmap -v 10", "r");
     XKB_Preferences *prefs = g_slice_alloc0(sizeof (XKB_Preferences));
 
@@ -168,7 +136,7 @@ xkb_preferences_load_from_system() {
 
             //printf("\nmodel: %s\n", prefs->model);
         }
-        
+
         /*
          * read layouts and variants
          */
@@ -203,7 +171,7 @@ xkb_preferences_load_from_system() {
         /*
          *  read options
          */
-        
+
         if (strcmp(buff, "options:") == 0) {
             fscanf(setxbkmap_output, "%s", buff);
             gchar *it = strtok(buff, ",");
@@ -220,7 +188,7 @@ xkb_preferences_load_from_system() {
 
         fscanf(setxbkmap_output, "%s", buff);
     }
-    
+
     pclose(setxbkmap_output);
     return prefs;
 }

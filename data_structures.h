@@ -7,7 +7,6 @@
 #ifndef LOCAL_STRUCTURES_H
 #define	LOCAL_STRUCTURES_H
 
-
 typedef struct {
     gchar* id;
     gchar* description;
@@ -60,23 +59,6 @@ typedef struct {
     GSList *layouts;
     GSList *options;
 } XKB_Rules;
-
-
-/* Holds the data that is shown 
- * in the menu and saved as user
- * preferences.
- */
-typedef struct {
-    gchar *layoutId;
-    gchar *layoutDesc;
-    gchar *variantId;
-    gchar *variantDesc;
-} PairLayoutVariant;
-
-/* INPUT: KB_Rules structure, a layout description 
- * OUTPUT: void
- * DESCRIPTION: Adds a layout to the list */
-void add_layout(XKB_Rules *rules, Layout *l);
 
 
 #endif	/* LOCAL_STRUCTURES_H */

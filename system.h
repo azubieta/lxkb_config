@@ -20,9 +20,6 @@
 
 /* Assume ANSI C89 headers are available.  */
 #include <locale.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <libintl.h>
 
 /* Use POSIX headers.  If they are not available, we use the substitute

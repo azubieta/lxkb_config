@@ -1,0 +1,17 @@
+Tool to configure the keyboard preferences.
+
+
+Functionalities:
+   - Select keyboard layout and variant.
+   - Test keyboard layout and variant before set it.
+   - Set a configuration to the global sistem
+	(writing the .xorg configuaration files).
+   - Remember configurations between sessions.    
+
+Advice:
+   - Probably you must add this command to your startup secuence in
+     order to set up the stored configuration.
+		lxkb-config -s   
+
+Contact info: 
+	Alexis López Zubieta 	azubieta@estudiantes.uci.cu 

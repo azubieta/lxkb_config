@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Keyboard Settings
+Name[es]=Preferencias de Teclado
+Comment=Set your keyboard preferences
+Comment[es]=Establece tu configuración de teclado.
+Exec=lxkb-config -s
+Icon=preferences-desktop-keyboard
+Terminal=false
+Type=Application
+Categories=
+GenericName=
+X-GNOME-Autostart-Delay=8
