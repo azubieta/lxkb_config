@@ -7,6 +7,10 @@
 #ifndef GTK_2_X
 #define	GTK_2_X
 
+// Sizes of the widget buttons
+#define BUTTON_HIGH 30
+#define BUTTON_WIDTH 70
+
 #include <gtk/gtk.h>
 #include "data_structures.h"
 

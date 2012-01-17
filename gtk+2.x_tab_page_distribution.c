@@ -272,7 +272,7 @@ button_new_config_callback(GtkWidget *widget, gpointer data) {
     Layout *layout;
     Variant *variant;
     if ((result == GTK_RESPONSE_ACCEPT) &&
-        (dist_dialog->active_layout != NULL && dist_dialog->active_variant != NULL)) {
+            (dist_dialog->active_layout != NULL && dist_dialog->active_variant != NULL)) {
 
         layout = xkb_rules_get_layout(rules, NULL, dist_dialog->active_layout);
         variant = xkb_rules_layout_get_variant(layout, NULL, dist_dialog->active_variant);
@@ -283,7 +283,7 @@ button_new_config_callback(GtkWidget *widget, gpointer data) {
 
     dist_dialog->tmp_prefs = xkb_preferences_load_from_gconf();
     xkb_preferences_set_to_system(dist_dialog->tmp_prefs);
-    
+
     gtk_widget_destroy(dialog);
 }
 
@@ -381,8 +381,13 @@ build_distribution_tab() {
     hbox = gtk_hbox_new(FALSE, 4);
 
     tab->button_default = gtk_button_new_from_stock(GTK_STOCK_GOTO_TOP);
+    gtk_widget_set_size_request(tab->button_default, BUTTON_WIDTH, BUTTON_HIGH);
+    
     tab->button_delete = gtk_button_new_from_stock(GTK_STOCK_REMOVE);
+    gtk_widget_set_size_request(tab->button_delete, BUTTON_WIDTH, BUTTON_HIGH);
+    
     tab->button_new = gtk_button_new_from_stock(GTK_STOCK_ADD);
+    gtk_widget_set_size_request(tab->button_new, BUTTON_WIDTH, BUTTON_HIGH);
 
     g_signal_connect(tab->button_default, "clicked",
             G_CALLBACK(button_default_callback), tab);
@@ -393,7 +398,7 @@ build_distribution_tab() {
 
 
     span = gtk_label_new("");
-    gtk_widget_set_size_request(span, 50, 25);
+    gtk_widget_set_size_request(span, 40, 0);
 
     gtk_container_add(GTK_CONTAINER(hbox), tab->button_default);
     gtk_container_add(GTK_CONTAINER(hbox), span);

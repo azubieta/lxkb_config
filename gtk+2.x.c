@@ -15,19 +15,6 @@
 extern XKB_Preferences *user_prefs;
 extern XKB_Rules *rules;
 
-/*
-gint
-signal_handler_event(GtkWidget *widget, GdkEventButton *event, gpointer func_data) {
-    if (GTK_IS_LIST_ITEM(widget) &&
-            (event->type == GDK_2BUTTON_PRESS ||
-            event->type == GDK_3BUTTON_PRESS)) {
-        printf("I feel clicked on button");
-    }
-
-    return FALSE;
-}
- */
-
 void
 button_global_callback(GtkWidget *widget, gpointer data) {
     gboolean result;
@@ -48,7 +35,7 @@ button_global_callback(GtkWidget *widget, gpointer data) {
                 "Error while applying the configuration.");
     }
 
-    gtk_dialog_run(GTK_DIALOG(dialog));    
+    gtk_dialog_run(GTK_DIALOG(dialog));
     gtk_widget_destroy(GTK_WIDGET(dialog));
 }
 
@@ -114,14 +101,14 @@ void showMainWindow(int argc, char** argv) {
     GtkWidget *tabs = gtk_notebook_new();
 
     gtk_container_add(GTK_CONTAINER(vbox), tabs);
-    
+
     /*
      * Adding tabs to the notebook
      */
-    
+
     Distribution_Tab *tab_distributions = (Distribution_Tab *) build_distribution_tab();
     Credits_Tab *tab_credits = (Credits_Tab *) build_credits_tab();
-    
+
     gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_distributions->tab_content, tab_distributions->tab_name);
     gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_credits->tab_content, tab_credits->tab_name);
 
@@ -135,12 +122,22 @@ void showMainWindow(int argc, char** argv) {
     GtkWidget *span, *button_cancel, *button_accept, * button_aplic, *button_global;
 
     span = gtk_label_new("");
-    gtk_widget_set_size_request(span, 80, 20);
+
+
+
+    gtk_widget_set_size_request(span, 40, 0);
 
     button_cancel = gtk_button_new_from_stock(GTK_STOCK_CANCEL);
+    gtk_widget_set_size_request(button_cancel, BUTTON_WIDTH, BUTTON_HIGH);
+
     button_accept = gtk_button_new_from_stock(GTK_STOCK_OK);
+    gtk_widget_set_size_request(button_accept, BUTTON_WIDTH, BUTTON_HIGH);
+
     button_aplic = gtk_button_new_from_stock(GTK_STOCK_APPLY);
+    gtk_widget_set_size_request(button_aplic, BUTTON_WIDTH, BUTTON_HIGH);
+
     button_global = gtk_button_new_with_label(_("Apply to System"));
+    gtk_widget_set_size_request(button_global, 90, BUTTON_HIGH);
 
     gtk_container_add(GTK_CONTAINER(control_box), button_global);
     gtk_container_add(GTK_CONTAINER(control_box), span);
