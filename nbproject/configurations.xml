@@ -31,9 +31,11 @@
         <itemPath>manage_xorg_preferences.c</itemPath>
         <itemPath>manage_xorg_rules.c</itemPath>
         <itemPath>setxkbmap_interface.c</itemPath>
+        <itemPath>RESOURCES/xkblib_interface.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="PRESENTATION" projectFiles="true">
         <itemPath>gtk+2.x.c</itemPath>
+        <itemPath>gtk+2.x_tab_page_credits.c</itemPath>
         <itemPath>gtk+2.x_tab_page_distribution.c</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>

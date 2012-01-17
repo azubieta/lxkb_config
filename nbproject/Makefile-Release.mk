@@ -34,9 +34,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/gtk+2.x_tab_page_credits.o \
 	${OBJECTDIR}/gtk+2.x.o \
 	${OBJECTDIR}/setxkbmap_interface.o \
 	${OBJECTDIR}/manage_xorg_rules.o \
+	${OBJECTDIR}/RESOURCES/xkblib_interface.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/manage_user_preferences.o \
 	${OBJECTDIR}/gtk+2.x_tab_page_distribution.o \
@@ -67,6 +69,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lxkb-config: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lxkb-config ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/gtk+2.x_tab_page_credits.o: nbproject/Makefile-${CND_CONF}.mk gtk+2.x_tab_page_credits.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0` `pkg-config --cflags gconf-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/gtk+2.x_tab_page_credits.o gtk+2.x_tab_page_credits.c
+
 ${OBJECTDIR}/gtk+2.x.o: nbproject/Makefile-${CND_CONF}.mk gtk+2.x.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
@@ -81,6 +88,11 @@ ${OBJECTDIR}/manage_xorg_rules.o: nbproject/Makefile-${CND_CONF}.mk manage_xorg_
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0` `pkg-config --cflags gconf-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/manage_xorg_rules.o manage_xorg_rules.c
+
+${OBJECTDIR}/RESOURCES/xkblib_interface.o: nbproject/Makefile-${CND_CONF}.mk RESOURCES/xkblib_interface.c 
+	${MKDIR} -p ${OBJECTDIR}/RESOURCES
+	${RM} $@.d
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0` `pkg-config --cflags gconf-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/RESOURCES/xkblib_interface.o RESOURCES/xkblib_interface.c
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
 	${MKDIR} -p ${OBJECTDIR}

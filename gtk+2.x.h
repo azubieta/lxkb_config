@@ -25,12 +25,17 @@ typedef struct {
 } Distribution_Tab;
 
 typedef struct {
+    GtkWidget *tab_name;
+    GtkWidget *tab_content;
+} Credits_Tab;
+
+typedef struct {
     GtkWidget *name;
     GtkWidget *content;
     gchar *active_layout, *active_variant;
     GtkWidget *test_field;
     GtkWidget *layout_cbox, *variant_cbox;
-    
+
     XKB_Preferences * tmp_prefs;
 } Distribution_Dialog;
 

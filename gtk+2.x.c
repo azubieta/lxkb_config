@@ -114,10 +114,16 @@ void showMainWindow(int argc, char** argv) {
     GtkWidget *tabs = gtk_notebook_new();
 
     gtk_container_add(GTK_CONTAINER(vbox), tabs);
-
-    Distribution_Tab *distab = (Distribution_Tab *) build_distribution_tab();
-
-    gtk_notebook_append_page(GTK_NOTEBOOK(tabs), distab->tab_content, distab->tab_name);
+    
+    /*
+     * Adding tabs to the notebook
+     */
+    
+    Distribution_Tab *tab_distributions = (Distribution_Tab *) build_distribution_tab();
+    Credits_Tab *tab_credits = (Credits_Tab *) build_credits_tab();
+    
+    gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_distributions->tab_content, tab_distributions->tab_name);
+    gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_credits->tab_content, tab_credits->tab_name);
 
     /*
      * Adding Control Buttons
