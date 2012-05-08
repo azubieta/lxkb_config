@@ -136,7 +136,7 @@ intl-extract:
 	ls | grep -F .h > ${INTL_DIR}/src_list
 	ls | grep -F .c >> ${INTL_DIR}/src_list
 	# getting .pot file
-	xgettext -L python --from-code=UTF-8 -d ${CND_ARTIFACT_NAME_Debug} -s -o ${INTL_DIR}/${CND_ARTIFACT_NAME_Release}.pot -f ${INTL_DIR}/src_list
+	xgettext -L python --from-code=UTF-8 -d ${CND_ARTIFACT_NAME_${CONF}} -s -o ${INTL_DIR}/${CND_ARTIFACT_NAME_${CONF}}.pot -f ${INTL_DIR}/src_list
 	# remove sources list
 	rm ${INTL_DIR}/src_list
 	# Done
@@ -154,7 +154,7 @@ install:
 	mkdir ${DESTDIR}/usr/share/locale/es_ES
 	mkdir ${DESTDIR}/usr/share/locale/es_ES/LC_MESSAGES/
 	
-	install -m 0555 ${CND_ARTIFACT_PATH_Debug} ${DESTDIR}/usr/bin/${CND_ARTIFACT_NAME_Debug}
+	install -m 0555 ${CND_ARTIFACT_PATH_${CONF}} ${DESTDIR}/usr/bin/${CND_ARTIFACT_NAME_${CONF}}
 	install -m 0444 resources/keyboard.desktop.in ${DESTDIR}/usr/share/applications/keyboard.desktop
 
 	# install locales
@@ -162,7 +162,7 @@ install:
 
 # uninstall targuet
 uninstall:
-	rm $(PREFIX)/bin/${CND_ARTIFACT_NAME_Debug}
+	rm $(PREFIX)/bin/${CND_ARTIFACT_NAME_${CONF}}
 	rm $(PREFIX)/share/applications/keyboard.desktop
 	rm /usr/share/locale/es_ES/LC_MESSAGES/lxkb_config.mo
 
