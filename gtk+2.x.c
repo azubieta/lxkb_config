@@ -20,7 +20,7 @@ button_global_callback(GtkWidget *widget, gpointer data) {
     gboolean result;
     GtkDialog * dialog;
     result = xkb_preferences_write_xorg_config(user_prefs);
-
+/*
     if (result) {
         dialog = gtk_message_dialog_new(NULL,
                 GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -36,7 +36,7 @@ button_global_callback(GtkWidget *widget, gpointer data) {
     }
 
     gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(GTK_WIDGET(dialog));
+    gtk_widget_destroy(GTK_WIDGET(dialog));*/
 }
 
 void
@@ -125,7 +125,7 @@ void showMainWindow(int argc, char** argv) {
     
 
 
-    gtk_widget_set_size_request(span, 40, 0);
+    gtk_widget_set_size_request(span, 45, 0);
 
     button_cancel = gtk_button_new_from_stock(GTK_STOCK_CANCEL);
     gtk_widget_set_size_request(button_cancel, BUTTON_WIDTH, BUTTON_HIGH);

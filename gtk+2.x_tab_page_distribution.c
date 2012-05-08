@@ -138,7 +138,7 @@ build_dialog_layout_variant_management(GtkWidget *parent, Distribution_Dialog *d
             GTK_RESPONSE_REJECT,
             NULL);
 
-    gtk_widget_set_size_request(dialog, 400, 150);
+    gtk_widget_set_size_request(dialog, 440, 160);
     dist_dialog->content = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
     gtk_container_set_border_width(GTK_CONTAINER(dialog), 4);
 
@@ -398,7 +398,7 @@ build_distribution_tab() {
 
 
     span = gtk_label_new("");
-    gtk_widget_set_size_request(span, 40, 0);
+    gtk_widget_set_size_request(span, 10, 0);
 
     gtk_container_add(GTK_CONTAINER(hbox), tab->button_default);
     gtk_container_add(GTK_CONTAINER(hbox), span);

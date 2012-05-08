@@ -14,7 +14,7 @@ NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
 OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lxkb_config
 OUTPUT_BASENAME=lxkb_config
-PACKAGE_TOP_DIR=/usr/
+PACKAGE_TOP_DIR=lxkbconfig/
 
 # Functions
 function checkReturnCode
@@ -59,33 +59,16 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}//usr/bin"
+makeDirectory "${NBTMPDIR}/lxkbconfig/bin"
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
-# Create control file
+# Generate tar file
 cd "${TOP}"
-CONTROL_FILE=${NBTMPDIR}/DEBIAN/control
-rm -f ${CONTROL_FILE}
-mkdir -p ${NBTMPDIR}/DEBIAN
-
-cd "${TOP}"
-echo 'Package: lxkb-config' >> ${CONTROL_FILE}
-echo 'Version: 1.0' >> ${CONTROL_FILE}
-echo 'Architecture: i386' >> ${CONTROL_FILE}
-echo 'Maintainer: alexis' >> ${CONTROL_FILE}
-echo 'Description: ...' >> ${CONTROL_FILE}
-
-# Create Debian Package
-cd "${TOP}"
-cd "${NBTMPDIR}/.."
-dpkg-deb  --build ${TMPDIRNAME}
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/lxkbconfig.tar
+cd ${NBTMPDIR}
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/lxkbconfig.tar *
 checkReturnCode
-cd "${TOP}"
-mkdir -p  ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package
-mv ${NBTMPDIR}.deb ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/lxkbconfig.deb
-checkReturnCode
-echo Debian: ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/lxkbconfig.deb
 
 # Cleanup
 cd "${TOP}"

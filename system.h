@@ -27,14 +27,6 @@
 #include <getopt.h>
 #include <unistd.h>
 
-#define NOINTL
-
-#ifdef NOINTL
-#define _(String) (String)
-#define N_(String) String
-#define textdomain(Domain)
-#define bindtextdomain(Package, Directory)
-
-#endif
+#define _(STRING)    gettext(STRING)
 
 #endif /* LXKB_CONFIG_SYSTEM_H */

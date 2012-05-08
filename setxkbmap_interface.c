@@ -20,8 +20,8 @@
  * Input: Struct with the user preferences.
  * Output: Command line instructuion.
  */
-char* generate_setxkbmap_command(XKB_Preferences *prefs) {
-    char *command = g_slice_alloc0(sizeof (char) * 2048);
+gchar* generate_setxkbmap_command(XKB_Preferences *prefs) {
+    gchar *command = g_slice_alloc0(sizeof (char) * 2048);
     strcat(command, "setxkbmap ");
 
     // Adding options

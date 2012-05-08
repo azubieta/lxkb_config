@@ -37,9 +37,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/gtk+2.x_tab_page_credits.o \
 	${OBJECTDIR}/gtk+2.x.o \
 	${OBJECTDIR}/setxkbmap_interface.o \
+	${OBJECTDIR}/xkblib_interface.o \
 	${OBJECTDIR}/_ext/429258114/manage_desktop_preferences.o \
 	${OBJECTDIR}/manage_xorg_rules.o \
-	${OBJECTDIR}/RESOURCES/xkblib_interface.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/manage_user_preferences.o \
 	${OBJECTDIR}/gtk+2.x_tab_page_distribution.o \
@@ -85,6 +85,11 @@ ${OBJECTDIR}/setxkbmap_interface.o: nbproject/Makefile-${CND_CONF}.mk setxkbmap_
 	${RM} $@.d
 	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/setxkbmap_interface.o setxkbmap_interface.c
 
+${OBJECTDIR}/xkblib_interface.o: nbproject/Makefile-${CND_CONF}.mk xkblib_interface.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/xkblib_interface.o xkblib_interface.c
+
 ${OBJECTDIR}/_ext/429258114/manage_desktop_preferences.o: nbproject/Makefile-${CND_CONF}.mk /home/alexis/workspace/lxkb_config/manage_desktop_preferences.c 
 	${MKDIR} -p ${OBJECTDIR}/_ext/429258114
 	${RM} $@.d
@@ -94,11 +99,6 @@ ${OBJECTDIR}/manage_xorg_rules.o: nbproject/Makefile-${CND_CONF}.mk manage_xorg_
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/manage_xorg_rules.o manage_xorg_rules.c
-
-${OBJECTDIR}/RESOURCES/xkblib_interface.o: nbproject/Makefile-${CND_CONF}.mk RESOURCES/xkblib_interface.c 
-	${MKDIR} -p ${OBJECTDIR}/RESOURCES
-	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/RESOURCES/xkblib_interface.o RESOURCES/xkblib_interface.c
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
 	${MKDIR} -p ${OBJECTDIR}

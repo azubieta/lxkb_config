@@ -126,3 +126,35 @@ include nbproject/Makefile-impl.mk
 
 # include project make variables
 include nbproject/Makefile-variables.mk
+
+# internationalization
+INTL_DIR=resources/po
+intl-extract:
+	
+	mkdir resources/po
+	# make sources list
+	ls | grep -F .h > ${INTL_DIR}/src_list
+	ls | grep -F .c >> ${INTL_DIR}/src_list
+	# getting .pot file
+	xgettext -L python --from-code=UTF-8 -d ${CND_ARTIFACT_NAME_Release} -s -o ${INTL_DIR}/${CND_ARTIFACT_NAME_Release}.pot -f ${INTL_DIR}/src_list
+	# remove sources list
+	rm ${INTL_DIR}/src_list
+	# Done
+	
+intl-clean:
+	rm -rf ${INTL_DIR}
+
+# install targuet
+PREFIX=/usr
+install:
+	install -m 0555 ${CND_ARTIFACT_PATH_Release} $(PREFIX)/bin
+	install -m 0444 resources/keyboard.desktop.in $(PREFIX)/share/applications/keyboard.desktop
+
+	# install locales
+	install -m 0444 ${INTL_DIR}/lxkb_config.mo /usr/share/locale/es_ES/LC_MESSAGES/lxkb_config.mo
+
+# uninstall targuet
+uninstall:
+	rm $(PREFIX)/bin/${CND_ARTIFACT_NAME_Release}
+	rm $(PREFIX)/share/applications/keyboard.desktop
+	

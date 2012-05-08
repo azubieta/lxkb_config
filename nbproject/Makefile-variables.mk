@@ -20,8 +20,8 @@ CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux-x86
 CND_ARTIFACT_NAME_Release=lxkb_config
 CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/lxkb_config
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Release=lxkbconfig.deb
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/lxkbconfig.deb
+CND_PACKAGE_NAME_Release=lxkbconfig.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/lxkbconfig.tar
 #
 # include compiler specific variables
 #
