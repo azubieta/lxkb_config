@@ -101,7 +101,8 @@ build-tests: .build-tests-post
 
 
 # run tests
-test: .test-post
+test: 
+#test: .test-post
 
 .test-pre:
 # Add your pre 'test' code here...
@@ -128,15 +129,14 @@ include nbproject/Makefile-impl.mk
 include nbproject/Makefile-variables.mk
 
 # internationalization
-INTL_DIR=resources/po
+INTL_DIR=po
 intl-extract:
-	
-	mkdir resources/po
+	mkdir INTL_DIR
 	# make sources list
 	ls | grep -F .h > ${INTL_DIR}/src_list
 	ls | grep -F .c >> ${INTL_DIR}/src_list
 	# getting .pot file
-	xgettext -L python --from-code=UTF-8 -d ${CND_ARTIFACT_NAME_Release} -s -o ${INTL_DIR}/${CND_ARTIFACT_NAME_Release}.pot -f ${INTL_DIR}/src_list
+	xgettext -L python --from-code=UTF-8 -d ${CND_ARTIFACT_NAME_Debug} -s -o ${INTL_DIR}/${CND_ARTIFACT_NAME_Release}.pot -f ${INTL_DIR}/src_list
 	# remove sources list
 	rm ${INTL_DIR}/src_list
 	# Done
@@ -145,16 +145,24 @@ intl-clean:
 	rm -rf ${INTL_DIR}
 
 # install targuet
-PREFIX=/usr
 install:
-	install -m 0555 ${CND_ARTIFACT_PATH_Release} $(PREFIX)/bin
-	install -m 0444 resources/keyboard.desktop.in $(PREFIX)/share/applications/keyboard.desktop
+	mkdir ${DESTDIR}/usr
+	mkdir ${DESTDIR}/usr/bin
+	mkdir ${DESTDIR}/usr/share
+	mkdir ${DESTDIR}/usr/share/applications/
+	mkdir ${DESTDIR}/usr/share/locale
+	mkdir ${DESTDIR}/usr/share/locale/es_ES
+	mkdir ${DESTDIR}/usr/share/locale/es_ES/LC_MESSAGES/
+	
+	install -m 0555 ${CND_ARTIFACT_PATH_Debug} ${DESTDIR}/usr/bin/${CND_ARTIFACT_NAME_Debug}
+	install -m 0444 resources/keyboard.desktop.in ${DESTDIR}/usr/share/applications/keyboard.desktop
 
 	# install locales
-	install -m 0444 ${INTL_DIR}/lxkb_config.mo /usr/share/locale/es_ES/LC_MESSAGES/lxkb_config.mo
+	install -m 0444 ${INTL_DIR}/lxkb_config.mo ${DESTDIR}/usr/share/locale/es_ES/LC_MESSAGES/lxkb_config.mo
 
 # uninstall targuet
 uninstall:
-	rm $(PREFIX)/bin/${CND_ARTIFACT_NAME_Release}
+	rm $(PREFIX)/bin/${CND_ARTIFACT_NAME_Debug}
 	rm $(PREFIX)/share/applications/keyboard.desktop
-	
+	rm /usr/share/locale/es_ES/LC_MESSAGES/lxkb_config.mo
+

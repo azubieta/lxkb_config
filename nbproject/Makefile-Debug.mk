@@ -34,16 +34,16 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/gtk+2.x_tab_page_credits.o \
-	${OBJECTDIR}/gtk+2.x.o \
-	${OBJECTDIR}/setxkbmap_interface.o \
-	${OBJECTDIR}/xkblib_interface.o \
-	${OBJECTDIR}/_ext/429258114/manage_desktop_preferences.o \
-	${OBJECTDIR}/manage_xorg_rules.o \
-	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/manage_user_preferences.o \
-	${OBJECTDIR}/gtk+2.x_tab_page_distribution.o \
-	${OBJECTDIR}/manage_xorg_preferences.o
+	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/_ext/895203027/manage_desktop_preferences.o \
+	${OBJECTDIR}/src/setxkbmap_interface.o \
+	${OBJECTDIR}/src/gtk+2.x_tab_page_distribution.o \
+	${OBJECTDIR}/src/manage_user_preferences.o \
+	${OBJECTDIR}/src/manage_xorg_rules.o \
+	${OBJECTDIR}/src/gtk+2.x.o \
+	${OBJECTDIR}/src/xkblib_interface.o \
+	${OBJECTDIR}/src/gtk+2.x_tab_page_credits.o \
+	${OBJECTDIR}/src/manage_xorg_preferences.o
 
 
 # C Compiler Flags
@@ -70,55 +70,55 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lxkb_config: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lxkb_config ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/gtk+2.x_tab_page_credits.o: nbproject/Makefile-${CND_CONF}.mk gtk+2.x_tab_page_credits.c 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/main.o: nbproject/Makefile-${CND_CONF}.mk src/main.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/gtk+2.x_tab_page_credits.o gtk+2.x_tab_page_credits.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.c
 
-${OBJECTDIR}/gtk+2.x.o: nbproject/Makefile-${CND_CONF}.mk gtk+2.x.c 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/_ext/895203027/manage_desktop_preferences.o: nbproject/Makefile-${CND_CONF}.mk /home/alexis/workspace/lxkb_config/src/manage_desktop_preferences.c 
+	${MKDIR} -p ${OBJECTDIR}/_ext/895203027
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/gtk+2.x.o gtk+2.x.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/895203027/manage_desktop_preferences.o /home/alexis/workspace/lxkb_config/src/manage_desktop_preferences.c
 
-${OBJECTDIR}/setxkbmap_interface.o: nbproject/Makefile-${CND_CONF}.mk setxkbmap_interface.c 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/setxkbmap_interface.o: nbproject/Makefile-${CND_CONF}.mk src/setxkbmap_interface.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/setxkbmap_interface.o setxkbmap_interface.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/setxkbmap_interface.o src/setxkbmap_interface.c
 
-${OBJECTDIR}/xkblib_interface.o: nbproject/Makefile-${CND_CONF}.mk xkblib_interface.c 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/gtk+2.x_tab_page_distribution.o: nbproject/Makefile-${CND_CONF}.mk src/gtk+2.x_tab_page_distribution.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/xkblib_interface.o xkblib_interface.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/gtk+2.x_tab_page_distribution.o src/gtk+2.x_tab_page_distribution.c
 
-${OBJECTDIR}/_ext/429258114/manage_desktop_preferences.o: nbproject/Makefile-${CND_CONF}.mk /home/alexis/workspace/lxkb_config/manage_desktop_preferences.c 
-	${MKDIR} -p ${OBJECTDIR}/_ext/429258114
+${OBJECTDIR}/src/manage_user_preferences.o: nbproject/Makefile-${CND_CONF}.mk src/manage_user_preferences.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/429258114/manage_desktop_preferences.o /home/alexis/workspace/lxkb_config/manage_desktop_preferences.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/manage_user_preferences.o src/manage_user_preferences.c
 
-${OBJECTDIR}/manage_xorg_rules.o: nbproject/Makefile-${CND_CONF}.mk manage_xorg_rules.c 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/manage_xorg_rules.o: nbproject/Makefile-${CND_CONF}.mk src/manage_xorg_rules.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/manage_xorg_rules.o manage_xorg_rules.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/manage_xorg_rules.o src/manage_xorg_rules.c
 
-${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/gtk+2.x.o: nbproject/Makefile-${CND_CONF}.mk src/gtk+2.x.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/gtk+2.x.o src/gtk+2.x.c
 
-${OBJECTDIR}/manage_user_preferences.o: nbproject/Makefile-${CND_CONF}.mk manage_user_preferences.c 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/xkblib_interface.o: nbproject/Makefile-${CND_CONF}.mk src/xkblib_interface.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/manage_user_preferences.o manage_user_preferences.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/xkblib_interface.o src/xkblib_interface.c
 
-${OBJECTDIR}/gtk+2.x_tab_page_distribution.o: nbproject/Makefile-${CND_CONF}.mk gtk+2.x_tab_page_distribution.c 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/gtk+2.x_tab_page_credits.o: nbproject/Makefile-${CND_CONF}.mk src/gtk+2.x_tab_page_credits.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/gtk+2.x_tab_page_distribution.o gtk+2.x_tab_page_distribution.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/gtk+2.x_tab_page_credits.o src/gtk+2.x_tab_page_credits.c
 
-${OBJECTDIR}/manage_xorg_preferences.o: nbproject/Makefile-${CND_CONF}.mk manage_xorg_preferences.c 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/manage_xorg_preferences.o: nbproject/Makefile-${CND_CONF}.mk src/manage_xorg_preferences.c 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/manage_xorg_preferences.o manage_xorg_preferences.c
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/manage_xorg_preferences.o src/manage_xorg_preferences.c
 
 # Subprojects
 .build-subprojects:

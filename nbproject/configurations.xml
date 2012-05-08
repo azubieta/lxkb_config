@@ -5,15 +5,15 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="f1" displayName="DATA_ACCES" projectFiles="true">
-        <itemPath>manage_rules.h</itemPath>
-        <itemPath>manage_user_preferences.h</itemPath>
+        <itemPath>src/manage_rules.h</itemPath>
+        <itemPath>src/manage_user_preferences.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="PRESENTATION" projectFiles="true">
-        <itemPath>gtk+2.x.h</itemPath>
+        <itemPath>src/gtk+2.x.h</itemPath>
       </logicalFolder>
-      <itemPath>data_structures.h</itemPath>
-      <itemPath>setxkbmap_interface.h</itemPath>
-      <itemPath>system.h</itemPath>
+      <itemPath>src/data_structures.h</itemPath>
+      <itemPath>src/setxkbmap_interface.h</itemPath>
+      <itemPath>src/system.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -26,20 +26,20 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f2" displayName="DATA_ACCESS" projectFiles="true">
-        <itemPath>/home/alexis/workspace/lxkb_config/manage_desktop_preferences.c</itemPath>
-        <itemPath>manage_user_preferences.c</itemPath>
-        <itemPath>manage_xorg_preferences.c</itemPath>
-        <itemPath>manage_xorg_rules.c</itemPath>
-        <itemPath>setxkbmap_interface.c</itemPath>
-        <itemPath>xkblib_interface.c</itemPath>
+        <itemPath>/home/alexis/workspace/lxkb_config/src/manage_desktop_preferences.c</itemPath>
+        <itemPath>src/manage_user_preferences.c</itemPath>
+        <itemPath>src/manage_xorg_preferences.c</itemPath>
+        <itemPath>src/manage_xorg_rules.c</itemPath>
+        <itemPath>src/setxkbmap_interface.c</itemPath>
+        <itemPath>src/xkblib_interface.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="PRESENTATION" projectFiles="true">
-        <itemPath>gtk+2.x.c</itemPath>
-        <itemPath>gtk+2.x_tab_page_credits.c</itemPath>
-        <itemPath>gtk+2.x_tab_page_distribution.c</itemPath>
+        <itemPath>src/gtk+2.x.c</itemPath>
+        <itemPath>src/gtk+2.x_tab_page_credits.c</itemPath>
+        <itemPath>src/gtk+2.x_tab_page_distribution.c</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>main.c</itemPath>
+      <itemPath>src/main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
