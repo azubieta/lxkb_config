@@ -35,11 +35,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/main.o \
-	${OBJECTDIR}/_ext/895203027/manage_desktop_preferences.o \
 	${OBJECTDIR}/src/setxkbmap_interface.o \
 	${OBJECTDIR}/src/gtk+2.x_tab_page_distribution.o \
 	${OBJECTDIR}/src/manage_user_preferences.o \
 	${OBJECTDIR}/src/manage_xorg_rules.o \
+	${OBJECTDIR}/src/manage_desktop_preferences.o \
 	${OBJECTDIR}/src/gtk+2.x.o \
 	${OBJECTDIR}/src/xkblib_interface.o \
 	${OBJECTDIR}/src/gtk+2.x_tab_page_credits.o \
@@ -75,11 +75,6 @@ ${OBJECTDIR}/src/main.o: nbproject/Makefile-${CND_CONF}.mk src/main.c
 	${RM} $@.d
 	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.c
 
-${OBJECTDIR}/_ext/895203027/manage_desktop_preferences.o: nbproject/Makefile-${CND_CONF}.mk /home/alexis/workspace/lxkb_config/src/manage_desktop_preferences.c 
-	${MKDIR} -p ${OBJECTDIR}/_ext/895203027
-	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/895203027/manage_desktop_preferences.o /home/alexis/workspace/lxkb_config/src/manage_desktop_preferences.c
-
 ${OBJECTDIR}/src/setxkbmap_interface.o: nbproject/Makefile-${CND_CONF}.mk src/setxkbmap_interface.c 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
@@ -99,6 +94,11 @@ ${OBJECTDIR}/src/manage_xorg_rules.o: nbproject/Makefile-${CND_CONF}.mk src/mana
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/manage_xorg_rules.o src/manage_xorg_rules.c
+
+${OBJECTDIR}/src/manage_desktop_preferences.o: nbproject/Makefile-${CND_CONF}.mk src/manage_desktop_preferences.c 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/manage_desktop_preferences.o src/manage_desktop_preferences.c
 
 ${OBJECTDIR}/src/gtk+2.x.o: nbproject/Makefile-${CND_CONF}.mk src/gtk+2.x.c 
 	${MKDIR} -p ${OBJECTDIR}/src
