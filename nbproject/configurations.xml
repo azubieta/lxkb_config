@@ -20,13 +20,13 @@
                    projectFiles="true">
       <logicalFolder name="RESOURCES" displayName="RESOURCES" projectFiles="true">
         <itemPath>RESOURCES/keyboard.desktop.in.in</itemPath>
-        <itemPath>RESOURCES/keyboard.desktop.startup.in</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="f2" displayName="DATA_ACCESS" projectFiles="true">
+        <itemPath>/home/alexis/workspace/lxkb_config/manage_desktop_preferences.c</itemPath>
         <itemPath>manage_user_preferences.c</itemPath>
         <itemPath>manage_xorg_preferences.c</itemPath>
         <itemPath>manage_xorg_rules.c</itemPath>
@@ -54,7 +54,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>RESOURCES</Elem>
+    <Elem>/home/alexis/workspace/lxkb_config/RESOURCES</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -69,21 +69,21 @@
           <developmentMode>0</developmentMode>
         </cTool>
         <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lxkb_config</output>
           <linkerAddLib>
             <pElem>/usr/lib/libgtk2.0-0</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerOptionItem>`pkg-config --libs gtk+-2.0`</linkerOptionItem>
             <linkerOptionItem>`pkg-config --libs libxml-2.0`</linkerOptionItem>
-            <linkerOptionItem>`pkg-config --libs gconf-2.0`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
       <packaging>
-        <packType>Debian</packType>
+        <packType>Tar</packType>
         <packFileList>
           <packFileListElem type="File"
-                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            to="/usr/bin/${OUTPUT_BASENAME}"
                             from="${OUTPUT_PATH}"
                             perm="755"
                             owner="root"
@@ -94,30 +94,7 @@
                             perm="644"
                             owner="root"
                             group="bin"/>
-          <packFileListElem type="File"
-                            to="/etc/xdg/autostart/keyboard.desktop.startup"
-                            from="RESOURCES/keyboard.desktop.startup.in"
-                            perm="444"
-                            owner="root"
-                            group="bin"/>
         </packFileList>
-        <packInfoList>
-          <packInfoListElem name="Package" value="lxkb-config" mandatory="true"/>
-          <packInfoListElem name="Version" value="0.2" mandatory="true"/>
-          <packInfoListElem name="Architecture" value="i386" mandatory="false"/>
-          <packInfoListElem name="Maintainer"
-                            value="Alexis López Zubieta"
-                            mandatory="false"/>
-          <packInfoListElem name="email"
-                            value="azubieta@estudiantes.uci.cu"
-                            mandatory="false"/>
-          <packInfoListElem name="Description"
-                            value="Tool to configure the keyboard preferences.   Functionalities:    - Select keyboard layout and variant.    - Test keyboard layout and variant before set it.    - Set a configuration to the global sistem  (writing the .xorg configuaration files).    - Remember configurations between sessions.      Advice:    - Probably you must add this command to your startup secuence in      order to set up the stored configuration.   lxkb-config -s     Contact info:   Alexis López Zubieta  azubieta@estudiantes.uci.cu  "
-                            mandatory="false"/>
-          <packInfoListElem name="Depends"
-                            value="libglib2.0-0 (>= 2.16.0), libgtk2.0-0 (>= 2.8.0), libpango1.0-0 (>= 1.14.0), libpng12-0 (>= 1.2.13-4), libxml2 (>= 2.7.4), dpkg (>= 1.15.4)"
-                            mandatory="false"/>
-        </packInfoList>
       </packaging>
     </conf>
     <conf name="Release" type="1">

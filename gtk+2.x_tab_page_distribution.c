@@ -129,7 +129,7 @@ build_dialog_layout_variant_management(GtkWidget *parent, Distribution_Dialog *d
 
     /* Create the widgets */
     GtkWidget *hbox, *vbox, *dialog;
-    dialog = gtk_dialog_new_with_buttons("Keyboard layout",
+    dialog = gtk_dialog_new_with_buttons(_("Pic a keyboard layout"),
             GTK_WINDOW(parent),
             GTK_DIALOG_DESTROY_WITH_PARENT,
             GTK_STOCK_OK,
@@ -187,7 +187,7 @@ build_dialog_layout_variant_management(GtkWidget *parent, Distribution_Dialog *d
 
     // Testa area
 
-    GtkWidget *label = gtk_label_new("Test here:");
+    GtkWidget *label = gtk_label_new(_("Test here:"));
     dist_dialog->test_field = gtk_entry_new_with_max_length(50);
 
     gtk_container_add(GTK_CONTAINER(hbox), GTK_WIDGET(label));
@@ -279,10 +279,12 @@ button_new_config_callback(GtkWidget *widget, gpointer data) {
 
         xkb_preferences_layout_variant_append(user_prefs, layout->id, variant->id);
         list_store_update(tab->store);
+    } else {
     }
 
-    dist_dialog->tmp_prefs = xkb_preferences_load_from_gconf();
-    xkb_preferences_set_to_system(dist_dialog->tmp_prefs);
+    /* TODO: Memory clean must be performed */
+
+    xkb_preferences_set_to_system(user_prefs);
 
     gtk_widget_destroy(dialog);
 }
@@ -323,8 +325,6 @@ button_default_callback(GtkWidget *widget, gpointer data) {
     GtkTreeSelection *selection;
     GtkTreeModel *model;
     GtkTreeIter iter;
-
-
 
     selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(w->treeview));
     if (gtk_tree_selection_get_selected(selection, &model, &iter)) {

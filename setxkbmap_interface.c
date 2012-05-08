@@ -10,18 +10,17 @@
 #include <glib-2.0/glib/gslist.h>
 #include <glib-2.0/glib/gslice.h>
 #include <string.h>
+#include <locale.h>
 
 #include "data_structures.h"
 
-/* Description: This method calls setxkbmap whit the 
- *              specific arguments to set the keyboard
- *              preferences.
+/* Description: This method generates a call tosetxkbmap 
+ *              whit the specific arguments to set the 
+ *              keyboard preferences.
  * Input: Struct with the user preferences.
- * Output: Nothing.
+ * Output: Command line instructuion.
  */
-gboolean
-xkb_preferences_set_to_system(XKB_Preferences *prefs) {
-
+char* generate_setxkbmap_command(XKB_Preferences *prefs) {
     char *command = g_slice_alloc0(sizeof (char) * 2048);
     strcat(command, "setxkbmap ");
 
@@ -75,21 +74,34 @@ xkb_preferences_set_to_system(XKB_Preferences *prefs) {
         }
         strcat(command, "\"");
     }
-
-
+    
     // This argument must be the last
     if (prefs->model != NULL) {
         strcat(command, " -model ");
         strcat(command, prefs-> model);
     }
+    return command;
 
+}
 
+/* Description: This method calls setxkbmap whit the 
+ *              specific arguments to set the keyboard
+ *              preferences.
+ * Input: Struct with the user preferences.
+ * Output: Nothing.
+ */
+gboolean
+xkb_preferences_set_to_system(XKB_Preferences *prefs) {
+
+    char * command = generate_setxkbmap_command(prefs);
 
     //printf("%s\n", command);
     int result = system(command);
+    
+    g_slice_free1(sizeof (char) * 2048, command);
     if (result == -1)
         return FALSE;
-    else 
+    else
         return TRUE;
 }
 
@@ -118,6 +130,8 @@ remove_parentheses(gchar *str, gchar *layout, gchar *variant) {
 
 XKB_Preferences *
 xkb_preferences_load_from_env() {
+    setlocale(LC_ALL, "C");
+    
     FILE *setxbkmap_output = popen("setxkbmap -v 10", "r");
     XKB_Preferences *prefs = g_slice_alloc0(sizeof (XKB_Preferences));
 

@@ -8,4 +8,10 @@
 #include <X11/XKBlib.h>
 
 
+/* TODO
+ * 
+ * xkb_preferences_load_from_xkb
+ * xkb_preferences_set_with_xkb
+ * 
+ */
 

@@ -26,13 +26,13 @@ button_global_callback(GtkWidget *widget, gpointer data) {
                 GTK_DIALOG_DESTROY_WITH_PARENT,
                 GTK_MESSAGE_INFO,
                 GTK_BUTTONS_CLOSE,
-                "The configuration was applied successfully.");
+                _("The configuration was applied successfully."));
     } else {
         dialog = gtk_message_dialog_new(NULL,
                 GTK_DIALOG_DESTROY_WITH_PARENT,
                 GTK_MESSAGE_ERROR,
                 GTK_BUTTONS_CLOSE,
-                "Error while applying the configuration.");
+                _("Error while applying the configuration."));
     }
 
     gtk_dialog_run(GTK_DIALOG(dialog));
@@ -45,20 +45,20 @@ button_aplic_callback(GtkWidget *widget, gpointer data) {
     gboolean result;
     result = xkb_preferences_set_to_system(user_prefs);
     if (result)
-        result = xkb_preferences_save_to_gconf(user_prefs);
+        result = save_prefs_to_autostart(user_prefs);
 
     if (result) {
         dialog = gtk_message_dialog_new(NULL,
                 GTK_DIALOG_DESTROY_WITH_PARENT,
                 GTK_MESSAGE_INFO,
                 GTK_BUTTONS_CLOSE,
-                "The configuration was applied successfully.");
+                _("The configuration was applied successfully."));
     } else {
         dialog = gtk_message_dialog_new(NULL,
                 GTK_DIALOG_DESTROY_WITH_PARENT,
                 GTK_MESSAGE_ERROR,
                 GTK_BUTTONS_CLOSE,
-                "Error while applying the configuration.");
+                _("Error while applying the configuration."));
     }
 
     gtk_dialog_run(GTK_DIALOG(dialog));
@@ -68,13 +68,13 @@ button_aplic_callback(GtkWidget *widget, gpointer data) {
 void
 button_acept_callback(GtkWidget *widget, gpointer data) {
     xkb_preferences_set_to_system(user_prefs);
-    xkb_preferences_save_to_gconf(user_prefs);
+    save_prefs_to_autostart(user_prefs);
     gtk_main_quit();
 }
 
 void
 button_cancel_callback(GtkWidget *widget, gpointer data) {
-    user_prefs = xkb_preferences_load_from_gconf();
+    user_prefs = xkb_preferences_load_from_env();
     xkb_preferences_set_to_system(user_prefs);
     gtk_main_quit();
 }
@@ -122,7 +122,7 @@ void showMainWindow(int argc, char** argv) {
     GtkWidget *span, *button_cancel, *button_accept, * button_aplic, *button_global;
 
     span = gtk_label_new("");
-
+    
 
 
     gtk_widget_set_size_request(span, 40, 0);
@@ -146,7 +146,7 @@ void showMainWindow(int argc, char** argv) {
     gtk_container_add(GTK_CONTAINER(control_box), button_aplic);
     gtk_container_add(GTK_CONTAINER(control_box), button_cancel);
 
-
+    
     g_signal_connect(button_global, "clicked",
             G_CALLBACK(button_global_callback), NULL);
 

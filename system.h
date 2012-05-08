@@ -37,11 +37,4 @@
 
 #endif
 
-#ifdef INTL
-#include <libintl.h>
-#define _(String) gettext (String)
-#define gettext_noop(String) String
-#define N_(String) gettext_noop (String)
-#endif
-
 #endif /* LXKB_CONFIG_SYSTEM_H */

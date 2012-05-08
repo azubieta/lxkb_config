@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <glib/gi18n.h>
 #include <glib-2.0/glib/gslist.h>
 
 #include "data_structures.h"
@@ -92,9 +93,15 @@ xkb_preferences_write_xorg_config (XKB_Preferences * prefs ) {
     fprintf(tmp, "EndSection");
     fclose(tmp);
 
+    gchar *msg = _("Introduce your password to set this configuration to the whole system.");
+    GString *cmd = g_string_new("gksu -m '");
+    g_string_append( cmd, msg );
+    g_string_append(cmd, "' mv /tmp/keyboard.conf /usr/lib/X11/xorg.conf.d/01-keyboard-layout.conf");
+    
+    g_debug("generated command %s", cmd->str);
+    
     int ret_value;
-    ret_value = system("gksu -m 'Introduce your password to set this configuration to the whole system.' "
-            "mv /tmp/keyboard.conf /usr/lib/X11/xorg.conf.d/01-keyboard-layout.conf");
+    ret_value = system(cmd->str);
     
     if (ret_value == -1) {
         remove(XORG_TMP_PATH);

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=lxkb-config
+PROJECTNAME=lxkb_config
 
 # Active Configuration
 DEFAULTCONF=Debug

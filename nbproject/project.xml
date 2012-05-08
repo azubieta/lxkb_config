@@ -10,7 +10,7 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>RESOURCES</sourceRootElem>
+                <sourceRootElem>/home/alexis/workspace/lxkb_config/RESOURCES</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
