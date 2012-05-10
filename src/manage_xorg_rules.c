@@ -14,6 +14,16 @@
 #define rules_path_lst "/usr/share/X11/xkb/rules/xfree86.lst"
 #define rules_path_xml "/usr/share/X11/xkb/rules/xfree86.xml"
 
+/* Description: Layout comparing function *
+ * Usage: Use it as complement to g_slist_sort.
+ * Input: Tow layouts
+ * Output: 0 if they are equals, -1  if the first is 
+ *         lesser than the second, else 1.
+ */
+gint compare_layouts(const gconstpointer a,const gconstpointer b) {
+    return strcmp(( (Layout *) a )->description, ( (Layout *) b )->description);
+}
+
 void
 parse_variant(xmlDocPtr doc, xmlNodePtr cur, Layout *l) {
     cur = cur->xmlChildrenNode;
@@ -123,6 +133,8 @@ parse_layout_list(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
         }
         cur = cur->next;
     }
+    /* Sort layouts */
+    rules->layouts = g_slist_sort(rules->layouts, compare_layouts);
 }
 
 XKB_Rules*

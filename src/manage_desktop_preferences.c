@@ -17,7 +17,7 @@
  */
 gboolean save_prefs_to_autostart(XKB_Preferences *user_prefs) {
     
-    gchar * cmd = generate_setxkbmap_command(user_prefs);
+    gchar * cmd = (gchar *) generate_setxkbmap_command(user_prefs);
 
     char* dirname;
     const char grp[] = "Desktop Entry";

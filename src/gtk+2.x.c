@@ -48,17 +48,17 @@ button_aplic_callback(GtkWidget *widget, gpointer data) {
         result = save_prefs_to_autostart(user_prefs);
 
     if (result) {
-        dialog = gtk_message_dialog_new(NULL,
+        dialog = GTK_DIALOG ( gtk_message_dialog_new(NULL,
                 GTK_DIALOG_DESTROY_WITH_PARENT,
                 GTK_MESSAGE_INFO,
                 GTK_BUTTONS_CLOSE,
-                _("The configuration was applied successfully."));
+                _("The configuration was applied successfully.")) );
     } else {
-        dialog = gtk_message_dialog_new(NULL,
+        dialog = GTK_DIALOG ( gtk_message_dialog_new(NULL,
                 GTK_DIALOG_DESTROY_WITH_PARENT,
                 GTK_MESSAGE_ERROR,
                 GTK_BUTTONS_CLOSE,
-                _("Error while applying the configuration."));
+                _("Error while applying the configuration.")) );
     }
 
     gtk_dialog_run(GTK_DIALOG(dialog));
@@ -74,7 +74,7 @@ button_acept_callback(GtkWidget *widget, gpointer data) {
 
 void
 button_cancel_callback(GtkWidget *widget, gpointer data) {
-    user_prefs = xkb_preferences_load_from_env();
+    user_prefs = (XKB_Preferences *) xkb_preferences_load_from_env();
     xkb_preferences_set_to_system(user_prefs);
     gtk_main_quit();
 }

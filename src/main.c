@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
     textdomain("lxkb_config");
 
     rules = xkb_rules_load();
-    user_prefs = xkb_preferences_load_from_env();
+    user_prefs = (XKB_Preferences*) xkb_preferences_load_from_env();
 
     showMainWindow(argc, argv);
     return (EXIT_SUCCESS);

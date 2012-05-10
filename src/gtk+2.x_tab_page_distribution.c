@@ -138,7 +138,7 @@ build_dialog_layout_variant_management(GtkWidget *parent, Distribution_Dialog *d
             GTK_RESPONSE_REJECT,
             NULL);
 
-    gtk_widget_set_size_request(dialog, 440, 160);
+    gtk_widget_set_size_request(dialog, 450, 180);
     dist_dialog->content = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
     gtk_container_set_border_width(GTK_CONTAINER(dialog), 4);
 
