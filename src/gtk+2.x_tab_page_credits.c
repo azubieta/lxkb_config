@@ -14,10 +14,10 @@
 /*
  * Tab_Page Credits
  */
-Credits_Tab *
-build_credits_tab() {
+Others_Tab *
+build_tab_credits() {
     // Initialization
-    Credits_Tab *tab = g_slice_new0(Credits_Tab);
+    Others_Tab *tab = g_slice_new0(Others_Tab);
     tab->tab_name = gtk_label_new(_("Credits"));
     tab->tab_content = gtk_vbox_new(FALSE, INNER_SPACE);
     gtk_container_set_border_width(GTK_CONTAINER(tab->tab_content), 8);

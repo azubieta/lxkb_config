@@ -350,7 +350,7 @@ button_default_callback(GtkWidget *widget, gpointer data) {
  * Tab_Page Distributions
  */
 Distribution_Tab *
-build_distribution_tab() {
+build_tab_distribution() {
     // Initialization
     Distribution_Tab *tab = g_slice_new0(Distribution_Tab);
     tab->tab_name = gtk_label_new(_("Distribution"));
@@ -362,10 +362,6 @@ build_distribution_tab() {
 
     GtkWidget *hbox, *vbox;
 
-    vbox = gtk_vbox_new(FALSE, INNER_SPACE);
-
-    gtk_container_add(GTK_CONTAINER(tab->tab_content), vbox);
-
     tab->treeview = gtk_tree_view_new();
     setup_tree_view(tab->treeview);
     gtk_widget_set_size_request(tab->treeview, 250, 300);
@@ -376,7 +372,7 @@ build_distribution_tab() {
     gtk_tree_view_set_model(GTK_TREE_VIEW(tab->treeview), GTK_TREE_MODEL(tab->store));
     g_object_unref(tab->store);
 
-    gtk_container_add(GTK_CONTAINER(vbox), tab->treeview);
+    gtk_container_add(GTK_CONTAINER(tab->tab_content), tab->treeview);
 
     hbox = gtk_hbox_new(FALSE, 4);
 
@@ -404,12 +400,11 @@ build_distribution_tab() {
     gtk_container_add(GTK_CONTAINER(hbox), span);
 
     gtk_container_add(GTK_CONTAINER(hbox), tab->button_new);
-    //gtk_container_add(GTK_CONTAINER(hbox), tab->button_edit);
+
     gtk_container_add(GTK_CONTAINER(hbox), tab->button_delete);
 
     gtk_container_add(GTK_CONTAINER(tab->tab_content), hbox);
 
-    gtk_container_add(GTK_CONTAINER(tab->tab_content), vbox);
 
     return tab;
 }

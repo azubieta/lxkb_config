@@ -20,8 +20,18 @@
  * Output: 0 if they are equals, -1  if the first is 
  *         lesser than the second, else 1.
  */
-gint compare_layouts(const gconstpointer a,const gconstpointer b) {
-    return strcmp(( (Layout *) a )->description, ( (Layout *) b )->description);
+gint compare_layouts(const gconstpointer a, const gconstpointer b) {
+    return strcmp(((Layout *) a)->description, ((Layout *) b)->description);
+}
+
+/* Description: Model comparing function *
+ * Usage: Use it as complement to g_slist_sort.
+ * Input: Tow Models
+ * Output: 0 if they are equals, -1  if the first is 
+ *         lesser than the second, else 1.
+ */
+gint compare_models(const gconstpointer a, const gconstpointer b) {
+    return strcmp(((Model *) a)->description, ((Model *) b)->description);
 }
 
 void
@@ -137,6 +147,65 @@ parse_layout_list(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
     rules->layouts = g_slist_sort(rules->layouts, compare_layouts);
 }
 
+void
+parse_model(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
+    xmlNodePtr parent = cur->xmlChildrenNode;
+    cur = parent;
+    // Go into config item section
+    while (cur != NULL) {
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "configItem"))) {
+            cur = cur->children;
+            break;
+
+        }
+        cur = cur->next;
+    }
+
+    Model *m = malloc(sizeof (Model));
+    memset(m, 0, sizeof (Model));
+
+    while (cur != NULL) {
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "name"))) {
+            m->id = (gchar *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            //xmlFree(id);
+        }
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "description"))) {
+            m->description = (char *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            //xmlFree(id);
+        }
+        cur = cur->next;
+    }
+
+    if (m->id != NULL && m->description != NULL)
+        rules->models = g_slist_append(rules->models, (gpointer) m);
+    else
+        free(m);
+}
+
+void
+parse_model_list(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
+
+    cur = cur->xmlChildrenNode;
+    while (cur != NULL) {
+        if (!xmlStrcmp(cur->name, (const xmlChar *) "model")) {
+            parse_model(doc, cur, rules);
+        }
+        cur = cur->next;
+    }
+    /* Sort layouts */
+    rules->models = g_slist_sort(rules->models, compare_models);
+}
+
+extern XKB_Rules *rules;
+
+XKB_Rules * xkb_xorg_get_rules() {
+    if (rules == NULL)
+        return xkb_rules_load();
+    else
+        return rules;
+
+}
+
 XKB_Rules*
 xkb_rules_load() {
 
@@ -171,6 +240,9 @@ xkb_rules_load() {
 
 
     while (cur != NULL) {
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "modelList"))) {
+            parse_model_list(doc, cur, rules);
+        }
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "layoutList"))) {
             parse_layout_list(doc, cur, rules);
         }
@@ -180,6 +252,29 @@ xkb_rules_load() {
 
     xmlFreeDoc(doc);
     return rules;
+}
+
+Model *
+xkb_rules_get_model(XKB_Rules *rules, gchar *mod_id, gchar *mod_desc) {
+    if ((mod_id == NULL) && (mod_desc == NULL)) {
+        return NULL;
+    }
+
+    GSList *mod_it = rules->models;
+    Model * model;
+
+    while (mod_it != NULL) {
+        model = mod_it->data;
+
+        if ((mod_id != NULL) && (strcmp(model->id, mod_id)) == 0)
+            return model;
+
+        if ((mod_desc != NULL) && (strcmp(model->description, mod_desc)) == 0)
+            return model;
+
+        mod_it = mod_it->next;
+    }
+    return NULL;
 }
 
 Layout *

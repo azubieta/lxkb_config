@@ -78,7 +78,7 @@ gchar* generate_setxkbmap_command(XKB_Preferences *prefs) {
     // This argument must be the last
     if (prefs->model != NULL) {
         strcat(command, " -model ");
-        strcat(command, prefs-> model);
+        strcat(command, prefs->model->id);
     }
     return command;
 
@@ -130,6 +130,7 @@ remove_parentheses(gchar *str, gchar *layout, gchar *variant) {
 
 XKB_Preferences *
 xkb_preferences_load_from_env() {
+    XKB_Rules * rules = (XKB_Rules *) xkb_xorg_get_rules();
     setlocale(LC_ALL, "C");
     
     FILE *setxbkmap_output = popen("setxkbmap -v 10", "r");
@@ -145,9 +146,10 @@ xkb_preferences_load_from_env() {
          * read model
          */
         if (strcmp(buff, "model:") == 0) {
-            prefs->model = g_slice_alloc0(sizeof (char) * 128);
-            fscanf(setxbkmap_output, "%s", prefs->model);
-
+            gchar * model_id = g_slice_alloc0(sizeof (char) * 128);
+            fscanf(setxbkmap_output, "%s", model_id);
+            prefs->model = (Model *) xkb_rules_get_model(rules , model_id, NULL);
+            
             //printf("\nmodel: %s\n", prefs->model);
         }
 

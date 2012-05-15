@@ -15,29 +15,6 @@
 extern XKB_Preferences *user_prefs;
 extern XKB_Rules *rules;
 
-void
-button_global_callback(GtkWidget *widget, gpointer data) {
-    gboolean result;
-    GtkDialog * dialog;
-    result = xkb_preferences_write_xorg_config(user_prefs);
-/*
-    if (result) {
-        dialog = gtk_message_dialog_new(NULL,
-                GTK_DIALOG_DESTROY_WITH_PARENT,
-                GTK_MESSAGE_INFO,
-                GTK_BUTTONS_CLOSE,
-                _("The configuration was applied successfully."));
-    } else {
-        dialog = gtk_message_dialog_new(NULL,
-                GTK_DIALOG_DESTROY_WITH_PARENT,
-                GTK_MESSAGE_ERROR,
-                GTK_BUTTONS_CLOSE,
-                _("Error while applying the configuration."));
-    }
-
-    gtk_dialog_run(GTK_DIALOG(dialog));
-    gtk_widget_destroy(GTK_WIDGET(dialog));*/
-}
 
 void
 button_aplic_callback(GtkWidget *widget, gpointer data) {
@@ -106,11 +83,11 @@ void showMainWindow(int argc, char** argv) {
      * Adding tabs to the notebook
      */
 
-    Distribution_Tab *tab_distributions = (Distribution_Tab *) build_distribution_tab();
-    Credits_Tab *tab_credits = (Credits_Tab *) build_credits_tab();
+    Distribution_Tab *tab_distributions = (Distribution_Tab *) build_tab_distribution();
+    Others_Tab *tab_others = (Others_Tab *) build_tab_others();
 
     gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_distributions->tab_content, tab_distributions->tab_name);
-    gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_credits->tab_content, tab_credits->tab_name);
+    gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_others->tab_content, tab_others->tab_name);
 
     /*
      * Adding Control Buttons
@@ -119,7 +96,7 @@ void showMainWindow(int argc, char** argv) {
     GtkWidget *control_box = gtk_hbox_new(FALSE, 4);
     gtk_container_add(GTK_CONTAINER(vbox), control_box);
 
-    GtkWidget *span, *button_cancel, *button_accept, * button_aplic, *button_global;
+    GtkWidget *span, *button_cancel, *button_accept, * button_aplic;
 
     span = gtk_label_new("");
     
@@ -136,19 +113,11 @@ void showMainWindow(int argc, char** argv) {
     button_aplic = gtk_button_new_from_stock(GTK_STOCK_APPLY);
     gtk_widget_set_size_request(button_aplic, BUTTON_WIDTH, BUTTON_HIGH);
 
-    button_global = gtk_button_new_with_label(_("Apply to System"));
-    gtk_widget_set_size_request(button_global, 90, BUTTON_HIGH);
-
-    gtk_container_add(GTK_CONTAINER(control_box), button_global);
     gtk_container_add(GTK_CONTAINER(control_box), span);
 
     gtk_container_add(GTK_CONTAINER(control_box), button_accept);
     gtk_container_add(GTK_CONTAINER(control_box), button_aplic);
     gtk_container_add(GTK_CONTAINER(control_box), button_cancel);
-
-    
-    g_signal_connect(button_global, "clicked",
-            G_CALLBACK(button_global_callback), NULL);
 
 
     g_signal_connect(button_accept, "clicked",

@@ -18,9 +18,8 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
-      <logicalFolder name="RESOURCES" displayName="RESOURCES" projectFiles="true">
-        <itemPath>RESOURCES/keyboard.desktop.in</itemPath>
-      </logicalFolder>
+      <itemPath>po/es_ES.po</itemPath>
+      <itemPath>resources/keyboard.desktop.in</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -37,6 +36,7 @@
         <itemPath>src/gtk+2.x.c</itemPath>
         <itemPath>src/gtk+2.x_tab_page_credits.c</itemPath>
         <itemPath>src/gtk+2.x_tab_page_distribution.c</itemPath>
+        <itemPath>src/gtk+2.x_tab_page_others.c</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>src/main.c</itemPath>

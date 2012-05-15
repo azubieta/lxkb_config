@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/setxkbmap_interface.o \
 	${OBJECTDIR}/src/gtk+2.x_tab_page_distribution.o \
 	${OBJECTDIR}/src/manage_user_preferences.o \
+	${OBJECTDIR}/src/gtk+2.x_tab_page_others.o \
 	${OBJECTDIR}/src/manage_xorg_rules.o \
 	${OBJECTDIR}/src/manage_desktop_preferences.o \
 	${OBJECTDIR}/src/gtk+2.x.o \
@@ -89,6 +90,11 @@ ${OBJECTDIR}/src/manage_user_preferences.o: nbproject/Makefile-${CND_CONF}.mk sr
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/manage_user_preferences.o src/manage_user_preferences.c
+
+${OBJECTDIR}/src/gtk+2.x_tab_page_others.o: nbproject/Makefile-${CND_CONF}.mk src/gtk+2.x_tab_page_others.c 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/gtk+2.x_tab_page_others.o src/gtk+2.x_tab_page_others.c
 
 ${OBJECTDIR}/src/manage_xorg_rules.o: nbproject/Makefile-${CND_CONF}.mk src/manage_xorg_rules.c 
 	${MKDIR} -p ${OBJECTDIR}/src

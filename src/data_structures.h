@@ -43,7 +43,7 @@ typedef struct opt {
  * Pair structures.
  **/
 typedef struct {
-    gchar *model;
+    Model *model;
     GSList *layouts;
     GSList *variants;
     GSList *options;
@@ -55,7 +55,7 @@ typedef struct {
  * Exp: grp
  **/
 typedef struct {
-    GSList *modules;
+    GSList *models;
     GSList *layouts;
     GSList *options;
 } XKB_Rules;
