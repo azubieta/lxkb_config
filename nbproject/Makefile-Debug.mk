@@ -34,6 +34,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/gtk+2.x_tab_page_about.o \
 	${OBJECTDIR}/src/main.o \
 	${OBJECTDIR}/src/setxkbmap_interface.o \
 	${OBJECTDIR}/src/gtk+2.x_tab_page_distribution.o \
@@ -43,7 +44,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/manage_desktop_preferences.o \
 	${OBJECTDIR}/src/gtk+2.x.o \
 	${OBJECTDIR}/src/xkblib_interface.o \
-	${OBJECTDIR}/src/gtk+2.x_tab_page_credits.o \
 	${OBJECTDIR}/src/manage_xorg_preferences.o
 
 
@@ -70,6 +70,11 @@ LDLIBSOPTIONS=-L/usr/lib/libgtk2.0-0 `pkg-config --libs gtk+-2.0` `pkg-config --
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lxkb_config: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/lxkb_config ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/src/gtk+2.x_tab_page_about.o: nbproject/Makefile-${CND_CONF}.mk src/gtk+2.x_tab_page_about.c 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/gtk+2.x_tab_page_about.o src/gtk+2.x_tab_page_about.c
 
 ${OBJECTDIR}/src/main.o: nbproject/Makefile-${CND_CONF}.mk src/main.c 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -115,11 +120,6 @@ ${OBJECTDIR}/src/xkblib_interface.o: nbproject/Makefile-${CND_CONF}.mk src/xkbli
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/xkblib_interface.o src/xkblib_interface.c
-
-${OBJECTDIR}/src/gtk+2.x_tab_page_credits.o: nbproject/Makefile-${CND_CONF}.mk src/gtk+2.x_tab_page_credits.c 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.c) `pkg-config --cflags gtk+-2.0` `pkg-config --cflags libxml-2.0`    -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/gtk+2.x_tab_page_credits.o src/gtk+2.x_tab_page_credits.c
 
 ${OBJECTDIR}/src/manage_xorg_preferences.o: nbproject/Makefile-${CND_CONF}.mk src/manage_xorg_preferences.c 
 	${MKDIR} -p ${OBJECTDIR}/src

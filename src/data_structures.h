@@ -30,8 +30,8 @@ typedef struct {
 
 
 typedef struct opt {
-    GString* id;
-    GString* description;
+    gchar* id;
+    gchar* description;
     gboolean multiple_selection;
     GSList* options;
 } OptionGroup;

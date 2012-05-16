@@ -46,5 +46,14 @@ xkb_preferences_layout_variant_append(XKB_Preferences *user_prefs, gchar *lay, g
 gboolean
 xkb_preferences_layout_variant_contains(XKB_Preferences *user_prefs, gchar *lay, gchar *var);
 
+
+gboolean
+belongs_to_group(gchar *grp_id, gchar *opt_id);
+
+gboolean
+xkb_preferences_option_set(XKB_Preferences *user_prefs, OptionGroup *opt_grp, Option *opt);
+
+gboolean
+xkb_preferences_option_unset(XKB_Preferences *user_prefs, OptionGroup *opt_grp, Option *opt);
 #endif	/* MANAGE_USER_PREFERENCES_H */
 

@@ -94,7 +94,9 @@ gboolean
 xkb_preferences_set_to_system(XKB_Preferences *prefs) {
 
     char * command = generate_setxkbmap_command(prefs);
-
+    
+    // remove all options
+    system("setxkbmap -option");
     //printf("%s\n", command);
     int result = system(command);
     

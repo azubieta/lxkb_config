@@ -15,7 +15,6 @@
 extern XKB_Preferences *user_prefs;
 extern XKB_Rules *rules;
 
-
 void
 button_aplic_callback(GtkWidget *widget, gpointer data) {
     GtkDialog * dialog;
@@ -25,17 +24,17 @@ button_aplic_callback(GtkWidget *widget, gpointer data) {
         result = save_prefs_to_autostart(user_prefs);
 
     if (result) {
-        dialog = GTK_DIALOG ( gtk_message_dialog_new(NULL,
+        dialog = GTK_DIALOG(gtk_message_dialog_new(NULL,
                 GTK_DIALOG_DESTROY_WITH_PARENT,
                 GTK_MESSAGE_INFO,
                 GTK_BUTTONS_CLOSE,
-                _("The configuration was applied successfully.")) );
+                _("The configuration was applied successfully.")));
     } else {
-        dialog = GTK_DIALOG ( gtk_message_dialog_new(NULL,
+        dialog = GTK_DIALOG(gtk_message_dialog_new(NULL,
                 GTK_DIALOG_DESTROY_WITH_PARENT,
                 GTK_MESSAGE_ERROR,
                 GTK_BUTTONS_CLOSE,
-                _("Error while applying the configuration.")) );
+                _("Error while applying the configuration.")));
     }
 
     gtk_dialog_run(GTK_DIALOG(dialog));
@@ -61,6 +60,7 @@ void showMainWindow(int argc, char** argv) {
 
     GtkWindow *window;
 
+
     // Main window 
     window = GTK_WINDOW(gtk_window_new(GTK_WINDOW_TOPLEVEL));
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
@@ -68,6 +68,10 @@ void showMainWindow(int argc, char** argv) {
     gtk_container_set_border_width(GTK_CONTAINER(window), 8);
     gtk_window_set_title(GTK_WINDOW(window), _("Keyboard configuration tool"));
 
+    /* TODO Set application icon
+     GtkImage *app_icon = GTK_IMAGE(gtk_image_new_from_icon_name("keyboard", GTK_ICON_SIZE_SMALL_TOOLBAR));
+     gtk_window_set_icon( window, gtk_image_get_pixbuf(app_icon));
+     */
     g_signal_connect(window, "destroy",
             G_CALLBACK(gtk_main_quit), NULL);
 
@@ -85,10 +89,11 @@ void showMainWindow(int argc, char** argv) {
 
     Distribution_Tab *tab_distributions = (Distribution_Tab *) build_tab_distribution();
     Others_Tab *tab_others = (Others_Tab *) build_tab_others();
+    About_Tab *tab_credits = (About_Tab *) build_tab_credits();
 
     gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_distributions->tab_content, tab_distributions->tab_name);
     gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_others->tab_content, tab_others->tab_name);
-
+    gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_credits->tab_content, tab_credits->tab_name);
     /*
      * Adding Control Buttons
      */
@@ -99,7 +104,7 @@ void showMainWindow(int argc, char** argv) {
     GtkWidget *span, *button_cancel, *button_accept, * button_aplic;
 
     span = gtk_label_new("");
-    
+
 
 
     gtk_widget_set_size_request(span, 45, 0);

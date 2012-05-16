@@ -34,7 +34,7 @@
       </logicalFolder>
       <logicalFolder name="f1" displayName="PRESENTATION" projectFiles="true">
         <itemPath>src/gtk+2.x.c</itemPath>
-        <itemPath>src/gtk+2.x_tab_page_credits.c</itemPath>
+        <itemPath>src/gtk+2.x_tab_page_about.c</itemPath>
         <itemPath>src/gtk+2.x_tab_page_distribution.c</itemPath>
         <itemPath>src/gtk+2.x_tab_page_others.c</itemPath>
       </logicalFolder>

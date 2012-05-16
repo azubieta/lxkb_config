@@ -131,10 +131,10 @@ include nbproject/Makefile-variables.mk
 # internationalization
 INTL_DIR=po
 intl-extract:
-	mkdir INTL_DIR
+	#mkdir ${INTL_DIR}
 	# make sources list
-	ls | grep -F .h > ${INTL_DIR}/src_list
-	ls | grep -F .c >> ${INTL_DIR}/src_list
+	find | grep -F .h > ${INTL_DIR}/src_list
+	find | grep -F .c >> ${INTL_DIR}/src_list
 	# getting .pot file
 	xgettext -L python --from-code=UTF-8 -d ${CND_ARTIFACT_NAME_${CONF}} -s -o ${INTL_DIR}/${CND_ARTIFACT_NAME_${CONF}}.pot -f ${INTL_DIR}/src_list
 	# remove sources list

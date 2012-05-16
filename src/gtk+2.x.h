@@ -32,7 +32,14 @@ typedef struct {
     GtkWidget *tab_name;
     GtkWidget *tab_content;
     
+} About_Tab;
+
+typedef struct {
+    GtkWidget *tab_name;
+    GtkWidget *tab_content;
+    
     GtkWidget * model_cbox;
+    GtkWidget * keys_cbox;
 } Others_Tab;
 
 typedef struct {

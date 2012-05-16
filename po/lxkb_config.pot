@@ -8,79 +8,117 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-08 02:47-0400\n"
+"POT-Creation-Date: 2012-05-15 22:21-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: gtk+2.x.c:139
-msgid "Apply to System"
+#: src/gtk+2.x_tab_page_about.c:21
+msgid "About"
 msgstr ""
 
-#: gtk+2.x_tab_page_credits.c:21
-msgid "Credits"
+#: src/gtk+2.x_tab_page_others.c:234
+msgid "Apply Globaly"
 msgstr ""
 
-#: manage_xorg_rules.c:98
+#: src/gtk+2.x_tab_page_others.c:229
+msgid ""
+"Apply this keyboard configuration not only to your\n"
+"session, but also to the whole system."
+msgstr ""
+
+#: src/manage_xorg_rules.c:118
 msgid "Default"
 msgstr ""
 
-#: gtk+2.x_tab_page_distribution.c:356
+#: src/gtk+2.x_tab_page_distribution.c:356
 msgid "Distribution"
 msgstr ""
 
-#: gtk+2.x_tab_page_distribution.c:145
+#: src/gtk+2.x_tab_page_distribution.c:145
 msgid "Distribution:"
 msgstr ""
 
-#: gtk+2.x.c:35 gtk+2.x.c:61
+#: src/gtk+2.x_tab_page_others.c:116 src/gtk+2.x.c:37
 msgid "Error while applying the configuration."
 msgstr ""
 
-#: manage_xorg_preferences.c:96
+#: src/gtk+2.x_tab_page_others.c:211
+msgid "Global Configuration:"
+msgstr ""
+
+#: src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""
 
-#: manage_desktop_preferences.c:39
+#: src/gtk+2.x_tab_page_others.c:139
+msgid "Key(s) to change layout:"
+msgstr ""
+
+#: src/gtk+2.x_tab_page_others.c:172
+msgid "Keyboard Model:"
+msgstr ""
+
+#: src/manage_desktop_preferences.c:39
 msgid "Keyboard Settings setup"
 msgstr ""
 
-#: gtk+2.x.c:92
+#: src/gtk+2.x.c:69
 msgid "Keyboard configuration tool"
 msgstr ""
 
-#: gtk+2.x_tab_page_distribution.c:224
+#: src/gtk+2.x_tab_page_distribution.c:224
 msgid "Layout"
 msgstr ""
 
-#: gtk+2.x_tab_page_distribution.c:155
+#: src/gtk+2.x_tab_page_distribution.c:155
 msgid "Layout:"
 msgstr ""
 
-#: gtk+2.x_tab_page_distribution.c:132
+#: src/gtk+2.x_tab_page_others.c:29 src/gtk+2.x_tab_page_others.c:78
+msgid "None"
+msgstr ""
+
+#: src/gtk+2.x_tab_page_others.c:134
+msgid "Other Options"
+msgstr ""
+
+#: src/gtk+2.x_tab_page_distribution.c:132
 msgid "Pic a keyboard layout"
 msgstr ""
 
-#: manage_desktop_preferences.c:40
+#: src/gtk+2.x_tab_page_others.c:152
+msgid ""
+"Select a key combination to swtich between layouts\n"
+"or just select 'None'."
+msgstr ""
+
+#: src/manage_desktop_preferences.c:40
 msgid "Sets up your preferred keyboard settings"
 msgstr ""
 
-#: gtk+2.x_tab_page_distribution.c:190
+#: src/gtk+2.x_tab_page_distribution.c:190
 msgid "Test here:"
 msgstr ""
 
-#: gtk+2.x.c:29 gtk+2.x.c:55
+#: src/gtk+2.x_tab_page_others.c:110 src/gtk+2.x.c:31
 msgid "The configuration was applied successfully."
 msgstr ""
 
-#: gtk+2.x_tab_page_distribution.c:229
+#: src/gtk+2.x_tab_page_distribution.c:229
 msgid "Variant"
 msgstr ""
 
-#: gtk+2.x_tab_page_distribution.c:156
+#: src/gtk+2.x_tab_page_distribution.c:156
 msgid "Variant: "
+msgstr ""
+
+#: src/gtk+2.x_tab_page_others.c:187
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
 msgstr ""

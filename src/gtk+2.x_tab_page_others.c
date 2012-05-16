@@ -15,6 +15,35 @@
 extern XKB_Preferences *user_prefs;
 extern XKB_Rules *rules;
 
+/* Sets data to the keys options combo box */
+void
+fill_cbox_keys(GtkWidget *combo) {
+    if (rules == NULL) {
+        rules = xkb_rules_load();
+    }
+
+    OptionGroup* opt_grp =
+            (OptionGroup *) xkb_rules_get_option_group(rules, "grp", NULL);
+
+    // apppend None option
+    gtk_combo_box_append_text(GTK_COMBO_BOX(combo), _("None"));
+
+    GSList *it = opt_grp->options;
+
+    Option *o;
+    gint item_count = 1, item_active = 0;
+    while (it != NULL) {
+        o = it->data;
+        if (xkb_preferences_option_is_set(user_prefs, o->id)) {
+            item_active = item_count;
+        }
+        gtk_combo_box_append_text(GTK_COMBO_BOX(combo), o->description);
+        it = it->next;
+        item_count++;
+    }
+    gtk_combo_box_set_active(GTK_COMBO_BOX(combo), item_active);
+}
+
 /* Sets data to the layouts combo box */
 void
 fill_cbox_models(GtkWidget *combo) {
@@ -35,6 +64,26 @@ fill_cbox_models(GtkWidget *combo) {
         item_count++;
     }
     gtk_combo_box_set_active(GTK_COMBO_BOX(combo), item_active);
+}
+
+/* Change the keys option in user prefs */
+void
+combo_keys_selected(GtkWidget *widget, void *user_data) {
+    gchar *text = gtk_combo_box_get_active_text(GTK_COMBO_BOX(widget));
+
+    OptionGroup * opt_grp = (OptionGroup*) xkb_rules_get_option_group(rules, "grp", NULL);
+    opt_grp->multiple_selection = FALSE;
+    Option * option = (Option *) xkb_rules_get_option(opt_grp, NULL, text);
+
+    if (strcmp(text, _("None")) == 0)
+        xkb_preferences_option_unset_group(user_prefs, opt_grp);
+
+
+    if (option != NULL) {
+        // remove it if setted
+        xkb_preferences_option_unset(user_prefs, opt_grp, option);
+        xkb_preferences_option_set(user_prefs, opt_grp, option);
+    }
 }
 
 /* Change the model in user prefs */
@@ -78,62 +127,117 @@ Others_Tab *
 build_tab_others() {
     GtkWidget *hbox, *vbox;
     // Initialization
+    
+    
+    
     Others_Tab *tab = g_slice_new0(Others_Tab);
     tab->tab_name = gtk_label_new(_("Other Options"));
     tab->tab_content = gtk_vbox_new(FALSE, INNER_SPACE);
     gtk_container_set_border_width(GTK_CONTAINER(tab->tab_content), 8);
 
-    GtkFrame *model_frame = GTK_FRAME(gtk_frame_new(_("Keyboard Model:")));
+    // Option Keyboard Switch 
+    GtkFrame *keys_frame = GTK_FRAME(gtk_frame_new(_("Key(s) to change layout:")));
+    vbox = gtk_vbox_new(FALSE, 0);
+    gtk_container_set_border_width(GTK_CONTAINER(vbox), 4);
+
+    gtk_container_add(GTK_CONTAINER(keys_frame), GTK_WIDGET(vbox));
     
-    gtk_widget_set_size_request(GTK_WIDGET(model_frame), 100, 40);
+    gtk_widget_set_size_request(GTK_WIDGET(keys_frame), 330, 50);
+
+    gtk_container_add(GTK_CONTAINER(tab->tab_content), GTK_WIDGET(keys_frame));
+
+    GtkWidget *keys_image = gtk_image_new_from_icon_name("keyboard", GTK_ICON_SIZE_DIALOG);
+    
+    GtkWidget *keys_label = gtk_label_new(
+            _("Select a key combination to swtich between layouts\n"
+            "or just select 'None'."));
+
+    hbox = gtk_hbox_new(FALSE, INNER_SPACE);
+    gtk_container_add(GTK_CONTAINER(hbox), keys_image);
+    gtk_container_add(GTK_CONTAINER(hbox), keys_label);
+    gtk_container_add(GTK_CONTAINER(vbox), hbox);
+    
+    tab->keys_cbox = gtk_combo_box_new_text();
+    gtk_widget_set_size_request(GTK_WIDGET(tab->keys_cbox), 330, 30);
+    
+    fill_cbox_keys(tab->keys_cbox);
+    g_signal_connect(G_OBJECT(tab->keys_cbox), "changed",
+            G_CALLBACK(combo_keys_selected), NULL);
+    
+    
+    gtk_container_add(GTK_CONTAINER(vbox), tab->keys_cbox);
+
+    
+    // keyboard model frame
+    GtkFrame *model_frame = GTK_FRAME(gtk_frame_new(_("Keyboard Model:")));
+
+    gtk_widget_set_size_request(GTK_WIDGET(model_frame), 330, 50);
 
     gtk_container_add(GTK_CONTAINER(tab->tab_content), GTK_WIDGET(model_frame));
 
     vbox = gtk_vbox_new(FALSE, 0);
     gtk_container_set_border_width(GTK_CONTAINER(vbox), 4);
-    
+
     gtk_container_add(GTK_CONTAINER(model_frame), GTK_WIDGET(vbox));
 
     hbox = gtk_hbox_new(FALSE, INNER_SPACE);
     GtkWidget *warning_image = gtk_image_new_from_stock(GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_DIALOG);
 
 
-    GtkWidget *warning_label = gtk_label_new(_("WARNING: \n"
-            "Be aware that changing these settings may result in \n"
-            "system malfunction."));
+    GtkWidget *warning_label = gtk_label_new(_("WARNING: "
+            "Be aware that changing these settings may\n"
+            "result in system malfunction."));
 
     gtk_container_add(GTK_CONTAINER(hbox), warning_image);
     gtk_container_add(GTK_CONTAINER(hbox), warning_label);
     gtk_container_add(GTK_CONTAINER(vbox), hbox);
 
 
-    GtkWidget *model_label = gtk_label_new(_("Model: "));
-    tab->model_cbox = gtk_combo_box_entry_new_text();
-    gtk_widget_set_size_request(GTK_WIDGET(tab->model_cbox), 330, 10);
-
+    tab->model_cbox = gtk_combo_box_new_text();
+    gtk_widget_set_size_request(GTK_WIDGET(tab->model_cbox), 330, 30);
+    
     fill_cbox_models(tab->model_cbox);
     g_signal_connect(G_OBJECT(tab->model_cbox), "changed",
             G_CALLBACK(combo_model_selected), NULL);
 
     hbox = gtk_hbox_new(FALSE, INNER_SPACE);
-    gtk_container_add(GTK_CONTAINER(hbox), model_label);
     gtk_container_add(GTK_CONTAINER(hbox), tab->model_cbox);
 
     gtk_container_add(GTK_CONTAINER(vbox), hbox);
 
-    GtkWidget *span = gtk_label_new(" ");
-    gtk_container_add(GTK_CONTAINER(tab->tab_content), span);
 
-    // Option Keyboard Switch 
 
-    // Global config
+    // Global configuration
+    GtkFrame * global_config_frame = GTK_FRAME(gtk_frame_new(_("Global Configuration:")));
+    gtk_widget_set_size_request(GTK_WIDGET(global_config_frame), 330, 50);
+    gtk_container_add(GTK_CONTAINER(tab->tab_content), GTK_WIDGET(global_config_frame));
+
+    
+    
+    hbox = gtk_hbox_new(FALSE, INNER_SPACE);
+    gtk_container_set_border_width(GTK_CONTAINER(hbox), 4);
+    gtk_container_add(GTK_CONTAINER(global_config_frame), hbox);
+
+    GtkWidget *global_cfg_image = gtk_image_new_from_stock(GTK_STOCK_EXECUTE, GTK_ICON_SIZE_DIALOG);
+    gtk_container_add(GTK_CONTAINER(hbox), global_cfg_image);
+
+    vbox = gtk_vbox_new(FALSE, INNER_SPACE);
+    gtk_container_set_border_width(GTK_CONTAINER(vbox), 4);
+    gtk_container_add(GTK_CONTAINER(hbox), vbox);
+    
+    GtkWidget *msg_label = gtk_label_new(_(
+            "Apply this keyboard configuration not only to your\n"
+            "session, but also to the whole system."));
+    gtk_container_add(GTK_CONTAINER(vbox), msg_label);
+
     GtkWidget *button_global;
-    button_global = gtk_button_new_with_label(_("Apply to System"));
-    gtk_widget_set_size_request(button_global, 90, BUTTON_HIGH);
+    button_global = gtk_button_new_with_label(_("Apply Globaly"));
 
-    gtk_container_add(GTK_CONTAINER(tab->tab_content), button_global);
     g_signal_connect(button_global, "clicked",
             G_CALLBACK(button_global_callback), NULL);
+
+    gtk_container_add(GTK_CONTAINER(vbox), button_global);
+
 
     return tab;
 }

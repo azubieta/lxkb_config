@@ -192,8 +192,106 @@ parse_model_list(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
         }
         cur = cur->next;
     }
-    /* Sort layouts */
+    /* Sort models */
     rules->models = g_slist_sort(rules->models, compare_models);
+}
+
+Option *
+parse_group_option(xmlDocPtr doc, xmlNodePtr cur) {
+    cur = cur->xmlChildrenNode;
+    // go into configItem node
+    cur = cur->next;
+    cur = cur->xmlChildrenNode;
+
+
+    Option *opt = malloc(sizeof (Option));
+    memset(opt, 0, sizeof (Option));
+
+    while (cur != NULL) {
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "name"))) {
+            opt->id = (gchar *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            //printf("id: %s\n", opt->id);
+            //xmlFree(id);
+        }
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "description"))) {
+            opt->description = (gchar *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            //printf("Description: %s\n", opt->description);
+            //xmlFree(id);
+        }
+        cur = cur->next;
+    }
+    return opt;
+}
+
+void
+parse_group_info(xmlDocPtr doc, xmlNodePtr cur, OptionGroup * opt_group) {
+    cur = cur->xmlChildrenNode;
+
+    while (cur != NULL) {
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "name"))) {
+            opt_group->id = (gchar *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            //printf("id: %s\n", opt_group->id);
+            //xmlFree(id);
+        }
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "description"))) {
+            opt_group->description = (gchar *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            //printf("Description: %s\n", opt_group->description);
+            //xmlFree(id);
+        }
+        cur = cur->next;
+    }
+}
+
+void
+parse_group(xmlDocPtr doc, xmlNodePtr cur, OptionGroup * opt_group) {
+    cur = cur->xmlChildrenNode;
+    while (cur != NULL) {
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "configItem"))) {
+            parse_group_info(doc, cur, opt_group);
+        }
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "option"))) {
+            Option * opt = parse_group_option(doc, cur);
+            if (opt != NULL) {
+                opt_group->options = g_slist_append(opt_group->options, opt);
+            }
+        }
+        cur = cur->next;
+    }
+}
+
+void
+parse_options_groups(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
+    cur = cur->xmlChildrenNode;
+    while (cur != NULL) {
+
+        if (!xmlStrcmp(cur->name, (const xmlChar *) "group")) {
+            OptionGroup * opt_group = malloc(sizeof (OptionGroup));
+            memset(opt_group, 0, sizeof (OptionGroup));
+            // read allowMultipleSelection attribute
+            xmlAttr* attribute = cur->properties;
+            while (attribute && attribute->name && attribute->children) {
+                if (xmlStrcmp(attribute->name, "allowMultipleSelection") == 0) {
+                    xmlChar* value = xmlNodeListGetString(cur->doc, attribute->children, 1);
+                    if (xmlStrcmp(value, "true") == 0)
+                        opt_group->multiple_selection = TRUE;
+                    else
+                        opt_group->multiple_selection = FALSE;
+
+                    xmlFree(value);
+                }
+                attribute = attribute->next;
+            }
+
+            parse_group(doc, cur, opt_group);
+
+            if (opt_group != NULL) {
+                rules->options = g_slist_append(rules->options, opt_group);
+            }
+        }
+        
+        cur = cur->next;
+    }
+
 }
 
 extern XKB_Rules *rules;
@@ -247,6 +345,9 @@ xkb_rules_load() {
             parse_layout_list(doc, cur, rules);
         }
 
+        if ((!xmlStrcmp(cur->name, (const xmlChar *) "optionList"))) {
+            parse_options_groups(doc, cur, rules);
+        }
         cur = cur->next;
     }
 
@@ -320,6 +421,53 @@ xkb_rules_layout_get_variant(Layout *layout, gchar *var_id, gchar *var_desc) {
 
 
         var_it = var_it->next;
+    }
+    return NULL;
+}
+
+OptionGroup *
+xkb_rules_get_option_group(XKB_Rules *rules, gchar *opt_grp_id, gchar *opt_grp_desc) {
+    if ((opt_grp_id == NULL) && (opt_grp_desc == NULL)) {
+        return NULL;
+    }
+
+    GSList *opt_grp_it = rules->options;
+    OptionGroup *opt_grp;
+
+    while (opt_grp_it != NULL) {
+        opt_grp = opt_grp_it->data;
+        //printf("id: %s desc: %s \n", opt_grp->id, opt_grp->description);
+
+        if ((opt_grp_id != NULL) && (strcmp(opt_grp->id, opt_grp_id)) == 0)
+            return opt_grp;
+
+        if ((opt_grp_desc != NULL) && (strcmp(opt_grp->description, opt_grp_desc)) == 0)
+            return opt_grp;
+
+        opt_grp_it = opt_grp_it->next;
+    }
+    return NULL;
+}
+
+Option *
+xkb_rules_get_option(OptionGroup *opt_grp, gchar *opt_id, gchar *opt_desc) {
+    if ((opt_id == NULL) && (opt_desc == NULL)) {
+        return NULL;
+    }
+
+    GSList *opt_grp_it = opt_grp->options;
+    Option *opt;
+
+    while (opt_grp_it != NULL) {
+        opt = opt_grp_it->data;
+
+        if ((opt_id != NULL) && (strcmp(opt->id, opt_id)) == 0)
+            return opt;
+
+        if ((opt_desc != NULL) && (strcmp(opt->description, opt_desc)) == 0)
+            return opt;
+
+        opt_grp_it = opt_grp_it->next;
     }
     return NULL;
 }
