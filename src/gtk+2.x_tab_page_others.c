@@ -149,7 +149,7 @@ build_tab_others() {
     GtkWidget *keys_image = gtk_image_new_from_icon_name("keyboard", GTK_ICON_SIZE_DIALOG);
     
     GtkWidget *keys_label = gtk_label_new(
-            _("Select a key combination to swtich between layouts\n"
+            _("Select a key combination to switch between layouts\n"
             "or just select 'None'."));
 
     hbox = gtk_hbox_new(FALSE, INNER_SPACE);

@@ -56,7 +56,7 @@ parse_variant(xmlDocPtr doc, xmlNodePtr cur, Layout *l) {
             //xmlFree(id);
         }
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "description"))) {
-            v->description = (char *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            v->description = _((char *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1));
             //printf("Description: %s\n", l->description);
             //xmlFree(id);
         }
@@ -105,7 +105,7 @@ parse_layout(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
             //xmlFree(id);
         }
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "description"))) {
-            l->description = (char *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            l->description = _((char *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1));
             //printf("Description: %s\n", l->description);
             //xmlFree(id);
         }
@@ -170,7 +170,7 @@ parse_model(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
             //xmlFree(id);
         }
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "description"))) {
-            m->description = (char *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            m->description = _((char *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1));
             //xmlFree(id);
         }
         cur = cur->next;
@@ -214,7 +214,7 @@ parse_group_option(xmlDocPtr doc, xmlNodePtr cur) {
             //xmlFree(id);
         }
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "description"))) {
-            opt->description = (gchar *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            opt->description = _((gchar *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1));
             //printf("Description: %s\n", opt->description);
             //xmlFree(id);
         }
@@ -234,7 +234,7 @@ parse_group_info(xmlDocPtr doc, xmlNodePtr cur, OptionGroup * opt_group) {
             //xmlFree(id);
         }
         if ((!xmlStrcmp(cur->name, (const xmlChar *) "description"))) {
-            opt_group->description = (gchar *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1);
+            opt_group->description = _((gchar *) xmlNodeListGetString(doc, cur->xmlChildrenNode, 1));
             //printf("Description: %s\n", opt_group->description);
             //xmlFree(id);
         }
@@ -288,7 +288,7 @@ parse_options_groups(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
                 rules->options = g_slist_append(rules->options, opt_group);
             }
         }
-        
+
         cur = cur->next;
     }
 
@@ -306,6 +306,8 @@ XKB_Rules * xkb_xorg_get_rules() {
 
 XKB_Rules*
 xkb_rules_load() {
+
+    textdomain("xkeyboard-config");
 
     xmlDocPtr doc;
     xmlNodePtr cur;
@@ -352,6 +354,7 @@ xkb_rules_load() {
     }
 
     xmlFreeDoc(doc);
+    textdomain("lxkb_config");
     return rules;
 }
 

@@ -129,7 +129,7 @@ build_dialog_layout_variant_management(GtkWidget *parent, Distribution_Dialog *d
 
     /* Create the widgets */
     GtkWidget *hbox, *vbox, *dialog;
-    dialog = gtk_dialog_new_with_buttons(_("Pic a keyboard layout"),
+    dialog = gtk_dialog_new_with_buttons(_("Pick a keyboard layout"),
             GTK_WINDOW(parent),
             GTK_DIALOG_DESTROY_WITH_PARENT,
             GTK_STOCK_OK,

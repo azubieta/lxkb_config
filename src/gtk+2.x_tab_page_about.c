@@ -21,14 +21,15 @@ build_tab_credits() {
     tab->tab_name = gtk_label_new(_("About"));
     tab->tab_content = gtk_vbox_new(FALSE, INNER_SPACE);
     gtk_container_set_border_width(GTK_CONTAINER(tab->tab_content), 8);
-    GtkWidget *credits = gtk_label_new(
+    GtkWidget *credits = gtk_label_new( _(
             "Developers:\n"
             "Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n\n"
+            "Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n\n"
             "Repository:\n"
             "https://github.com/azubieta/lxkb_config\n\n"
             "Last version:\n"
             "https://github.com/azubieta/lxkb_config/downloads"
-            );
+            ) );
     gtk_container_add(GTK_CONTAINER(tab->tab_content), credits);  
     return tab;
 }
