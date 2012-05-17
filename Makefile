@@ -162,32 +162,33 @@ intl-clean:
 	    fi; \
 	)
 
-PREFIX=/usr
+DESTDIR=/usr
+#CONF=Debug
+CONF=Release
 # install targuet
 install: intl-build
-	mkdir -p ${DESTDIR}/usr/share/applications/
+	mkdir -p ${DESTDIR}/bin
+	mkdir -p ${DESTDIR}/share/applications
 	
-	
-	install -m 0555 ${CND_ARTIFACT_PATH_${CONF}} $(PREFIX)/bin/${CND_ARTIFACT_NAME_${CONF}}
-	install -m 0444 resources/keyboard.desktop.in /usr/share/applications/keyboard.desktop
+	install -m 0555 ${CND_ARTIFACT_PATH_${CONF}} ${DESTDIR}/bin/${CND_ARTIFACT_NAME_${CONF}}
+	install -m 0444 resources/keyboard.desktop.in  ${DESTDIR}/share/applications/keyboard.desktop
 
 	# install locales
 	$(foreach lang, ${LANGUAGES}, \
 	    if [ -f ${INTL_DIR}/${lang}.mo ]; then 	\
-		mkdir -p /usr/share/locale/${lang}/LC_MESSAGES/; \
-		install -m 0444 ${INTL_DIR}/${lang}.mo /usr/share/locale/${lang}/LC_MESSAGES/lxkb_config.mo; \
+		mkdir -p ${DESTDIR}/share/locale/${lang}/LC_MESSAGES/; \
+		install -m 0444 ${INTL_DIR}/${lang}.mo ${DESTDIR}/share/locale/${lang}/LC_MESSAGES/lxkb_config.mo; \
 	    fi;\
 	)
-	#install -m 0444 ${INTL_DIR}/lxkb_config.mo ${DESTDIR}/usr/share/locale/es_ES/LC_MESSAGES/lxkb_config.mo
 
 # uninstall targuet
 uninstall:
-	rm $(PREFIX)/bin/${CND_ARTIFACT_NAME_${CONF}}
-	rm $(PREFIX)/share/applications/keyboard.desktop
+	rm ${DESTDIR}/bin/${CND_ARTIFACT_NAME_${CONF}}
+	rm ${DESTDIR}/share/applications/keyboard.desktop
 	# install locales
 	$(foreach lang, ${LANGUAGES}, \
-	    if [ -f ${DESTDIR}/usr/share/locale/${lang}/LC_MESSAGES/lxkb_config.mo ]; then \
-		rm ${DESTDIR}/usr/share/locale/${lang}/LC_MESSAGES/lxkb_config.mo; \
+	    if [ -f ${DESTDIR}/share/locale/${lang}/LC_MESSAGES/lxkb_config.mo ]; then \
+		rm ${DESTDIR}/share/locale/${lang}/LC_MESSAGES/lxkb_config.mo; \
 	    fi;\
 	)
 

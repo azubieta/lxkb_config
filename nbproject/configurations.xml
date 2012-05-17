@@ -18,7 +18,6 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
-      <itemPath>po/es_ES.po</itemPath>
       <itemPath>resources/keyboard.desktop.in</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
