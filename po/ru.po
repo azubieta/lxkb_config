@@ -1,0 +1,155 @@
+# Russian translations for lxkb-config package.
+# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2012.
+# Maxim Orlov <uubboo@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-15 22:59-0400\n"
+"PO-Revision-Date: 2012-05-16 15:01+0400\n"
+"Last-Translator: Maxim Orlov <uubboo@gmail.com>\n"
+"Language-Team: русский <>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "О программе"
+
+#: src/gtk+2.x_tab_page_others.c:234
+msgid "Apply Globaly"
+msgstr "Применить ко всей системе"
+
+#: src/gtk+2.x_tab_page_others.c:229
+msgid ""
+"Apply this keyboard configuration not only to your\n"
+"session, but also to the whole system."
+msgstr ""
+"Применить настройки ко всей системе в целом,\n"
+"а не только для текущей сессии."
+
+#: src/manage_xorg_rules.c:118
+msgid "Default"
+msgstr "По умолчанию"
+
+#: src/gtk+2.x_tab_page_about.c:25
+msgid ""
+"Developers:\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Repository:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Last version:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+msgstr ""
+"Разработчики:\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Репозиторий:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Последняя версия:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+
+#: src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr "Раскладки"
+
+#: src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr "Раскладки:"
+
+#: src/gtk+2.x_tab_page_others.c:116 src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Возникла ошибка во время применения конфигурации."
+
+#: src/gtk+2.x_tab_page_others.c:211
+msgid "Global Configuration:"
+msgstr "Глобальные настройки:"
+
+#: src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
+msgstr "Введите пароль, чтобы установить конфигурацию для всей системы в целом."
+
+#: src/gtk+2.x_tab_page_others.c:139
+msgid "Key(s) to change layout:"
+msgstr "Сочетание клавиш:"
+
+#: src/gtk+2.x_tab_page_others.c:172
+msgid "Keyboard Model:"
+msgstr "Модель клавиатуры:"
+
+#: src/manage_desktop_preferences.c:39
+msgid "Keyboard Settings setup"
+msgstr "Настройка параметров клавиатуры"
+
+#: src/gtk+2.x.c:69
+msgid "Keyboard configuration tool"
+msgstr "Инструмент настройки клавиатуры"
+
+#: src/gtk+2.x_tab_page_distribution.c:224
+msgid "Layout"
+msgstr "Раскладка"
+
+#: src/gtk+2.x_tab_page_distribution.c:155
+msgid "Layout:"
+msgstr "Раскладка:"
+
+#: src/gtk+2.x_tab_page_others.c:29 src/gtk+2.x_tab_page_others.c:78
+msgid "None"
+msgstr "Отсутствует"
+
+#: src/gtk+2.x_tab_page_others.c:134
+msgid "Other Options"
+msgstr "Другие опции"
+
+#: src/gtk+2.x_tab_page_distribution.c:132
+msgid "Pick a keyboard layout"
+msgstr "Выберите раскладку клавиатуры"
+
+#: src/gtk+2.x_tab_page_others.c:152
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"Выберите комбинацию клавиш для переключения между раскладками\n"
+"или просто выберите 'Отсутствует'."
+
+#: src/manage_desktop_preferences.c:40
+msgid "Sets up your preferred keyboard settings"
+msgstr "Устанавливает ваши персональные настройки клавиатуры"
+
+#: src/gtk+2.x_tab_page_distribution.c:190
+msgid "Test here:"
+msgstr "Проверьте здесь:"
+
+#: src/gtk+2.x_tab_page_others.c:110 src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Конфигурация была успешно применена."
+
+#: src/gtk+2.x_tab_page_distribution.c:229
+msgid "Variant"
+msgstr "Вариант"
+
+#: src/gtk+2.x_tab_page_distribution.c:156
+msgid "Variant: "
+msgstr "Вариант:"
+
+#: src/gtk+2.x_tab_page_others.c:187
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+"ВНИМАНИЕ: Помните, что изменение этих параметров может\n"
+"привести систему к неисправности."
