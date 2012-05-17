@@ -1,0 +1,17 @@
+./src/system.h
+./src/manage_rules.h
+./src/gtk+2.x.h
+./src/data_structures.h
+./src/manage_user_preferences.h
+./src/setxkbmap_interface.h
+./src/xkblib_interface.c
+./src/setxkbmap_interface.c
+./src/manage_user_preferences.c
+./src/gtk+2.x_tab_page_distribution.c
+./src/gtk+2.x_tab_page_others.c
+./src/main.c
+./src/gtk+2.x_tab_page_about.c
+./src/gtk+2.x.c
+./src/manage_desktop_preferences.c
+./src/manage_xorg_rules.c
+./src/manage_xorg_preferences.c
