@@ -66,7 +66,7 @@ clean: .clean-post
 .clean-pre:
 # Add your pre 'clean' code here...
 
-.clean-post: .clean-impl
+.clean-post: .clean-impl intl-clean
 # Add your post 'clean' code here...
 
 
@@ -129,40 +129,65 @@ include nbproject/Makefile-impl.mk
 include nbproject/Makefile-variables.mk
 
 # internationalization
+LANGUAGES=es ru
 INTL_DIR=po
 intl-extract:
-	#mkdir ${INTL_DIR}
+	mkdir -p ${INTL_DIR}
 	# make sources list
 	find | grep -F .h > ${INTL_DIR}/src_list
 	find | grep -F .c >> ${INTL_DIR}/src_list
 	# getting .pot file
 	xgettext -L python --from-code=UTF-8 -d ${CND_ARTIFACT_NAME_${CONF}} -s -o ${INTL_DIR}/${CND_ARTIFACT_NAME_${CONF}}.pot -f ${INTL_DIR}/src_list
-	# remove sources list
-	rm ${INTL_DIR}/src_list
+	
+	# making .po files
+	$(foreach lang, ${LANGUAGES},\
+	    if [ -f ${INTL_DIR}/${lang}.po ]; then \
+		msgmerge -s -U ${INTL_DIR}/${lang}.po ${INTL_DIR}/lxkb_config.pot; \
+	    else \
+		msginit -l or_IN -o ${INTL_DIR}/${lang}.po -i ${INTL_DIR}/lxkb_config.pot --no-translator; \
+	    fi; \
+	)
 	# Done
-	
-intl-clean:
-	rm -rf ${INTL_DIR}
 
+intl-build: 
+	# compiling po files to mo
+	$(foreach lang, ${LANGUAGES}, \
+	    msgfmt -c -v -o ${INTL_DIR}/${lang}.mo ${INTL_DIR}/${lang}.po; \
+	)
+
+intl-clean:
+	$(foreach lang, ${LANGUAGES},\
+	    if [ -f ${INTL_DIR}/${lang}.mo ]; then \
+		rm ${INTL_DIR}/${lang}.mo ; \
+	    fi; \
+	)
+
+PREFIX=/usr
 # install targuet
-install:
-	mkdir ${DESTDIR}/usr
-	mkdir ${DESTDIR}/usr/bin
-	mkdir ${DESTDIR}/usr/share
-	mkdir ${DESTDIR}/usr/share/applications/
-	mkdir ${DESTDIR}/usr/share/locale
-	mkdir ${DESTDIR}/usr/share/locale/es_ES
-	mkdir ${DESTDIR}/usr/share/locale/es_ES/LC_MESSAGES/
+install: intl-build
+	mkdir -p ${DESTDIR}/usr/share/applications/
 	
-	install -m 0555 ${CND_ARTIFACT_PATH_${CONF}} ${DESTDIR}/usr/bin/${CND_ARTIFACT_NAME_${CONF}}
-	install -m 0444 resources/keyboard.desktop.in ${DESTDIR}/usr/share/applications/keyboard.desktop
+	
+	install -m 0555 ${CND_ARTIFACT_PATH_${CONF}} $(PREFIX)/bin/${CND_ARTIFACT_NAME_${CONF}}
+	install -m 0444 resources/keyboard.desktop.in /usr/share/applications/keyboard.desktop
 
 	# install locales
-	install -m 0444 ${INTL_DIR}/lxkb_config.mo ${DESTDIR}/usr/share/locale/es_ES/LC_MESSAGES/lxkb_config.mo
+	$(foreach lang, ${LANGUAGES}, \
+	    if [ -f ${INTL_DIR}/${lang}.mo ]; then 	\
+		mkdir -p /usr/share/locale/${lang}/LC_MESSAGES/; \
+		install -m 0444 ${INTL_DIR}/${lang}.mo /usr/share/locale/${lang}/LC_MESSAGES/lxkb_config.mo; \
+	    fi;\
+	)
+	#install -m 0444 ${INTL_DIR}/lxkb_config.mo ${DESTDIR}/usr/share/locale/es_ES/LC_MESSAGES/lxkb_config.mo
 
 # uninstall targuet
 uninstall:
 	rm $(PREFIX)/bin/${CND_ARTIFACT_NAME_${CONF}}
 	rm $(PREFIX)/share/applications/keyboard.desktop
-	rm /usr/share/locale/es_ES/LC_MESSAGES/lxkb_config.mo
+	# install locales
+	$(foreach lang, ${LANGUAGES}, \
+	    if [ -f ${DESTDIR}/usr/share/locale/${lang}/LC_MESSAGES/lxkb_config.mo ]; then \
+		rm ${DESTDIR}/usr/share/locale/${lang}/LC_MESSAGES/lxkb_config.mo; \
+	    fi;\
+	)
 
