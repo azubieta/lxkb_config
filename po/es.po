@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.9\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-15 22:59-0400\n"
+"Report-Msgid-Bugs-To: azubieta@estudiantes.uci.cu\n"
+"POT-Creation-Date: 2012-05-17 21:59-0400\n"
 "PO-Revision-Date: 2012-05-15 22:21-0400\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,13 +17,73 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/gtk+2.x_tab_page_about.c:21
-msgid "About"
-msgstr "Acerca de"
+#: src/gtk+2.x_tab_page_distribution.c:132
+msgid "Pick a keyboard layout"
+msgstr "Elija una distribución de teclado"
 
-#: src/gtk+2.x_tab_page_others.c:234
-msgid "Apply Globaly"
-msgstr "Aplicar a todo el sistema"
+#: src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr "Distribución"
+
+#: src/gtk+2.x_tab_page_distribution.c:155
+msgid "Layout:"
+msgstr "Distribución:"
+
+#: src/gtk+2.x_tab_page_distribution.c:156
+msgid "Variant: "
+msgstr "Variante:"
+
+#: src/gtk+2.x_tab_page_distribution.c:190
+msgid "Test here:"
+msgstr "Pruebe aquí:"
+
+#: src/gtk+2.x_tab_page_distribution.c:224
+msgid "Layout"
+msgstr "Distribución"
+
+#: src/gtk+2.x_tab_page_distribution.c:229
+msgid "Variant"
+msgstr "Variante"
+
+#: src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr "Distribución"
+
+#: src/gtk+2.x_tab_page_others.c:29 src/gtk+2.x_tab_page_others.c:78
+msgid "None"
+msgstr "Ninguna"
+
+#: src/gtk+2.x_tab_page_others.c:134
+msgid "Other Options"
+msgstr "Otras opciones"
+
+#: src/gtk+2.x_tab_page_others.c:139
+msgid "Key(s) to change layout:"
+msgstr "Tecla(s) para cambiar la distribución:"
+
+#: src/gtk+2.x_tab_page_others.c:152
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"Elija una combinación de teclas para alternar entre\n"
+"diferentes distribuciones o solo elija 'Ninguna'"
+
+#: src/gtk+2.x_tab_page_others.c:172
+msgid "Keyboard Model:"
+msgstr "Modelo de taclado:"
+
+#: src/gtk+2.x_tab_page_others.c:187
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+"ALERTA: Sepa usted que el cambio de estas opciones\n"
+"puede provocar un mal funcionamiento del sistema."
+
+#: src/gtk+2.x_tab_page_others.c:211
+msgid "Global Configuration:"
+msgstr "Configuración global"
 
 #: src/gtk+2.x_tab_page_others.c:229
 msgid ""
@@ -33,17 +93,21 @@ msgstr ""
 "Aplicar esta configuración a todo el sistema.\n"
 " "
 
-#: src/manage_xorg_rules.c:118
-msgid "Default"
-msgstr "Predefinida"
+#: src/gtk+2.x_tab_page_others.c:234
+msgid "Apply Globaly"
+msgstr "Aplicar a todo el sistema"
+
+#: src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "Acerca de"
 
 #: src/gtk+2.x_tab_page_about.c:25
 #, fuzzy
 msgid ""
 "Developers:\n"
-"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
 "\n"
-"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
 "Repository:\n"
 "https://github.com/azubieta/lxkb_config\n"
@@ -62,95 +126,31 @@ msgstr ""
 "Última versión:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
-#: src/gtk+2.x_tab_page_distribution.c:356
-msgid "Distribution"
-msgstr "Distribución"
+#: src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "La configuración fue aplicada con éxito."
 
-#: src/gtk+2.x_tab_page_distribution.c:145
-msgid "Distribution:"
-msgstr "Distribución"
-
-#: src/gtk+2.x_tab_page_others.c:116 src/gtk+2.x.c:37
+#: src/gtk+2.x.c:37
 msgid "Error while applying the configuration."
 msgstr "Error miestras se aplicaba la configuración."
-
-#: src/gtk+2.x_tab_page_others.c:211
-msgid "Global Configuration:"
-msgstr "Configuración global"
-
-#: src/manage_xorg_preferences.c:96
-msgid "Introduce your password to set this configuration to the whole system."
-msgstr ""
-"Entre su constraseña para establecer esta configuración a todo el sistema."
-
-#: src/gtk+2.x_tab_page_others.c:139
-msgid "Key(s) to change layout:"
-msgstr "Tecla(s) para cambiar la distribución:"
-
-#: src/gtk+2.x_tab_page_others.c:172
-msgid "Keyboard Model:"
-msgstr "Modelo de taclado:"
-
-#: src/manage_desktop_preferences.c:39
-msgid "Keyboard Settings setup"
-msgstr "Configuración de teclado."
 
 #: src/gtk+2.x.c:69
 msgid "Keyboard configuration tool"
 msgstr "Herramienta de configuración de teclado"
 
-#: src/gtk+2.x_tab_page_distribution.c:224
-msgid "Layout"
-msgstr "Distribución"
-
-#: src/gtk+2.x_tab_page_distribution.c:155
-msgid "Layout:"
-msgstr "Distribución:"
-
-#: src/gtk+2.x_tab_page_others.c:29 src/gtk+2.x_tab_page_others.c:78
-msgid "None"
-msgstr "Ninguna"
-
-#: src/gtk+2.x_tab_page_others.c:134
-msgid "Other Options"
-msgstr "Otras opciones"
-
-#: src/gtk+2.x_tab_page_distribution.c:132
-msgid "Pick a keyboard layout"
-msgstr "Elija una distribución de teclado"
-
-#: src/gtk+2.x_tab_page_others.c:152
-msgid ""
-"Select a key combination to switch between layouts\n"
-"or just select 'None'."
-msgstr ""
-"Elija una combinación de teclas para alternar entre\n"
-"diferentes distribuciones o solo elija 'Ninguna'"
+#: src/manage_desktop_preferences.c:39
+msgid "Keyboard Settings setup"
+msgstr "Configuración de teclado."
 
 #: src/manage_desktop_preferences.c:40
 msgid "Sets up your preferred keyboard settings"
 msgstr "Establece su configuración de teclado preferida."
 
-#: src/gtk+2.x_tab_page_distribution.c:190
-msgid "Test here:"
-msgstr "Pruebe aquí:"
+#: src/manage_xorg_rules.c:118
+msgid "Default"
+msgstr "Predefinida"
 
-#: src/gtk+2.x_tab_page_others.c:110 src/gtk+2.x.c:31
-msgid "The configuration was applied successfully."
-msgstr "La configuración fue aplicada con éxito."
-
-#: src/gtk+2.x_tab_page_distribution.c:229
-msgid "Variant"
-msgstr "Variante"
-
-#: src/gtk+2.x_tab_page_distribution.c:156
-msgid "Variant: "
-msgstr "Variante:"
-
-#: src/gtk+2.x_tab_page_others.c:187
-msgid ""
-"WARNING: Be aware that changing these settings may\n"
-"result in system malfunction."
+#: src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""
-"ALERTA: Sepa usted que el cambio de estas opciones\n"
-"puede provocar un mal funcionamiento del sistema."
+"Entre su constraseña para establecer esta configuración a todo el sistema."

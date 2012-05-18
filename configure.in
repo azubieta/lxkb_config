@@ -1,0 +1,44 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.68])
+AC_INIT([lxkb-config], [0.9.1], [azubieta@estudiantes.uci.cu])
+AM_INIT_AUTOMAKE
+AC_CONFIG_SRCDIR([src/main.c])
+AC_CONFIG_HEADERS([config.h])
+
+# adding internationalization support
+AM_GNU_GETTEXT_VERSION([0.18.1])
+AM_GNU_GETTEXT([external])
+
+
+# Checks for programs.
+AC_PROG_CC
+AC_PROG_INSTALL
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_PATH_X
+AC_CHECK_HEADERS([libintl.h limits.h locale.h stdlib.h string.h unistd.h])
+
+# Checks for dependecies
+
+pkg_modules="gtk+-2.0 >= 2.0.0 \
+    glib-2.0 >= 2.0 \
+    libxml-2.0 >= 2.0    "
+PKG_CHECK_MODULES(LXKB_CONFIG, [$pkg_modules])
+AC_SUBST(LXKB_CONFIG_CFLAGS)
+AC_SUBST(LXKB_CONFIG_LIBS)
+
+
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+AC_FUNC_MALLOC
+AC_CHECK_FUNCS([memset setlocale strdup])
+
+AC_CONFIG_FILES([Makefile po/Makefile.in
+                 src/Makefile])
+AC_OUTPUT

@@ -2,4 +2,4 @@
 /dist/Release/
 /nbproject/private/
 /build/Debug/
-/dist/Debug/
+/dist/Debug/*~

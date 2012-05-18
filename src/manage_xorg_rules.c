@@ -354,7 +354,7 @@ xkb_rules_load() {
     }
 
     xmlFreeDoc(doc);
-    textdomain("lxkb_config");
+    textdomain (PACKAGE);
     return rules;
 }
 

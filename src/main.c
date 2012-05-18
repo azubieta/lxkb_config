@@ -19,8 +19,8 @@ int main(int argc, char** argv) {
 
     /* Set locale via LC_ALL.  */
     setlocale(LC_ALL, "");
-    bindtextdomain("lxkb_config", "/usr/share/locale");
-    textdomain("lxkb_config");
+    bindtextdomain (PACKAGE, LOCALEDIR);
+    textdomain (PACKAGE);
 
     rules = xkb_rules_load();
     user_prefs = (XKB_Preferences*) xkb_preferences_load_from_env();

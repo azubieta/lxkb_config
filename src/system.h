@@ -18,9 +18,13 @@
 #ifndef LXKB_CONFIG_SYSTEM_H
 #define LXKB_CONFIG_SYSTEM_H
 
+#include <config.h>
+
 /* Assume ANSI C89 headers are available.  */
 #include <locale.h>
 #include <libintl.h>
+
+#include "gettext.h"
 
 /* Use POSIX headers.  If they are not available, we use the substitute
    provided by gnulib.  */

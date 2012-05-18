@@ -23,8 +23,8 @@ build_tab_credits() {
     gtk_container_set_border_width(GTK_CONTAINER(tab->tab_content), 8);
     GtkWidget *credits = gtk_label_new( _(
             "Developers:\n"
-            "Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n\n"
-            "Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n\n"
+            "Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n\n"
+            "Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n\n"
             "Repository:\n"
             "https://github.com/azubieta/lxkb_config\n\n"
             "Last version:\n"
