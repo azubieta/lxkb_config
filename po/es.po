@@ -102,7 +102,6 @@ msgid "About"
 msgstr "Acerca de"
 
 #: src/gtk+2.x_tab_page_about.c:25
-#, fuzzy
 msgid ""
 "Developers:\n"
 "Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"

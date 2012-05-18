@@ -1,5 +1,5 @@
 SUBDIRS = src po
-EXTRA_DIST = config.rpath README NEWS COPYING config.rpath  keyboard.desktop
+EXTRA_DIST = config.rpath README NEWS COPYING data/keyboard.desktop.in
 
 desktopfiledir=$(datadir)/applications
 desktopfile_DATA=data/keyboard.desktop
