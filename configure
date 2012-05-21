@@ -607,6 +607,8 @@ ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
 LIBOBJS
+XKEYBOARD_CONFIG_LIBS
+XKEYBOARD_CONFIG_CFLAGS
 LXKB_CONFIG_LIBS
 LXKB_CONFIG_CFLAGS
 PKG_CONFIG_LIBDIR
@@ -744,7 +746,9 @@ PKG_CONFIG
 PKG_CONFIG_PATH
 PKG_CONFIG_LIBDIR
 LXKB_CONFIG_CFLAGS
-LXKB_CONFIG_LIBS'
+LXKB_CONFIG_LIBS
+XKEYBOARD_CONFIG_CFLAGS
+XKEYBOARD_CONFIG_LIBS'
 
 
 # Initialize some variables set by options.
@@ -1403,6 +1407,10 @@ Some influential environment variables:
               C compiler flags for LXKB_CONFIG, overriding pkg-config
   LXKB_CONFIG_LIBS
               linker flags for LXKB_CONFIG, overriding pkg-config
+  XKEYBOARD_CONFIG_CFLAGS
+              C compiler flags for XKEYBOARD_CONFIG, overriding pkg-config
+  XKEYBOARD_CONFIG_LIBS
+              linker flags for XKEYBOARD_CONFIG, overriding pkg-config
 
 Use these variables to override the choices made by `configure' or to help
 it to find libraries and programs with nonstandard names/locations.
@@ -2696,7 +2704,7 @@ am__tar='$${TAR-tar} chof - "$$tardir"' am__untar='$${TAR-tar} xf -'
 
 
 
-ac_config_headers="$ac_config_headers config.h"
+ac_config_headers="$ac_config_headers src/config.h"
 
 
 # adding internationalization support
@@ -7053,9 +7061,9 @@ fi
 done
 
 
-# Checks for dependecies
+# Checks for build dependecies
 
-pkg_modules="gtk+-2.0 >= 2.0.0 \
+build_pkg_modules="gtk+-2.0 >= 2.0.0 \
     glib-2.0 >= 2.0 \
     libxml-2.0 >= 2.0    "
 
@@ -7187,12 +7195,12 @@ if test -n "$LXKB_CONFIG_CFLAGS"; then
     pkg_cv_LXKB_CONFIG_CFLAGS="$LXKB_CONFIG_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$pkg_modules\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "$pkg_modules") 2>&5
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$build_pkg_modules\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "$build_pkg_modules") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_LXKB_CONFIG_CFLAGS=`$PKG_CONFIG --cflags "$pkg_modules" 2>/dev/null`
+  pkg_cv_LXKB_CONFIG_CFLAGS=`$PKG_CONFIG --cflags "$build_pkg_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -7204,12 +7212,12 @@ if test -n "$LXKB_CONFIG_LIBS"; then
     pkg_cv_LXKB_CONFIG_LIBS="$LXKB_CONFIG_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$pkg_modules\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "$pkg_modules") 2>&5
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$build_pkg_modules\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "$build_pkg_modules") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_LXKB_CONFIG_LIBS=`$PKG_CONFIG --libs "$pkg_modules" 2>/dev/null`
+  pkg_cv_LXKB_CONFIG_LIBS=`$PKG_CONFIG --libs "$build_pkg_modules" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -7230,14 +7238,14 @@ else
         _pkg_short_errors_supported=no
 fi
         if test $_pkg_short_errors_supported = yes; then
-	        LXKB_CONFIG_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$pkg_modules" 2>&1`
+	        LXKB_CONFIG_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$build_pkg_modules" 2>&1`
         else
-	        LXKB_CONFIG_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$pkg_modules" 2>&1`
+	        LXKB_CONFIG_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$build_pkg_modules" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
 	echo "$LXKB_CONFIG_PKG_ERRORS" >&5
 
-	as_fn_error $? "Package requirements ($pkg_modules) were not met:
+	as_fn_error $? "Package requirements ($build_pkg_modules) were not met:
 
 $LXKB_CONFIG_PKG_ERRORS
 
@@ -7272,6 +7280,108 @@ fi
 
 
 
+
+# Checks for run time dependecies
+# lxkb-config also depends of "setxkbmap"
+build_pkg_modules="xkeyboard-config"
+
+pkg_failed=no
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for XKEYBOARD_CONFIG" >&5
+$as_echo_n "checking for XKEYBOARD_CONFIG... " >&6; }
+
+if test -n "$XKEYBOARD_CONFIG_CFLAGS"; then
+    pkg_cv_XKEYBOARD_CONFIG_CFLAGS="$XKEYBOARD_CONFIG_CFLAGS"
+ elif test -n "$PKG_CONFIG"; then
+    if test -n "$PKG_CONFIG" && \
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$build_pkg_modules\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "$build_pkg_modules") 2>&5
+  ac_status=$?
+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+  test $ac_status = 0; }; then
+  pkg_cv_XKEYBOARD_CONFIG_CFLAGS=`$PKG_CONFIG --cflags "$build_pkg_modules" 2>/dev/null`
+		      test "x$?" != "x0" && pkg_failed=yes
+else
+  pkg_failed=yes
+fi
+ else
+    pkg_failed=untried
+fi
+if test -n "$XKEYBOARD_CONFIG_LIBS"; then
+    pkg_cv_XKEYBOARD_CONFIG_LIBS="$XKEYBOARD_CONFIG_LIBS"
+ elif test -n "$PKG_CONFIG"; then
+    if test -n "$PKG_CONFIG" && \
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$build_pkg_modules\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "$build_pkg_modules") 2>&5
+  ac_status=$?
+  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+  test $ac_status = 0; }; then
+  pkg_cv_XKEYBOARD_CONFIG_LIBS=`$PKG_CONFIG --libs "$build_pkg_modules" 2>/dev/null`
+		      test "x$?" != "x0" && pkg_failed=yes
+else
+  pkg_failed=yes
+fi
+ else
+    pkg_failed=untried
+fi
+
+
+
+if test $pkg_failed = yes; then
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+
+if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+        _pkg_short_errors_supported=yes
+else
+        _pkg_short_errors_supported=no
+fi
+        if test $_pkg_short_errors_supported = yes; then
+	        XKEYBOARD_CONFIG_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "$build_pkg_modules" 2>&1`
+        else
+	        XKEYBOARD_CONFIG_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$build_pkg_modules" 2>&1`
+        fi
+	# Put the nasty error message in config.log where it belongs
+	echo "$XKEYBOARD_CONFIG_PKG_ERRORS" >&5
+
+	as_fn_error $? "Package requirements ($build_pkg_modules) were not met:
+
+$XKEYBOARD_CONFIG_PKG_ERRORS
+
+Consider adjusting the PKG_CONFIG_PATH environment variable if you
+installed software in a non-standard prefix.
+
+Alternatively, you may set the environment variables XKEYBOARD_CONFIG_CFLAGS
+and XKEYBOARD_CONFIG_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details." "$LINENO" 5
+elif test $pkg_failed = untried; then
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+$as_echo "no" >&6; }
+	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
+is in your PATH or set the PKG_CONFIG environment variable to the full
+path to pkg-config.
+
+Alternatively, you may set the environment variables XKEYBOARD_CONFIG_CFLAGS
+and XKEYBOARD_CONFIG_LIBS to avoid the need to call pkg-config.
+See the pkg-config man page for more details.
+
+To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+See \`config.log' for more details" "$LINENO" 5; }
+else
+	XKEYBOARD_CONFIG_CFLAGS=$pkg_cv_XKEYBOARD_CONFIG_CFLAGS
+	XKEYBOARD_CONFIG_LIBS=$pkg_cv_XKEYBOARD_CONFIG_LIBS
+        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+$as_echo "yes" >&6; }
+
+fi
+
+# getting xkb rules path
+xkb_base_dir=$( pkg-config --variable="xkb_base" xkeyboard-config )
+
+cat >>confdefs.h <<_ACEOF
+#define XKB_RULES_PATH "${xkb_base_dir}/rules/base.xml"
+_ACEOF
 
 
 # Checks for typedefs, structures, and compiler characteristics.
@@ -8099,7 +8209,7 @@ cat >>$CONFIG_STATUS <<\_ACEOF || ac_write_fail=1
 for ac_config_target in $ac_config_targets
 do
   case $ac_config_target in
-    "config.h") CONFIG_HEADERS="$CONFIG_HEADERS config.h" ;;
+    "src/config.h") CONFIG_HEADERS="$CONFIG_HEADERS src/config.h" ;;
     "po-directories") CONFIG_COMMANDS="$CONFIG_COMMANDS po-directories" ;;
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;

@@ -9,10 +9,10 @@
 
 #include "system.h"
 
-/* Default path for rules*/
-#define rules_path_lst "/usr/share/X11/xkb/rules/xfree86.lst"
-#define rules_path_xml "/usr/share/X11/xkb/rules/xfree86.xml"
+#include "config.h"
 
+
+                        
 /* Description: Layout comparing function *
  * Usage: Use it as complement to g_slist_sort.
  * Input: Tow layouts
@@ -311,7 +311,8 @@ xkb_rules_load() {
     xmlDocPtr doc;
     xmlNodePtr cur;
 
-    doc = xmlParseFile(rules_path_xml);
+    // Path for rules are imported from config.h 
+    doc = xmlParseFile(XKB_RULES_PATH);
 
     if (doc == NULL) {
         fprintf(stderr, "Document not parsed successfully. \n");

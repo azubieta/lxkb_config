@@ -1,0 +1,17 @@
+You must have installed the followind packages in order to build
+and execute lxkb-config.
+
+Dependecies:
+    - gtk-2.0
+    - libxml-2.0
+    - x11-xkb-utils
+    - xkb-data
+
+Follow theese steeps in order to install it. For more options read
+the INSTALL file.
+
+Installation notes:
+    ./bootstrap
+    ./configure
+    make
+    make install

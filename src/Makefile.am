@@ -3,6 +3,7 @@ AM_CPPFLAGS = -DLOCALEDIR=\"$(localedir)\"
 bin_PROGRAMS = lxkb_config
 lxkb_config_SOURCES=\
     system.h \
+    config.h \
     gettext.h \
     xkblib_interface.c \
     setxkbmap_interface.c \

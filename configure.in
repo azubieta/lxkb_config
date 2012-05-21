@@ -5,7 +5,7 @@ AC_PREREQ([2.68])
 AC_INIT([lxkb-config], [0.9.1], [azubieta@estudiantes.uci.cu])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/main.c])
-AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_HEADERS([src/config.h])
 
 # adding internationalization support
 AM_GNU_GETTEXT_VERSION([0.18.1])
@@ -22,16 +22,26 @@ AC_PROG_INSTALL
 AC_PATH_X
 AC_CHECK_HEADERS([libintl.h limits.h locale.h stdlib.h string.h unistd.h])
 
-# Checks for dependecies
+# Checks for build dependecies
 
-pkg_modules="gtk+-2.0 >= 2.0.0 \
+build_pkg_modules="gtk+-2.0 >= 2.0.0 \
     glib-2.0 >= 2.0 \
     libxml-2.0 >= 2.0    "
-PKG_CHECK_MODULES(LXKB_CONFIG, [$pkg_modules])
+PKG_CHECK_MODULES(LXKB_CONFIG, [$build_pkg_modules])
 AC_SUBST(LXKB_CONFIG_CFLAGS)
 AC_SUBST(LXKB_CONFIG_LIBS)
 
 
+# Checks for run time dependecies
+# lxkb-config also depends of "setxkbmap"
+build_pkg_modules="xkeyboard-config"
+PKG_CHECK_MODULES(XKEYBOARD_CONFIG, [$build_pkg_modules])
+
+# getting xkb rules path
+xkb_base_dir=$( pkg-config --variable="xkb_base" xkeyboard-config )
+AC_DEFINE_UNQUOTED([XKB_RULES_PATH], 
+    ["${xkb_base_dir}/rules/base.xml" ]  , 
+    ["Definition of the xkb rules path."])
 
 # Checks for typedefs, structures, and compiler characteristics.
 
