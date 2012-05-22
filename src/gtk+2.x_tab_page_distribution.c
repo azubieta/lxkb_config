@@ -21,9 +21,9 @@ extern XKB_Rules *rules;
 /* Sets data to the variants combo box */
 void
 fill_cbox_variants(GtkWidget *combo, gchar *layout) {
-    if (rules == NULL) {
-        rules = xkb_rules_load();
-    }
+
+    rules = xkb_xorg_get_rules();
+
 
     int nelemnts = gtk_tree_model_iter_n_children(
             gtk_combo_box_get_model(GTK_COMBO_BOX(combo)),
@@ -80,7 +80,7 @@ update_tmp_prefs(Distribution_Dialog *dist_dialog) {
 
     gtk_entry_set_text(GTK_ENTRY(dist_dialog->test_field), (gchar *) "");
 
-    xkb_preferences_set_to_system(dist_dialog->tmp_prefs);
+    xkb_preferences_set_to_env(dist_dialog->tmp_prefs);
 }
 
 /* Notify to the variants combo box 
@@ -108,9 +108,9 @@ combo_variant_selected(GtkWidget *widget, Distribution_Dialog *dist_dialog) {
 /* Sets data to the layouts combo box */
 void
 fill_cbox_layouts(GtkWidget *combo) {
-    if (rules == NULL) {
-        rules = xkb_rules_load();
-    }
+
+    rules = xkb_xorg_get_rules();
+
     GSList *it = rules->layouts;
     Layout *l;
 
@@ -238,7 +238,7 @@ list_store_update(GtkListStore *store) {
     gtk_list_store_clear(store);
 
     GtkTreeIter iter;
-
+    
     GSList *lay_it = user_prefs->layouts;
     GSList *var_it = user_prefs->variants;
 
@@ -284,7 +284,7 @@ button_new_config_callback(GtkWidget *widget, gpointer data) {
 
     /* TODO: Memory clean must be performed */
 
-    xkb_preferences_set_to_system(user_prefs);
+    xkb_preferences_set_to_env(user_prefs);
 
     gtk_widget_destroy(dialog);
 }
@@ -378,10 +378,10 @@ build_tab_distribution() {
 
     tab->button_default = gtk_button_new_from_stock(GTK_STOCK_GOTO_TOP);
     gtk_widget_set_size_request(tab->button_default, BUTTON_WIDTH, BUTTON_HIGH);
-    
+
     tab->button_delete = gtk_button_new_from_stock(GTK_STOCK_REMOVE);
     gtk_widget_set_size_request(tab->button_delete, BUTTON_WIDTH, BUTTON_HIGH);
-    
+
     tab->button_new = gtk_button_new_from_stock(GTK_STOCK_ADD);
     gtk_widget_set_size_request(tab->button_new, BUTTON_WIDTH, BUTTON_HIGH);
 

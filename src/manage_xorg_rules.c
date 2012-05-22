@@ -12,7 +12,21 @@
 #include "config.h"
 
 
-                        
+extern XKB_Rules *rules;
+
+XKB_Rules * xkb_xorg_get_rules() {
+    if (rules == NULL) {
+        XKB_Rules * r = xkb_rules_load();
+        if (r == NULL) {
+            printf("ERROR: Unable to load rules from: %s\n", XKB_RULES_PATH);
+            exit(EXIT_FAILURE);
+        } else
+            return r;
+    } else
+        return rules;
+
+}
+
 /* Description: Layout comparing function *
  * Usage: Use it as complement to g_slist_sort.
  * Input: Tow layouts
@@ -293,18 +307,9 @@ parse_options_groups(xmlDocPtr doc, xmlNodePtr cur, XKB_Rules *rules) {
 
 }
 
-extern XKB_Rules *rules;
-
-XKB_Rules * xkb_xorg_get_rules() {
-    if (rules == NULL)
-        return xkb_rules_load();
-    else
-        return rules;
-
-}
-
 XKB_Rules*
 xkb_rules_load() {
+    fprintf(stderr, "DEBUG: Loading xkb rules from \"%s\"\n", XKB_RULES_PATH);
 
     textdomain("xkeyboard-config");
 
@@ -354,7 +359,7 @@ xkb_rules_load() {
     }
 
     xmlFreeDoc(doc);
-    textdomain (PACKAGE);
+    textdomain(PACKAGE);
     return rules;
 }
 

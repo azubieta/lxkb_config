@@ -19,7 +19,7 @@ void
 button_aplic_callback(GtkWidget *widget, gpointer data) {
     GtkDialog * dialog;
     gboolean result;
-    result = xkb_preferences_set_to_system(user_prefs);
+    result = xkb_preferences_set_to_env(user_prefs);
     if (result)
         result = save_prefs_to_autostart(user_prefs);
 
@@ -43,19 +43,20 @@ button_aplic_callback(GtkWidget *widget, gpointer data) {
 
 void
 button_acept_callback(GtkWidget *widget, gpointer data) {
-    xkb_preferences_set_to_system(user_prefs);
+    xkb_preferences_set_to_env(user_prefs);
     save_prefs_to_autostart(user_prefs);
     gtk_main_quit();
 }
 
 void
 button_cancel_callback(GtkWidget *widget, gpointer data) {
-    user_prefs = (XKB_Preferences *) xkb_preferences_load_from_env();
-    xkb_preferences_set_to_system(user_prefs);
+    user_prefs = xkb_preferences_load_from_env();
+    xkb_preferences_set_to_env(user_prefs);
     gtk_main_quit();
 }
 
 void showMainWindow(int argc, char** argv) {
+    fprintf(stderr, "DEBUG: Running main window\n");
     gtk_init(&argc, &argv);
 
     GtkWindow *window;
@@ -87,9 +88,9 @@ void showMainWindow(int argc, char** argv) {
      * Adding tabs to the notebook
      */
 
-    Distribution_Tab *tab_distributions = (Distribution_Tab *) build_tab_distribution();
-    Others_Tab *tab_others = (Others_Tab *) build_tab_others();
-    About_Tab *tab_credits = (About_Tab *) build_tab_credits();
+    Distribution_Tab *tab_distributions = build_tab_distribution();
+    Others_Tab *tab_others = build_tab_others();
+    About_Tab *tab_credits = build_tab_credits();
 
     gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_distributions->tab_content, tab_distributions->tab_name);
     gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_others->tab_content, tab_others->tab_name);

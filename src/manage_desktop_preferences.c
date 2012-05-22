@@ -6,6 +6,7 @@
 #include <glib/gi18n.h>
 
 #include "manage_user_preferences.h"
+#include "setxkbmap_interface.h"
 #include "data_structures.h"
 #include "manage_rules.h"
 
@@ -17,7 +18,7 @@
  */
 gboolean save_prefs_to_autostart(XKB_Preferences *user_prefs) {
     
-    gchar * cmd = (gchar *) generate_setxkbmap_command(user_prefs);
+    gchar * cmd = generate_setxkbmap_command(user_prefs);
 
     char* dirname;
     const char grp[] = "Desktop Entry";

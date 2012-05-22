@@ -12,6 +12,7 @@
 
 #include <glib-2.0/glib.h>
 
+#include "manage_rules.h"
 #include "data_structures.h"
 
 /* Description: This method generates a call tosetxkbmap 
@@ -74,11 +75,11 @@ gchar* generate_setxkbmap_command(XKB_Preferences *prefs) {
         }
         strcat(command, "\"");
     }
-    
+
     // This argument must be the last
     if (prefs->model != NULL) {
         strcat(command, " -model ");
-        strcat(command, prefs->model->id);
+        strcat(command, prefs->model);
     }
     return command;
 
@@ -91,15 +92,27 @@ gchar* generate_setxkbmap_command(XKB_Preferences *prefs) {
  * Output: Nothing.
  */
 gboolean
-xkb_preferences_set_to_system(XKB_Preferences *prefs) {
+xkb_preferences_set_to_env(XKB_Preferences *prefs) {
+    fprintf(stderr, "DEBUG: Setting user preferences with \"setxkbmap\"\n");
 
     char * command = generate_setxkbmap_command(prefs);
-    
+    fprintf(stderr, "DEBUG: %s\n", command);
+
+    int result;
+
     // remove all options
-    system("setxkbmap -option");
-    //printf("%s\n", command);
-    int result = system(command);
-    
+    result = system("setxkbmap -option");
+    if (result == -1) {
+        printf("ERROR: setxkmap can't be executed.\n");
+        exit(EXIT_FAILURE);
+    }
+    result = system(command);
+
+    if (result == -1) {
+        printf("ERROR: \"%s\" can't be executed.\n", command);
+        exit(EXIT_FAILURE);
+    }
+
     g_slice_free1(sizeof (char) * 2048, command);
     if (result == -1)
         return FALSE;
@@ -132,33 +145,39 @@ remove_parentheses(gchar *str, gchar *layout, gchar *variant) {
 
 XKB_Preferences *
 xkb_preferences_load_from_env() {
-    XKB_Rules * rules = (XKB_Rules *) xkb_xorg_get_rules();
+
+    fprintf(stderr, "DEBUG: Loading user preferences with \"setxkbmap\"\n");
+
+    XKB_Rules * rules = xkb_xorg_get_rules();
     setlocale(LC_ALL, "C");
-    
+
     FILE *setxbkmap_output = popen("setxkbmap -v 10", "r");
     XKB_Preferences *prefs = g_slice_alloc0(sizeof (XKB_Preferences));
 
     gchar *buff = g_slice_alloc0(sizeof (char) * 1024);
+    gboolean nothing_loaded = TRUE;
 
     fscanf(setxbkmap_output, "%s", buff);
 
     while (!feof(setxbkmap_output)) {
-        //printf("\n-->%s", buff);
         /*
          * read model
          */
         if (strcmp(buff, "model:") == 0) {
+            nothing_loaded = FALSE;
             gchar * model_id = g_slice_alloc0(sizeof (char) * 128);
             fscanf(setxbkmap_output, "%s", model_id);
-            prefs->model = (Model *) xkb_rules_get_model(rules , model_id, NULL);
-            
-            //printf("\nmodel: %s\n", prefs->model);
+            prefs->model = model_id;
+
+            printf("DEBUG: model: %s\n", prefs->model);
+
         }
 
         /*
          * read layouts and variants
          */
         if (strcmp(buff, "layout:") == 0) {
+            nothing_loaded = FALSE;
 
             fscanf(setxbkmap_output, "%s", buff);
             gchar *it = strtok(buff, ",");
@@ -167,7 +186,7 @@ xkb_preferences_load_from_env() {
 
             remove_parentheses(it, lay_buff, var_buff);
 
-            //printf("\nLayout: %s Variant: %s", lay_buff, var_buff);
+            printf("DEBUG: Layout: %s Variant: %s \n", lay_buff, var_buff);
 
             prefs->layouts = g_slist_append(prefs->layouts, lay_buff);
             prefs->variants = g_slist_append(prefs->variants, var_buff);
@@ -178,7 +197,7 @@ xkb_preferences_load_from_env() {
 
                 remove_parentheses(it, lay_buff, var_buff);
 
-                //printf("\nLayout: %s Variant: %s", lay_buff, var_buff);
+                printf("DEBUG: Layout: %s Variant: %s", lay_buff, var_buff);
 
                 prefs->layouts = g_slist_append(prefs->layouts, lay_buff);
                 prefs->variants = g_slist_append(prefs->variants, var_buff);
@@ -191,22 +210,29 @@ xkb_preferences_load_from_env() {
          */
 
         if (strcmp(buff, "options:") == 0) {
+            nothing_loaded = FALSE;
             fscanf(setxbkmap_output, "%s", buff);
             gchar *it = strtok(buff, ",");
 
-            //printf("\n Option: %s \n", it);
+            printf("DEBUG: Option: %s \n", it);
             prefs->options = g_slist_append(prefs->options, strdup(it));
 
 
             while ((it = strtok(NULL, ",")) != NULL) {
                 prefs->options = g_slist_append(prefs->options, strdup(it));
-                //printf("\nOption: %s", it);
+                printf("DEBUG: Option: %s", it);
             }
         }
 
         fscanf(setxbkmap_output, "%s", buff);
     }
 
+    setlocale(LC_ALL, "");
+
+    if (nothing_loaded) {
+        g_slice_free(XKB_Preferences, prefs);
+        return NULL;
+    }
     pclose(setxbkmap_output);
     return prefs;
 }

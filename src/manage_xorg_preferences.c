@@ -33,7 +33,7 @@ xkb_preferences_write_xorg_config (XKB_Preferences * prefs ) {
     fprintf(tmp, "\tMatchIsKeyboard \"yes\"\n");
 
     if (prefs->model != NULL) {
-        fprintf(tmp, "\tOption \"XkbModel\" \"%s\"\n", prefs->model->id);
+        fprintf(tmp, "\tOption \"XkbModel\" \"%s\"\n", prefs->model);
     }
 
     if (prefs->layouts != NULL) {
