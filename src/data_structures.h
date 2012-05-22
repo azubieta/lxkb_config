@@ -39,14 +39,14 @@ typedef struct opt {
 
 /**
  * Stores a set of preferences.
- * Inner lists contains must contains
- * Pair structures.
- **/
+ * Inner lists contains shuld have only
+ * the ids of the elements.
+ */
 typedef struct {
-    Model *model;
-    GSList *layouts;
-    GSList *variants;
-    GSList *options;
+    gchar *model;       // id of the model
+    GSList *layouts;    // ids of layous    \_ The layout id and the variant id
+    GSList *variants;   // ids of variants  /  must be in the same position.
+    GSList *options;    // ids of options
 } XKB_Preferences;
 
 /** 

@@ -56,6 +56,15 @@ typedef struct {
 extern void
 showMainWindow(int argc, char** argv);
 
+About_Tab *
+build_tab_credits();
+
+Distribution_Tab *
+build_tab_distribution();
+
+Others_Tab *
+build_tab_others();
+
 #ifdef	__cplusplus
 extern "C" {
 #endif
