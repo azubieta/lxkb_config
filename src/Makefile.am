@@ -22,5 +22,5 @@ lxkb_config_SOURCES=\
     gtk+2.x.c \
     main.c
 
-INCLUDES = @LXKB_CONFIG_CFLAGS@ 
-lxkb_config_LDADD = @LXKB_CONFIG_LIBS@ 
+INCLUDES = @GTK2_CFLAGS@ @GLIB2_CFLAGS@  @LIBXML2_CFLAGS@
+lxkb_config_LDADD = @GTK2_LIBS@ @GLIB2_LIBS@ @LIBXML2_LIBS@
