@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <glib/gi18n.h>
-#include <glib-2.0/glib/gslist.h>
+#include <glib-2.0/glib.h>
 
 #include "data_structures.h"
 
