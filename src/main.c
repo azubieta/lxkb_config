@@ -22,9 +22,24 @@ int main(int argc, char** argv) {
     bindtextdomain (PACKAGE, LOCALEDIR);
     textdomain (PACKAGE);
 
-    rules = xkb_rules_load();
-    user_prefs = (XKB_Preferences*) xkb_preferences_load_from_env();
-
+    
+    rules = xkb_xorg_get_rules();
+    
+    if (rules == NULL) {
+        printf( _("X-Keyboard rules can't be loaded.\n"
+                    "Plase check that you have xkb-data installed.") );
+        return(EXIT_FAILURE);
+    }
+    
+    
+    user_prefs =  xkb_preferences_load_from_env();
+    if (user_prefs == NULL) {
+        printf( _("Keyboar user preferences can't be loaded.\n"
+                    "Plase check that you have setxkbmap installed.") );
+        return (EXIT_FAILURE);
+    }
+    
+    
     showMainWindow(argc, argv);
     return (EXIT_SUCCESS);
 
