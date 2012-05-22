@@ -24,13 +24,17 @@ AC_CHECK_HEADERS([libintl.h limits.h locale.h stdlib.h string.h unistd.h])
 
 # Checks for build dependecies
 
-build_pkg_modules="gtk+-2.0 >= 2.0.0 \
-    glib-2.0 >= 2.0 \
-    libxml-2.0 >= 2.0    "
-PKG_CHECK_MODULES(LXKB_CONFIG, [$build_pkg_modules])
-AC_SUBST(LXKB_CONFIG_CFLAGS)
-AC_SUBST(LXKB_CONFIG_LIBS)
+PKG_CHECK_MODULES(GTK2, [gtk+-2.0 >= 2.0.0])
+AC_SUBST(GTK2_CFLAGS)
+AC_SUBST(GTK2_LIBS)
 
+PKG_CHECK_MODULES(GLIB2, [glib-2.0 >= 2.0])
+AC_SUBST(GLIB2_CFLAGS)
+AC_SUBST(GLIB2_LIBS)
+
+PKG_CHECK_MODULES(LIBXML2, [libxml-2.0 >= 2.0])
+AC_SUBST(LIBXML2_CFLAGS)
+AC_SUBST(LIBXML2_LIBS)
 
 # Checks for run time dependecies
 # lxkb-config also depends of "setxkbmap"
