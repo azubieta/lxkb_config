@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-22 18:33+0300\n"
+"PO-Revision-Date: 2012-05-22 18:54+0300\n"
+"Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
+"Language-Team: Lietuvių <>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: ../src/main.c:29
+#, c-format
+msgid ""
+"X-Keyboard rules can't be loaded.\n"
+"Plase check that you have xkb-data installed."
+msgstr ""
+"Įkelti x-keyboard taisyklių nepavyko.\n"
+"Įsitikinkite jog įdiegėte xkb-data."
+
+#: ../src/main.c:37
+#, c-format
+msgid ""
+"Keyboar user preferences can't be loaded.\n"
+"Plase check that you have setxkbmap installed."
+msgstr ""
+"Įkelti klaviatūros nustatymų nepavyko.\n"
+"Įsitikinkite jog įdiegėte setxkbmap."
+
+#: ../src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Konfigūracija sėkmingai pritaikyta."
+
+#: ../src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Taikant konfigūraciją įvyko klaida."
+
+#: ../src/gtk+2.x.c:70
+msgid "Keyboard configuration tool"
+msgstr "Klaviatūros konfigūravimo įrankis"
+
+#: ../src/gtk+2.x_tab_page_distribution.c:132
+msgid "Pick a keyboard layout"
+msgstr "Pasirinkite klaviatūros išdėstymą"
+
+#: ../src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr "Kalbos:"
+
+#: ../src/gtk+2.x_tab_page_distribution.c:155
+msgid "Layout:"
+msgstr "Išdėstymas:"
+
+#: ../src/gtk+2.x_tab_page_distribution.c:156
+msgid "Variant: "
+msgstr "Variantas:"
+
+#. Testa area
+#: ../src/gtk+2.x_tab_page_distribution.c:190
+msgid "Test here:"
+msgstr "Pabandykite:"
+
+#: ../src/gtk+2.x_tab_page_distribution.c:224
+msgid "Layout"
+msgstr "Išdėstymas"
+
+#: ../src/gtk+2.x_tab_page_distribution.c:229
+msgid "Variant"
+msgstr "Variantas"
+
+#: ../src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr "Kalbos"
+
+#. apppend None option
+#: ../src/gtk+2.x_tab_page_others.c:28 ../src/gtk+2.x_tab_page_others.c:77
+msgid "None"
+msgstr "Jokia"
+
+#: ../src/gtk+2.x_tab_page_others.c:133
+msgid "Other Options"
+msgstr "Kitos parinktys"
+
+#. Option Keyboard Switch
+#: ../src/gtk+2.x_tab_page_others.c:138
+msgid "Key(s) to change layout:"
+msgstr "Keisti išdėstymą:"
+
+#: ../src/gtk+2.x_tab_page_others.c:151
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"Pasirinkite klavišų kombinaciją kuria bus perjungiama tarp \n"
+"išdėstymų arba pasirinkite „Jokia“."
+
+#. keyboard model frame
+#: ../src/gtk+2.x_tab_page_others.c:171
+msgid "Keyboard Model:"
+msgstr "Klaviatūros modelis:"
+
+#: ../src/gtk+2.x_tab_page_others.c:186
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+"ĮSPĖJIMAS: turėkite omenyje jog šių nustatymų keitimas\n"
+"gali privesti prie sistemos sugadinimo."
+
+#. Global configuration
+#: ../src/gtk+2.x_tab_page_others.c:210
+msgid "Global Configuration:"
+msgstr "Bendra konfigūracija:"
+
+#: ../src/gtk+2.x_tab_page_others.c:228
+msgid ""
+"Apply this keyboard configuration not only to your\n"
+"session, but also to the whole system."
+msgstr ""
+"Šią konfigūraciją pritaikyti ne vien jūsų sesijai,\n"
+"bet visai sistemai."
+
+#: ../src/gtk+2.x_tab_page_others.c:233
+msgid "Apply Globaly"
+msgstr "Pritaikyti visur"
+
+#: ../src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "Apie"
+
+#: ../src/gtk+2.x_tab_page_about.c:25
+msgid ""
+"Developers:\n"
+"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Repository:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Last version:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+msgstr ""
+"Kūrėjai:\n"
+"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Saugykla:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Naujausia versija:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+
+#: ../src/manage_desktop_preferences.c:40
+msgid "Keyboard Settings setup"
+msgstr "Klaviatūros nustatymas"
+
+#: ../src/manage_desktop_preferences.c:41
+msgid "Sets up your preferred keyboard settings"
+msgstr "Nustato jūsų pageidaujamus klaviatūros nustatymus"
+
+#: ../src/manage_xorg_rules.c:131
+msgid "Default"
+msgstr "Numatytieji"
+
+#: ../src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
+msgstr ""
+"Įveskite savo slaptažodį, kad nustatymai būtų pritaikyti visai sistemai."
