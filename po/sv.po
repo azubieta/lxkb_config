@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-16 22:03-0400\n"
+"POT-Creation-Date: 2012-05-23 11:30+0200\n"
 "PO-Revision-Date: 2012-05-23 09:06+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,25 +18,90 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: src/gtk+2.x_tab_page_about.c:21
-msgid "About"
-msgstr "Om"
-
-#: src/gtk+2.x_tab_page_others.c:234
-msgid "Apply Globaly"
+#: .././src/gtk+2.x_tab_page_distribution.c:132
+msgid "Pick a keyboard layout"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:229
+#: .././src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr ""
+
+#: .././src/gtk+2.x_tab_page_distribution.c:155
+msgid "Layout:"
+msgstr ""
+
+#: .././src/gtk+2.x_tab_page_distribution.c:156
+msgid "Variant: "
+msgstr ""
+
+#. Testa area
+#: .././src/gtk+2.x_tab_page_distribution.c:190
+msgid "Test here:"
+msgstr "Prova här:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:224
+msgid "Layout"
+msgstr ""
+
+#: .././src/gtk+2.x_tab_page_distribution.c:229
+msgid "Variant"
+msgstr ""
+
+#: .././src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr ""
+
+#. apppend None option
+#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
+msgid "None"
+msgstr "Ingen"
+
+#: .././src/gtk+2.x_tab_page_others.c:134
+msgid "Other Options"
+msgstr ""
+
+#. Option Keyboard Switch
+#: .././src/gtk+2.x_tab_page_others.c:139
+msgid "Key(s) to change layout:"
+msgstr ""
+
+#: .././src/gtk+2.x_tab_page_others.c:152
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+
+#. keyboard model frame
+#: .././src/gtk+2.x_tab_page_others.c:172
+msgid "Keyboard Model:"
+msgstr ""
+
+#: .././src/gtk+2.x_tab_page_others.c:187
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+
+#. Global configuration
+#: .././src/gtk+2.x_tab_page_others.c:211
+msgid "Global Configuration:"
+msgstr ""
+
+#: .././src/gtk+2.x_tab_page_others.c:229
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
 msgstr ""
 
-#: src/manage_xorg_rules.c:118
-msgid "Default"
-msgstr "Standard"
+#: .././src/gtk+2.x_tab_page_others.c:234
+msgid "Apply Globaly"
+msgstr ""
 
-#: src/gtk+2.x_tab_page_about.c:25
+#: .././src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "Om"
+
+#: .././src/gtk+2.x_tab_page_about.c:25
 msgid ""
 "Developers:\n"
 "Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
@@ -59,90 +124,30 @@ msgstr ""
 "Utgåvor:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
-#: src/gtk+2.x_tab_page_distribution.c:356
-msgid "Distribution"
-msgstr ""
-
-#: src/gtk+2.x_tab_page_distribution.c:145
-msgid "Distribution:"
-msgstr ""
-
-#: src/gtk+2.x_tab_page_others.c:116 src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr ""
-
-#: src/gtk+2.x_tab_page_others.c:211
-msgid "Global Configuration:"
-msgstr ""
-
-#: src/manage_xorg_preferences.c:96
-msgid "Introduce your password to set this configuration to the whole system."
-msgstr ""
-
-#: src/gtk+2.x_tab_page_others.c:139
-msgid "Key(s) to change layout:"
-msgstr ""
-
-#: src/gtk+2.x_tab_page_others.c:172
-msgid "Keyboard Model:"
-msgstr ""
-
-#: src/manage_desktop_preferences.c:39
-msgid "Keyboard Settings setup"
-msgstr ""
-
-#: src/gtk+2.x.c:69
-msgid "Keyboard configuration tool"
-msgstr ""
-
-#: src/gtk+2.x_tab_page_distribution.c:224
-msgid "Layout"
-msgstr ""
-
-#: src/gtk+2.x_tab_page_distribution.c:155
-msgid "Layout:"
-msgstr ""
-
-#: src/gtk+2.x_tab_page_others.c:29 src/gtk+2.x_tab_page_others.c:78
-msgid "None"
-msgstr "Ingen"
-
-#: src/gtk+2.x_tab_page_others.c:134
-msgid "Other Options"
-msgstr ""
-
-#: src/gtk+2.x_tab_page_distribution.c:132
-msgid "Pick a keyboard layout"
-msgstr ""
-
-#: src/gtk+2.x_tab_page_others.c:152
-msgid ""
-"Select a key combination to switch between layouts\n"
-"or just select 'None'."
-msgstr ""
-
-#: src/manage_desktop_preferences.c:40
-msgid "Sets up your preferred keyboard settings"
-msgstr ""
-
-#: src/gtk+2.x_tab_page_distribution.c:190
-msgid "Test here:"
-msgstr "Prova här:"
-
-#: src/gtk+2.x_tab_page_others.c:110 src/gtk+2.x.c:31
+#: .././src/gtk+2.x.c:31
 msgid "The configuration was applied successfully."
 msgstr ""
 
-#: src/gtk+2.x_tab_page_distribution.c:229
-msgid "Variant"
+#: .././src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
 msgstr ""
 
-#: src/gtk+2.x_tab_page_distribution.c:156
-msgid "Variant: "
+#: .././src/gtk+2.x.c:69
+msgid "Keyboard configuration tool"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:187
-msgid ""
-"WARNING: Be aware that changing these settings may\n"
-"result in system malfunction."
+#: .././src/manage_desktop_preferences.c:39
+msgid "Keyboard Settings setup"
+msgstr ""
+
+#: .././src/manage_desktop_preferences.c:40
+msgid "Sets up your preferred keyboard settings"
+msgstr ""
+
+#: .././src/manage_xorg_rules.c:118
+msgid "Default"
+msgstr "Standard"
+
+#: .././src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""

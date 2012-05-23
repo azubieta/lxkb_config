@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-16 22:03-0400\n"
+"POT-Creation-Date: 2012-05-23 11:30+0200\n"
 "PO-Revision-Date: 2012-05-23 10:50+0200\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,80 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: src/gtk+2.x_tab_page_about.c:21
-msgid "About"
-msgstr "Over"
+#: .././src/gtk+2.x_tab_page_distribution.c:132
+msgid "Pick a keyboard layout"
+msgstr "Kies een toetsenbordindeling"
 
-#: src/gtk+2.x_tab_page_others.c:234
-msgid "Apply Globaly"
-msgstr "Systeembreed toepassen"
+#: .././src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr "Distributie:"
 
-#: src/gtk+2.x_tab_page_others.c:229
+#: .././src/gtk+2.x_tab_page_distribution.c:155
+msgid "Layout:"
+msgstr "Indeling:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:156
+msgid "Variant: "
+msgstr "Variant: "
+
+#. Testa area
+#: .././src/gtk+2.x_tab_page_distribution.c:190
+msgid "Test here:"
+msgstr "Probeer het hier uit:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:224
+msgid "Layout"
+msgstr "Indeling"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:229
+msgid "Variant"
+msgstr "Variant"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr "Distributie"
+
+#. apppend None option
+#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
+msgid "None"
+msgstr "Geen"
+
+#: .././src/gtk+2.x_tab_page_others.c:134
+msgid "Other Options"
+msgstr "Andere opties"
+
+#. Option Keyboard Switch
+#: .././src/gtk+2.x_tab_page_others.c:139
+msgid "Key(s) to change layout:"
+msgstr "Toetsen om de indeling te wijzigen:"
+
+#: .././src/gtk+2.x_tab_page_others.c:152
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"Kies een toetscombinatie om te schakelen\n"
+"tussen indelingen of kies gewoon 'Geen'."
+
+#. keyboard model frame
+#: .././src/gtk+2.x_tab_page_others.c:172
+msgid "Keyboard Model:"
+msgstr "Toetsenbordmodel:"
+
+#: .././src/gtk+2.x_tab_page_others.c:187
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+"Let op: houd er rekening mee dat het veranderen van\n"
+"deze instellingen een systeemstoring kan veroorzaken."
+
+#. Global configuration
+#: .././src/gtk+2.x_tab_page_others.c:211
+msgid "Global Configuration:"
+msgstr "Systeembrede instellingen:"
+
+#: .././src/gtk+2.x_tab_page_others.c:229
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
@@ -34,11 +99,15 @@ msgstr ""
 "Deze toetsenbordinstelling niet alleen toepassen\n"
 "in uw sessie, maar ook systeembreed."
 
-#: src/manage_xorg_rules.c:118
-msgid "Default"
-msgstr "Standaard"
+#: .././src/gtk+2.x_tab_page_others.c:234
+msgid "Apply Globaly"
+msgstr "Systeembreed toepassen"
 
-#: src/gtk+2.x_tab_page_about.c:25
+#: .././src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "Over"
+
+#: .././src/gtk+2.x_tab_page_about.c:25
 msgid ""
 "Developers:\n"
 "Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
@@ -62,94 +131,30 @@ msgstr ""
 "Nieuwste versie:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
-#: src/gtk+2.x_tab_page_distribution.c:356
-msgid "Distribution"
-msgstr "Distributie"
-
-#: src/gtk+2.x_tab_page_distribution.c:145
-msgid "Distribution:"
-msgstr "Distributie:"
-
-#: src/gtk+2.x_tab_page_others.c:116 src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr "Fout bij het toepassen van de instellingen."
-
-#: src/gtk+2.x_tab_page_others.c:211
-msgid "Global Configuration:"
-msgstr "Systeembrede instellingen:"
-
-#: src/manage_xorg_preferences.c:96
-msgid "Introduce your password to set this configuration to the whole system."
-msgstr "Voer uw wachtwoord in om deze instellingen systeembreed toe te passen."
-
-#: src/gtk+2.x_tab_page_others.c:139
-msgid "Key(s) to change layout:"
-msgstr "Toetsen om de indeling te wijzigen:"
-
-#: src/gtk+2.x_tab_page_others.c:172
-msgid "Keyboard Model:"
-msgstr "Toetsenbordmodel:"
-
-#: src/manage_desktop_preferences.c:39
-msgid "Keyboard Settings setup"
-msgstr "Instelling van de toetsenbordinstellingen"
-
-#: src/gtk+2.x.c:69
-msgid "Keyboard configuration tool"
-msgstr "Gereedschap voor toetsenbordinstellingen"
-
-#: src/gtk+2.x_tab_page_distribution.c:224
-msgid "Layout"
-msgstr "Indeling"
-
-#: src/gtk+2.x_tab_page_distribution.c:155
-msgid "Layout:"
-msgstr "Indeling:"
-
-#: src/gtk+2.x_tab_page_others.c:29 src/gtk+2.x_tab_page_others.c:78
-msgid "None"
-msgstr "Geen"
-
-#: src/gtk+2.x_tab_page_others.c:134
-msgid "Other Options"
-msgstr "Andere opties"
-
-#: src/gtk+2.x_tab_page_distribution.c:132
-msgid "Pick a keyboard layout"
-msgstr "Kies een toetsenbordindeling"
-
-#: src/gtk+2.x_tab_page_others.c:152
-msgid ""
-"Select a key combination to switch between layouts\n"
-"or just select 'None'."
-msgstr ""
-"Kies een toetscombinatie om te schakelen\n"
-"tussen indelingen of kies gewoon 'Geen'."
-
-#: src/manage_desktop_preferences.c:40
-msgid "Sets up your preferred keyboard settings"
-msgstr "Stelt uw voorkeursinstellingen in voor het toetsenbord"
-
-#: src/gtk+2.x_tab_page_distribution.c:190
-msgid "Test here:"
-msgstr "Probeer het hier uit:"
-
-#: src/gtk+2.x_tab_page_others.c:110 src/gtk+2.x.c:31
+#: .././src/gtk+2.x.c:31
 msgid "The configuration was applied successfully."
 msgstr "De instellingen werden met succes toegepast."
 
-#: src/gtk+2.x_tab_page_distribution.c:229
-msgid "Variant"
-msgstr "Variant"
+#: .././src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Fout bij het toepassen van de instellingen."
 
-#: src/gtk+2.x_tab_page_distribution.c:156
-msgid "Variant: "
-msgstr "Variant: "
+#: .././src/gtk+2.x.c:69
+msgid "Keyboard configuration tool"
+msgstr "Gereedschap voor toetsenbordinstellingen"
 
-#: src/gtk+2.x_tab_page_others.c:187
-msgid ""
-"WARNING: Be aware that changing these settings may\n"
-"result in system malfunction."
-msgstr ""
-"Let op: houd er rekening mee dat het veranderen van\n"
-"deze instellingen een systeemstoring kan veroorzaken."
+#: .././src/manage_desktop_preferences.c:39
+msgid "Keyboard Settings setup"
+msgstr "Instelling van de toetsenbordinstellingen"
+
+#: .././src/manage_desktop_preferences.c:40
+msgid "Sets up your preferred keyboard settings"
+msgstr "Stelt uw voorkeursinstellingen in voor het toetsenbord"
+
+#: .././src/manage_xorg_rules.c:118
+msgid "Default"
+msgstr "Standaard"
+
+#: .././src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
+msgstr "Voer uw wachtwoord in om deze instellingen systeembreed toe te passen."

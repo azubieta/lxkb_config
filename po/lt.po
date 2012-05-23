@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lxkb_config 0.9\n"
-"Report-Msgid-Bugs-To: azubieta@estudiantes.uci.cu\n"
-"POT-Creation-Date: 2012-05-22 15:40-0400\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-23 11:30+0200\n"
 "PO-Revision-Date: 2012-05-23 10:12+0300\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
@@ -19,81 +19,54 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: src/main.c:29
-#, c-format
-msgid ""
-"X-Keyboard rules can't be loaded.\n"
-"Plase check that you have xkb-data installed."
-msgstr ""
-"Įkelti x-keyboard taisyklių nepavyko.\n"
-"Įsitikinkite jog įdiegėte xkb-data."
-
-#: src/main.c:37
-#, c-format
-msgid ""
-"Keyboard user preferences can't be loaded.\n"
-"Plase check that you have setxkbmap installed."
-msgstr ""
-"Įkelti klaviatūros nustatymų nepavyko.\n"
-"Įsitikinkite jog įdiegėte setxkbmap."
-
-#: src/gtk+2.x.c:31
-msgid "The configuration was applied successfully."
-msgstr "Konfigūracija sėkmingai pritaikyta."
-
-#: src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr "Taikant konfigūraciją įvyko klaida."
-
-#: src/gtk+2.x.c:70
-msgid "Keyboard configuration tool"
-msgstr "Klaviatūros konfigūravimo įrankis"
-
-#: src/gtk+2.x_tab_page_layouts.c:132
+#: .././src/gtk+2.x_tab_page_distribution.c:132
 msgid "Pick a keyboard layout"
 msgstr "Pasirinkite klaviatūros išdėstymą"
 
-#: src/gtk+2.x_tab_page_layouts.c:145
-msgid "Layouts:"
-msgstr "Išdėstymai:"
+#: .././src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr ""
 
-#: src/gtk+2.x_tab_page_layouts.c:155
+#: .././src/gtk+2.x_tab_page_distribution.c:155
 msgid "Layout:"
 msgstr "Išdėstymas:"
 
-#: src/gtk+2.x_tab_page_layouts.c:156
+#: .././src/gtk+2.x_tab_page_distribution.c:156
 msgid "Variant: "
 msgstr "Variantas:"
 
-#: src/gtk+2.x_tab_page_layouts.c:190
+#. Testa area
+#: .././src/gtk+2.x_tab_page_distribution.c:190
 msgid "Test here:"
 msgstr "Pabandykite:"
 
-#: src/gtk+2.x_tab_page_layouts.c:224
+#: .././src/gtk+2.x_tab_page_distribution.c:224
 msgid "Layout"
 msgstr "Išdėstymas"
 
-#: src/gtk+2.x_tab_page_layouts.c:229
+#: .././src/gtk+2.x_tab_page_distribution.c:229
 msgid "Variant"
 msgstr "Variantas"
 
-#: src/gtk+2.x_tab_page_layouts.c:356
-msgid "Layouts"
-msgstr "Išdėstymai"
+#: .././src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:28 src/gtk+2.x_tab_page_others.c:77
+#. apppend None option
+#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
 msgid "None"
 msgstr "Jokia"
 
-#: src/gtk+2.x_tab_page_others.c:133
+#: .././src/gtk+2.x_tab_page_others.c:134
 msgid "Other Options"
 msgstr "Kitos parinktys"
 
-#: src/gtk+2.x_tab_page_others.c:138
+#. Option Keyboard Switch
+#: .././src/gtk+2.x_tab_page_others.c:139
 msgid "Key(s) to change layout:"
 msgstr "Keisti išdėstymą:"
 
-#: src/gtk+2.x_tab_page_others.c:151
+#: .././src/gtk+2.x_tab_page_others.c:152
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
@@ -101,11 +74,12 @@ msgstr ""
 "Pasirinkite klavišų kombinaciją kuria bus perjungiama tarp \n"
 "išdėstymų arba pasirinkite „Jokia“."
 
-#: src/gtk+2.x_tab_page_others.c:171
+#. keyboard model frame
+#: .././src/gtk+2.x_tab_page_others.c:172
 msgid "Keyboard Model:"
 msgstr "Klaviatūros modelis:"
 
-#: src/gtk+2.x_tab_page_others.c:186
+#: .././src/gtk+2.x_tab_page_others.c:187
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
@@ -113,11 +87,12 @@ msgstr ""
 "ĮSPĖJIMAS: turėkite omenyje jog šių nustatymų keitimas\n"
 "gali privesti prie sistemos sugadinimo."
 
-#: src/gtk+2.x_tab_page_others.c:210
+#. Global configuration
+#: .././src/gtk+2.x_tab_page_others.c:211
 msgid "Global Configuration:"
 msgstr "Bendra konfigūracija:"
 
-#: src/gtk+2.x_tab_page_others.c:228
+#: .././src/gtk+2.x_tab_page_others.c:229
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
@@ -125,20 +100,21 @@ msgstr ""
 "Šią konfigūraciją pritaikyti ne vien jūsų sesijai,\n"
 "bet visai sistemai."
 
-#: src/gtk+2.x_tab_page_others.c:233
+#: .././src/gtk+2.x_tab_page_others.c:234
 msgid "Apply Globaly"
 msgstr "Pritaikyti visur"
 
-#: src/gtk+2.x_tab_page_about.c:21
+#: .././src/gtk+2.x_tab_page_about.c:21
 msgid "About"
 msgstr "Apie"
 
-#: src/gtk+2.x_tab_page_about.c:25
+#: .././src/gtk+2.x_tab_page_about.c:25
+#, fuzzy
 msgid ""
 "Developers:\n"
-"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
 "\n"
-"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
 "Repository:\n"
 "https://github.com/azubieta/lxkb_config\n"
@@ -157,19 +133,51 @@ msgstr ""
 "Naujausia versija:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
-#: src/manage_desktop_preferences.c:40
+#: .././src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Konfigūracija sėkmingai pritaikyta."
+
+#: .././src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Taikant konfigūraciją įvyko klaida."
+
+#: .././src/gtk+2.x.c:69
+msgid "Keyboard configuration tool"
+msgstr "Klaviatūros konfigūravimo įrankis"
+
+#: .././src/manage_desktop_preferences.c:39
 msgid "Keyboard Settings setup"
 msgstr "Klaviatūros nustatymas"
 
-#: src/manage_desktop_preferences.c:41
+#: .././src/manage_desktop_preferences.c:40
 msgid "Sets up your preferred keyboard settings"
 msgstr "Nustato jūsų pageidaujamus klaviatūros nustatymus"
 
-#: src/manage_xorg_rules.c:131
+#: .././src/manage_xorg_rules.c:118
 msgid "Default"
 msgstr "Numatytieji"
 
-#: src/manage_xorg_preferences.c:96
+#: .././src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""
 "Įveskite savo slaptažodį, kad nustatymai būtų pritaikyti visai sistemai."
+
+#~ msgid ""
+#~ "X-Keyboard rules can't be loaded.\n"
+#~ "Plase check that you have xkb-data installed."
+#~ msgstr ""
+#~ "Įkelti x-keyboard taisyklių nepavyko.\n"
+#~ "Įsitikinkite jog įdiegėte xkb-data."
+
+#~ msgid ""
+#~ "Keyboard user preferences can't be loaded.\n"
+#~ "Plase check that you have setxkbmap installed."
+#~ msgstr ""
+#~ "Įkelti klaviatūros nustatymų nepavyko.\n"
+#~ "Įsitikinkite jog įdiegėte setxkbmap."
+
+#~ msgid "Layouts:"
+#~ msgstr "Išdėstymai:"
+
+#~ msgid "Layouts"
+#~ msgstr "Išdėstymai"
