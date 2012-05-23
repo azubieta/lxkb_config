@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: lxkb_config 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-23 11:30+0200\n"
-"PO-Revision-Date: 2012-05-23 10:12+0300\n"
+"PO-Revision-Date: 2012-05-23 13:46+0300\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: lt\n"
@@ -25,7 +25,7 @@ msgstr "Pasirinkite klaviatūros išdėstymą"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:145
 msgid "Distribution:"
-msgstr ""
+msgstr "Išdėstymas:"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:155
 msgid "Layout:"
@@ -50,7 +50,7 @@ msgstr "Variantas"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:356
 msgid "Distribution"
-msgstr ""
+msgstr "Išdėstymas"
 
 #. apppend None option
 #: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
@@ -109,7 +109,6 @@ msgid "About"
 msgstr "Apie"
 
 #: .././src/gtk+2.x_tab_page_about.c:25
-#, fuzzy
 msgid ""
 "Developers:\n"
 "Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
@@ -123,9 +122,9 @@ msgid ""
 "https://github.com/azubieta/lxkb_config/downloads"
 msgstr ""
 "Kūrėjai:\n"
-"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
 "\n"
-"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
 "Saugykla:\n"
 "https://github.com/azubieta/lxkb_config\n"
@@ -161,23 +160,3 @@ msgstr "Numatytieji"
 msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""
 "Įveskite savo slaptažodį, kad nustatymai būtų pritaikyti visai sistemai."
-
-#~ msgid ""
-#~ "X-Keyboard rules can't be loaded.\n"
-#~ "Plase check that you have xkb-data installed."
-#~ msgstr ""
-#~ "Įkelti x-keyboard taisyklių nepavyko.\n"
-#~ "Įsitikinkite jog įdiegėte xkb-data."
-
-#~ msgid ""
-#~ "Keyboard user preferences can't be loaded.\n"
-#~ "Plase check that you have setxkbmap installed."
-#~ msgstr ""
-#~ "Įkelti klaviatūros nustatymų nepavyko.\n"
-#~ "Įsitikinkite jog įdiegėte setxkbmap."
-
-#~ msgid "Layouts:"
-#~ msgstr "Išdėstymai:"
-
-#~ msgid "Layouts"
-#~ msgstr "Išdėstymai"
