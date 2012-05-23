@@ -1,0 +1,162 @@
+# LXKB-CONFIG ukrainian translation.
+# Copyright (C) 2012 LXDE team
+# This file is distributed under the same license as the lxkb_config package.
+# Andriy Grytsenko <andrej@rep.kiev.ua>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: lxkb_config 0.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-23 11:30+0200\n"
+"PO-Revision-Date: 2012-05-23 10:03+0200\n"
+"Last-Translator: Y P <yupadmin@gmail.com>\n"
+"Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:132
+msgid "Pick a keyboard layout"
+msgstr "Виберіть розкладку"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr "Розміщення:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:155
+msgid "Layout:"
+msgstr "Розкладка:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:156
+msgid "Variant: "
+msgstr "Варіант: "
+
+#. Testa area
+#: .././src/gtk+2.x_tab_page_distribution.c:190
+msgid "Test here:"
+msgstr "Перевірте отут:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:224
+msgid "Layout"
+msgstr "Розкладка"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:229
+msgid "Variant"
+msgstr "Варіант"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr "Розміщення"
+
+#. apppend None option
+#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
+msgid "None"
+msgstr "Жодної"
+
+#: .././src/gtk+2.x_tab_page_others.c:134
+msgid "Other Options"
+msgstr "Інші параметри"
+
+#. Option Keyboard Switch
+#: .././src/gtk+2.x_tab_page_others.c:139
+msgid "Key(s) to change layout:"
+msgstr "Комбінація клавіш для зміни розкладок:"
+
+#: .././src/gtk+2.x_tab_page_others.c:152
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"Виберіть комбінацію клавіш для зміни розкладок\n"
+"або просто виберіть 'Жодної'."
+
+#. keyboard model frame
+#: .././src/gtk+2.x_tab_page_others.c:172
+msgid "Keyboard Model:"
+msgstr "Модель клавіатури:"
+
+#: .././src/gtk+2.x_tab_page_others.c:187
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+"ПОПЕРЕДЖЕННЯ: Зміна цих налаштувань може\n"
+"призвести до втрати керування системою."
+
+#. Global configuration
+#: .././src/gtk+2.x_tab_page_others.c:211
+msgid "Global Configuration:"
+msgstr "Глобальна конфігурація:"
+
+#: .././src/gtk+2.x_tab_page_others.c:229
+msgid ""
+"Apply this keyboard configuration not only to your\n"
+"session, but also to the whole system."
+msgstr ""
+"Застосувати цю конфігурацію не лише до Вашої сесії,\n"
+"але й до всієї системи."
+
+#: .././src/gtk+2.x_tab_page_others.c:234
+msgid "Apply Globaly"
+msgstr "Застосувати глобально"
+
+#: .././src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "Про програму"
+
+#: .././src/gtk+2.x_tab_page_about.c:25
+msgid ""
+"Developers:\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Repository:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Last version:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+msgstr ""
+"Розробники:\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Сховище:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Остання версія:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+
+#: .././src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Конфігурацію успішно застосовано."
+
+#: .././src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Помилка застосування конфігурації."
+
+#: .././src/gtk+2.x.c:69
+msgid "Keyboard configuration tool"
+msgstr "Засіб налаштування клавіатури"
+
+#: .././src/manage_desktop_preferences.c:39
+msgid "Keyboard Settings setup"
+msgstr "Налаштування клавіатури"
+
+#: .././src/manage_desktop_preferences.c:40
+msgid "Sets up your preferred keyboard settings"
+msgstr "Налаштуйте клавіатуру до вподоби"
+
+#: .././src/manage_xorg_rules.c:118
+msgid "Default"
+msgstr "Типово"
+
+#: .././src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
+msgstr ""
+"Введіть Ваш пароль для застосування цієї конфігурації до всієї системи ."
