@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-23 11:30+0200\n"
+"PO-Revision-Date: 2012-06-02 11:26+0200\n"
+"Last-Translator: zvacet <ikoli@yahoo.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:132
+msgid "Pick a keyboard layout"
+msgstr "Odaberite raspored tipkovnice"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr "Distribucija:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:155
+msgid "Layout:"
+msgstr "Raspored:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:156
+msgid "Variant: "
+msgstr "Varijanta: "
+
+#. Testa area
+#: .././src/gtk+2.x_tab_page_distribution.c:190
+msgid "Test here:"
+msgstr "Isprobajte ovdje:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:224
+msgid "Layout"
+msgstr "Raspored"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:229
+msgid "Variant"
+msgstr "Varijanta"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr "Distribucija"
+
+#. apppend None option
+#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
+msgid "None"
+msgstr "NIjedan"
+
+#: .././src/gtk+2.x_tab_page_others.c:134
+msgid "Other Options"
+msgstr "Ostale opcije"
+
+#. Option Keyboard Switch
+#: .././src/gtk+2.x_tab_page_others.c:139
+msgid "Key(s) to change layout:"
+msgstr "Tipka(e) za promjenu rasporeda:"
+
+#: .././src/gtk+2.x_tab_page_others.c:152
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"Odaberite kombinaciju tipki za prebacivanje između rasporeda\n"
+"ili samo izaberite'Nijedan'."
+
+#. keyboard model frame
+#: .././src/gtk+2.x_tab_page_others.c:172
+msgid "Keyboard Model:"
+msgstr "Model tiplovnice:"
+
+#: .././src/gtk+2.x_tab_page_others.c:187
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+"UPOZORENJE: Znajte da promjena ovih postavki može\n"
+"rezultirati kvarom sustava."
+
+#. Global configuration
+#: .././src/gtk+2.x_tab_page_others.c:211
+msgid "Global Configuration:"
+msgstr "Globalna konfiguracija:"
+
+#: .././src/gtk+2.x_tab_page_others.c:229
+msgid ""
+"Apply this keyboard configuration not only to your\n"
+"session, but also to the whole system."
+msgstr ""
+"Primjenite ovu konfiguraciju tipkovnice ne samo na vašu\n"
+"sesiju, nego i na cijeli sustav."
+
+#: .././src/gtk+2.x_tab_page_others.c:234
+msgid "Apply Globaly"
+msgstr "Primjeni globalno"
+
+#: .././src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "O programu"
+
+#: .././src/gtk+2.x_tab_page_about.c:25
+msgid ""
+"Developers:\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Repository:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Last version:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+msgstr ""
+"Razvijatejli:\n"
+" Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+" Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+" Repozitorij:\n"
+" https://github.com/azubieta/lxkb_config\n"
+"\n"
+" Zadnja verzija:\n"
+" https://github.com/azubieta/lxkb_config/downloads"
+
+#: .././src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Konfiguracija je uspješno primjenjena."
+
+#: .././src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Greška pri primjeni konfiguracije."
+
+#: .././src/gtk+2.x.c:69
+msgid "Keyboard configuration tool"
+msgstr "Alat za konfiguraciju tipkovnice"
+
+#: .././src/manage_desktop_preferences.c:39
+msgid "Keyboard Settings setup"
+msgstr "Postavljanje postavki tipkovnice"
+
+#: .././src/manage_desktop_preferences.c:40
+msgid "Sets up your preferred keyboard settings"
+msgstr "Postavjla vaše željene postavke tipkovnice"
+
+#: .././src/manage_xorg_rules.c:118
+msgid "Default"
+msgstr "Zadano"
+
+#: .././src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
+msgstr ""
+"Unesite vašu lozinku za postavljanje ove konfiguracije za cijeli sustav."
