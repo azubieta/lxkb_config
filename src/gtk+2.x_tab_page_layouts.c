@@ -238,7 +238,7 @@ list_store_update(GtkListStore *store) {
     gtk_list_store_clear(store);
 
     GtkTreeIter iter;
-    
+
     GSList *lay_it = user_prefs->layouts;
     GSList *var_it = user_prefs->variants;
 
@@ -249,10 +249,12 @@ list_store_update(GtkListStore *store) {
         layout = xkb_rules_get_layout(rules, lay_it->data, NULL);
         variant = xkb_rules_layout_get_variant(layout, var_it->data, NULL);
 
-        gtk_list_store_append(store, &iter);
-        gtk_list_store_set(store, &iter,
-                LAYOUT, layout->description,
-                VARIANT, variant->description, -1);
+        if (layout != NULL) {
+            gtk_list_store_append(store, &iter);
+            gtk_list_store_set(store, &iter,
+                    LAYOUT, layout->description,
+                    VARIANT, variant->description, -1);
+        }
 
         lay_it = lay_it->next;
         var_it = var_it->next;
@@ -277,6 +279,9 @@ button_new_config_callback(GtkWidget *widget, gpointer data) {
         layout = xkb_rules_get_layout(rules, NULL, dist_dialog->active_layout);
         variant = xkb_rules_layout_get_variant(layout, NULL, dist_dialog->active_variant);
 
+        
+        if (layout == NULL || variant == NULL)
+            return;
         xkb_preferences_layout_variant_append(user_prefs, layout->id, variant->id);
         list_store_update(tab->store);
     } else {
