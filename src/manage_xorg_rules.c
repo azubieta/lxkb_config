@@ -414,6 +414,9 @@ xkb_rules_layout_get_variant(Layout *layout, gchar *var_id, gchar *var_desc) {
     if ((var_id == NULL) && (var_desc == NULL)) {
         return layout->variant->data;
     }
+    
+    if (layout == NULL)
+        return NULL;
 
     GSList *var_it = layout->variant;
     Variant *variant;

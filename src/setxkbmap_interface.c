@@ -121,10 +121,18 @@ xkb_preferences_set_to_env(XKB_Preferences *prefs) {
 }
 
 void
-remove_parentheses(gchar *str, gchar *layout, gchar *variant) {
+remove_separators(gchar *str, gchar *layout, gchar *variant) {
     gchar *ptr = str;
     gchar *var_ptr;
-    while ((*ptr != '(') && (*ptr != 0)) ptr++;
+    while ( (*ptr != '(') && (*ptr != '_')  && (*ptr != 0)) ptr++;
+    if (*ptr == '_') {
+        *ptr =  0;
+        var_ptr = ++ptr;
+        
+        strcpy(layout, str);
+        strcpy(variant, var_ptr);
+        return;
+    }
     if (*ptr != 0) {
         *ptr = 0;
         var_ptr = ++ptr;
@@ -184,23 +192,31 @@ xkb_preferences_load_from_env() {
             gchar *lay_buff = g_slice_alloc0(sizeof (char) * 128);
             gchar *var_buff = g_slice_alloc0(sizeof (char) * 128);
 
-            remove_parentheses(it, lay_buff, var_buff);
+            remove_separators(it, lay_buff, var_buff);
 
-            printf("DEBUG: Layout: %s Variant: %s \n", lay_buff, var_buff);
+            if (xkb_rules_get_layout(rules, lay_buff, NULL) == NULL) {
+                printf("DEBUG: %s is not recognized as a valid layout\n", lay_buff);
+            } else {
+                printf("DEBUG: Layout: %s Variant: %s \n", lay_buff, var_buff);
 
-            prefs->layouts = g_slist_append(prefs->layouts, lay_buff);
-            prefs->variants = g_slist_append(prefs->variants, var_buff);
-
+                prefs->layouts = g_slist_append(prefs->layouts, lay_buff);
+                prefs->variants = g_slist_append(prefs->variants, var_buff);
+            }
+            
+            
             while ((it = strtok(NULL, ",")) != NULL) {
                 lay_buff = g_slice_alloc0(sizeof (char) * 128);
                 var_buff = g_slice_alloc0(sizeof (char) * 128);
 
-                remove_parentheses(it, lay_buff, var_buff);
+                remove_separators(it, lay_buff, var_buff);
+                if (xkb_rules_get_layout(rules, lay_buff, NULL) == NULL) {
+                    printf("DEBUG: %s is not a valid layout\n", lay_buff);
+                } else {
+                    printf("DEBUG: Layout: %s Variant: %s", lay_buff, var_buff);
 
-                printf("DEBUG: Layout: %s Variant: %s", lay_buff, var_buff);
-
-                prefs->layouts = g_slist_append(prefs->layouts, lay_buff);
-                prefs->variants = g_slist_append(prefs->variants, var_buff);
+                    prefs->layouts = g_slist_append(prefs->layouts, lay_buff);
+                    prefs->variants = g_slist_append(prefs->variants, var_buff);
+                }
             }
 
         }
