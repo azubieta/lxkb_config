@@ -170,7 +170,7 @@ build_tab_others() {
     // keyboard model frame
     GtkFrame *model_frame = GTK_FRAME(gtk_frame_new(_("Keyboard Model:")));
 
-    gtk_widget_set_size_request(GTK_WIDGET(model_frame), 330, 50);
+    gtk_widget_set_size_request(GTK_WIDGET(model_frame), 420, 50);
 
     gtk_container_add(GTK_CONTAINER(tab->tab_content), GTK_WIDGET(model_frame));
 
@@ -193,7 +193,7 @@ build_tab_others() {
 
 
     tab->model_cbox = gtk_combo_box_new_text();
-    gtk_widget_set_size_request(GTK_WIDGET(tab->model_cbox), 330, 30);
+    gtk_widget_set_size_request(GTK_WIDGET(tab->model_cbox), 420, 30);
 
     fill_cbox_models(tab->model_cbox);
     g_signal_connect(G_OBJECT(tab->model_cbox), "changed",
@@ -208,7 +208,7 @@ build_tab_others() {
 
     // Global configuration
     GtkFrame * global_config_frame = GTK_FRAME(gtk_frame_new(_("Global Configuration:")));
-    gtk_widget_set_size_request(GTK_WIDGET(global_config_frame), 330, 50);
+    gtk_widget_set_size_request(GTK_WIDGET(global_config_frame), 420, 50);
     gtk_container_add(GTK_CONTAINER(tab->tab_content), GTK_WIDGET(global_config_frame));
 
 
