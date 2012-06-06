@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-23 11:30+0200\n"
+"PO-Revision-Date: 2012-06-06 16:47+0200\n"
+"Last-Translator: Juhani <juhaninumminen0@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:132
+msgid "Pick a keyboard layout"
+msgstr "Valitse näppäinasettelu"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr "Jakelu:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:155
+msgid "Layout:"
+msgstr "Asettelu:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:156
+msgid "Variant: "
+msgstr "Variantti: "
+
+#. Testa area
+#: .././src/gtk+2.x_tab_page_distribution.c:190
+msgid "Test here:"
+msgstr "Kokeile tähän:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:224
+msgid "Layout"
+msgstr "Asettelu"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:229
+msgid "Variant"
+msgstr "Variantti"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr "Jakelu"
+
+#. apppend None option
+#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
+msgid "None"
+msgstr "Ei mitään"
+
+#: .././src/gtk+2.x_tab_page_others.c:134
+msgid "Other Options"
+msgstr "Muut vaihtoehdot"
+
+#. Option Keyboard Switch
+#: .././src/gtk+2.x_tab_page_others.c:139
+msgid "Key(s) to change layout:"
+msgstr "Vaihda asettelua näppäimillä:"
+
+#: .././src/gtk+2.x_tab_page_others.c:152
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"Valitse näippäinyhdistelmä, jolla vaihdetaan asettelua\n"
+"tai 'Ei mitään'."
+
+#. keyboard model frame
+#: .././src/gtk+2.x_tab_page_others.c:172
+msgid "Keyboard Model:"
+msgstr "Näppäimistön malli:"
+
+#: .././src/gtk+2.x_tab_page_others.c:187
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+"VAROITUS: Näiden asetusten muuttaminen saattaa\n"
+"aiheuttaa järjestelmän toimintahäiriön."
+
+#. Global configuration
+#: .././src/gtk+2.x_tab_page_others.c:211
+msgid "Global Configuration:"
+msgstr "Yleiset asetukset:"
+
+#: .././src/gtk+2.x_tab_page_others.c:229
+msgid ""
+"Apply this keyboard configuration not only to your\n"
+"session, but also to the whole system."
+msgstr ""
+"Käytä näitä näppäimistöasetuksia oman käyttäjätilisi\n"
+"lisäksi koko järjestelmässä."
+
+#: .././src/gtk+2.x_tab_page_others.c:234
+msgid "Apply Globaly"
+msgstr "Käytä koko järjestelmään"
+
+#: .././src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "Tietoja"
+
+#: .././src/gtk+2.x_tab_page_about.c:25
+msgid ""
+"Developers:\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Repository:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Last version:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+msgstr ""
+"Kehittäjät:\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Lähdekoodi:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Viimeisin versio:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+
+#: .././src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Asetusten käyttöön ottaminen onnistui."
+
+#: .././src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Asetusten käyttöön ottaminen epäonnistui."
+
+#: .././src/gtk+2.x.c:69
+msgid "Keyboard configuration tool"
+msgstr "Näppäimistöasetustyökalu"
+
+#: .././src/manage_desktop_preferences.c:39
+msgid "Keyboard Settings setup"
+msgstr "Näppäimistön asetukset"
+
+#: .././src/manage_desktop_preferences.c:40
+msgid "Sets up your preferred keyboard settings"
+msgstr "Asettaa haluamasi näppäimistöasetukset"
+
+#: .././src/manage_xorg_rules.c:118
+msgid "Default"
+msgstr "Oletus"
+
+#: .././src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
+msgstr "Anna salasanasi ottaaksesi asetukset käyttöön koko järjestelmässä."
