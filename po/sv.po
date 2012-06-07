@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-05-23 11:30+0200\n"
-"PO-Revision-Date: 2012-05-23 09:06+0200\n"
+"PO-Revision-Date: 2012-06-07 22:13+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sv\n"
@@ -20,19 +20,19 @@ msgstr ""
 
 #: .././src/gtk+2.x_tab_page_distribution.c:132
 msgid "Pick a keyboard layout"
-msgstr ""
+msgstr "Välj tangentbordsupplägg"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:145
 msgid "Distribution:"
-msgstr ""
+msgstr "Distribution:"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:155
 msgid "Layout:"
-msgstr ""
+msgstr "Utseende:"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:156
 msgid "Variant: "
-msgstr ""
+msgstr "Variant: "
 
 #. Testa area
 #: .././src/gtk+2.x_tab_page_distribution.c:190
@@ -41,15 +41,15 @@ msgstr "Prova här:"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:224
 msgid "Layout"
-msgstr ""
+msgstr "Utseende"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:229
 msgid "Variant"
-msgstr ""
+msgstr "Variant"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:356
 msgid "Distribution"
-msgstr ""
+msgstr "Ditribution"
 
 #. apppend None option
 #: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
@@ -58,49 +58,56 @@ msgstr "Ingen"
 
 #: .././src/gtk+2.x_tab_page_others.c:134
 msgid "Other Options"
-msgstr ""
+msgstr "Andra alternativ"
 
 #. Option Keyboard Switch
 #: .././src/gtk+2.x_tab_page_others.c:139
 msgid "Key(s) to change layout:"
-msgstr ""
+msgstr "Tangent(er) för att byta tangentbordsupplägg:"
 
 #: .././src/gtk+2.x_tab_page_others.c:152
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
 msgstr ""
+"Välj en tangentkombination för att byta mellan tangentbordsupplägg\n"
+"eller välj bra \\\"Ingen\\\"."
 
 #. keyboard model frame
 #: .././src/gtk+2.x_tab_page_others.c:172
 msgid "Keyboard Model:"
-msgstr ""
+msgstr "Tangentbordsmodell:"
 
 #: .././src/gtk+2.x_tab_page_others.c:187
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
 msgstr ""
+"VARNING: Ändring av dessa inställningar kan leda till\n"
+"att systemet beter sig felaktigt."
 
 #. Global configuration
 #: .././src/gtk+2.x_tab_page_others.c:211
 msgid "Global Configuration:"
-msgstr ""
+msgstr "Global inställning:"
 
 #: .././src/gtk+2.x_tab_page_others.c:229
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
 msgstr ""
+"Ange denna tangentbordsinställning inte bara för din\n"
+"session utan även för hela systemet."
 
 #: .././src/gtk+2.x_tab_page_others.c:234
 msgid "Apply Globaly"
-msgstr ""
+msgstr "Verkställ globalt"
 
 #: .././src/gtk+2.x_tab_page_about.c:21
 msgid "About"
 msgstr "Om"
 
+# PROTEST!
 #: .././src/gtk+2.x_tab_page_about.c:25
 msgid ""
 "Developers:\n"
@@ -119,30 +126,30 @@ msgstr ""
 "Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
 "Kodförråd:\n"
-"https://github.com/azubieta/lxkb_config\n"
+"http://lxde.git.sourceforge.net/git/gitweb.cgi?p=lxde/lxkb_config;a=summary\n"
 "\n"
 "Utgåvor:\n"
-"https://github.com/azubieta/lxkb_config/downloads"
+"https://sourceforge.net/projects/lxde/files/"
 
 #: .././src/gtk+2.x.c:31
 msgid "The configuration was applied successfully."
-msgstr ""
+msgstr "Inställningarna togs i bruk utan besvär."
 
 #: .././src/gtk+2.x.c:37
 msgid "Error while applying the configuration."
-msgstr ""
+msgstr "Fel uppstod när inställningarna skulle tas i bruk."
 
 #: .././src/gtk+2.x.c:69
 msgid "Keyboard configuration tool"
-msgstr ""
+msgstr "Verktyg för att göra tangentbordsinställningar"
 
 #: .././src/manage_desktop_preferences.c:39
 msgid "Keyboard Settings setup"
-msgstr ""
+msgstr "Inställningar för tangentbord"
 
 #: .././src/manage_desktop_preferences.c:40
 msgid "Sets up your preferred keyboard settings"
-msgstr ""
+msgstr "Ange dina föredragna tangentbordsinställningar"
 
 #: .././src/manage_xorg_rules.c:118
 msgid "Default"
@@ -150,4 +157,4 @@ msgstr "Standard"
 
 #: .././src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
-msgstr ""
+msgstr "Ange ditt lösenord för att applicera inställningarna för hela systemet."
