@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-23 11:30+0200\n"
+"POT-Creation-Date: 2012-06-07 22:14+0200\n"
 "PO-Revision-Date: 2012-06-07 22:13+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,7 +100,7 @@ msgstr ""
 "session utan även för hela systemet."
 
 #: .././src/gtk+2.x_tab_page_others.c:234
-msgid "Apply Globaly"
+msgid "Apply Globally"
 msgstr "Verkställ globalt"
 
 #: .././src/gtk+2.x_tab_page_about.c:21
@@ -157,4 +157,5 @@ msgstr "Standard"
 
 #: .././src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
-msgstr "Ange ditt lösenord för att applicera inställningarna för hela systemet."
+msgstr ""
+"Ange ditt lösenord för att applicera inställningarna för hela systemet."

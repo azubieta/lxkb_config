@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-23 11:30+0200\n"
+"POT-Creation-Date: 2012-06-07 22:14+0200\n"
 "PO-Revision-Date: 2012-05-25 21:32+0200\n"
 "Last-Translator: Anari <anari.jalakas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,7 +100,8 @@ msgstr ""
 "sessioonis, vaid ka kogu süsteemis."
 
 #: .././src/gtk+2.x_tab_page_others.c:234
-msgid "Apply Globaly"
+#, fuzzy
+msgid "Apply Globally"
 msgstr "Rakenda globaalselt"
 
 #: .././src/gtk+2.x_tab_page_about.c:21

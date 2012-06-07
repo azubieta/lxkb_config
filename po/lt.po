@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lxkb_config 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-23 11:30+0200\n"
+"POT-Creation-Date: 2012-06-07 22:14+0200\n"
 "PO-Revision-Date: 2012-05-23 13:46+0300\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
@@ -101,7 +101,8 @@ msgstr ""
 "bet visai sistemai."
 
 #: .././src/gtk+2.x_tab_page_others.c:234
-msgid "Apply Globaly"
+#, fuzzy
+msgid "Apply Globally"
 msgstr "Pritaikyti visur"
 
 #: .././src/gtk+2.x_tab_page_about.c:21

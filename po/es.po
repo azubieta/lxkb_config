@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-23 11:30+0200\n"
+"POT-Creation-Date: 2012-06-07 22:14+0200\n"
 "PO-Revision-Date: 2012-05-25 23:27+0200\n"
 "Last-Translator: Hugo <sysadmin@cips.cu>\n"
 "Language-Team: none\n"
@@ -100,7 +100,8 @@ msgstr ""
 " "
 
 #: .././src/gtk+2.x_tab_page_others.c:234
-msgid "Apply Globaly"
+#, fuzzy
+msgid "Apply Globally"
 msgstr "Aplicar a todo el sistema"
 
 #: .././src/gtk+2.x_tab_page_about.c:21

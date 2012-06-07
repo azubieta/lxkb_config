@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-23 11:30+0200\n"
+"POT-Creation-Date: 2012-06-07 22:14+0200\n"
 "PO-Revision-Date: 2012-05-16 15:01+0400\n"
 "Last-Translator: Maxim Orlov <uubboo@gmail.com>\n"
 "Language-Team: русский <>\n"
@@ -100,7 +100,8 @@ msgstr ""
 "а не только для текущей сессии."
 
 #: .././src/gtk+2.x_tab_page_others.c:234
-msgid "Apply Globaly"
+#, fuzzy
+msgid "Apply Globally"
 msgstr "Применить ко всей системе"
 
 #: .././src/gtk+2.x_tab_page_about.c:21
