@@ -231,7 +231,7 @@ build_tab_others() {
     gtk_container_add(GTK_CONTAINER(vbox), msg_label);
 
     GtkWidget *button_global;
-    button_global = gtk_button_new_with_label(_("Apply Globaly"));
+    button_global = gtk_button_new_with_label(_("Apply Globally"));
 
     g_signal_connect(button_global, "clicked",
             G_CALLBACK(button_global_callback), NULL);
