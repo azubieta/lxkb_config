@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-07 22:14+0200\n"
+"PO-Revision-Date: 2012-05-29 10:07+0200\n"
+"Last-Translator: Gheyret <gheyret@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:132
+msgid "Pick a keyboard layout"
+msgstr "ھەرپتاختا جايلاشتۇرۇلۇشىنى تاللاش"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr "تارقىتىلما:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:155
+msgid "Layout:"
+msgstr "جايلاشتۇرۇلۇشى:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:156
+msgid "Variant: "
+msgstr "ۋارىيانتى:"
+
+#. Testa area
+#: .././src/gtk+2.x_tab_page_distribution.c:190
+msgid "Test here:"
+msgstr "سىناڭ:"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:224
+msgid "Layout"
+msgstr "جايلاشتۇرۇلۇشى"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:229
+msgid "Variant"
+msgstr "ۋارىيانتى"
+
+#: .././src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr "تارقىتىلما"
+
+#. apppend None option
+#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
+msgid "None"
+msgstr "يوق"
+
+#: .././src/gtk+2.x_tab_page_others.c:134
+msgid "Other Options"
+msgstr "باشقا تاللانمىلار"
+
+#. Option Keyboard Switch
+#: .././src/gtk+2.x_tab_page_others.c:139
+msgid "Key(s) to change layout:"
+msgstr "جايلاشتۇرۇشنى ئالماشتۇرۇش كۇنۇپكىسى(لىرى):"
+
+#: .././src/gtk+2.x_tab_page_others.c:152
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"جايلاشتۇرۇشنى ئالماشتۇرىدىغان كۇنۇپكا بىرىكمىسىنى \n"
+"ياكى ‹يوق› نى تاللاڭ."
+
+#. keyboard model frame
+#: .././src/gtk+2.x_tab_page_others.c:172
+msgid "Keyboard Model:"
+msgstr "ھەرپتاختىنىڭ مودېلى:"
+
+#: .././src/gtk+2.x_tab_page_others.c:187
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+"ئاگاھلاندۇرۇش: بۇ تەڭشەكلەرنى ئالدىراپ ئۆزگەرتمەڭ\n"
+"بولمىسا سىستېما ئىشلىمەس بولۇپ قالىدۇ."
+
+#. Global configuration
+#: .././src/gtk+2.x_tab_page_others.c:211
+msgid "Global Configuration:"
+msgstr "ئورتاق سەپلىمە:"
+
+#: .././src/gtk+2.x_tab_page_others.c:229
+msgid ""
+"Apply this keyboard configuration not only to your\n"
+"session, but also to the whole system."
+msgstr ""
+"بۇ ھەرپتاختا تەڭشىكىنى ئۆزىڭىزگە ۋە شۇنداقلا\n"
+"پۈتكۈل سىستېمىغا قوللىنىڭ."
+
+#: .././src/gtk+2.x_tab_page_others.c:234
+#, fuzzy
+msgid "Apply Globally"
+msgstr "پۈتكۈل سىستېمىدا قوللان"
+
+#: .././src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "ھەققىدە"
+
+#: .././src/gtk+2.x_tab_page_about.c:25
+msgid ""
+"Developers:\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Repository:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Last version:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+msgstr ""
+"ئىجادىيەتچىلەر:\n"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"خەزىنە:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"ئەڭ يېڭى نەشرى:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+
+#: .././src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "سەپلىمە مۇۋەپپەقىيەتلىك قوللىنىلدى"
+
+#: .././src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "سەپلىمە قوللىنىشتا خاتالىق كۆرۈلدى."
+
+#: .././src/gtk+2.x.c:69
+msgid "Keyboard configuration tool"
+msgstr "ھەرپتاختا سەپلەش قورالى"
+
+#: .././src/manage_desktop_preferences.c:39
+msgid "Keyboard Settings setup"
+msgstr "ھەرپتاختا تەڭشىكىنى بەلگىلەش"
+
+#: .././src/manage_desktop_preferences.c:40
+msgid "Sets up your preferred keyboard settings"
+msgstr "ئۆزىڭىز ئامراق ھەرپتاختا تەڭشىكىنى بەلگىلەڭ"
+
+#: .././src/manage_xorg_rules.c:118
+msgid "Default"
+msgstr "كۆڭۈلدىكى"
+
+#: .././src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
+msgstr "سەپلىمىنى پۈتكۈل سىستېمىدا قوللىنىش ئۈچۈن ئىمىڭىزنى كىرگۈزۈڭ"
