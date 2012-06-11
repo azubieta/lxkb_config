@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     
     user_prefs =  xkb_preferences_load_from_env();
     if (user_prefs == NULL) {
-        printf( _("Keyboar user preferences can't be loaded.\n"
+        printf( _("Keyboard user preferences can't be loaded.\n"
                     "Plase check that you have setxkbmap installed.") );
         return (EXIT_FAILURE);
     }

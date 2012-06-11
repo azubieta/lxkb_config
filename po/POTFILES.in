@@ -8,7 +8,7 @@ src/setxkbmap_interface.h
 src/xkblib_interface.c
 src/setxkbmap_interface.c
 src/manage_user_preferences.c
-src/gtk+2.x_tab_page_distribution.c
+src/gtk+2.x_tab_page_layouts.c
 src/gtk+2.x_tab_page_others.c
 src/gtk+2.x_tab_page_about.c
 src/manage_desktop_preferences.c

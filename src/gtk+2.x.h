@@ -26,7 +26,7 @@ typedef struct {
 
 
     GtkWidget *button_add_config;
-} Distribution_Tab;
+} Layouts_Tab;
 
 typedef struct {
     GtkWidget *tab_name;
@@ -50,7 +50,7 @@ typedef struct {
     GtkWidget *layout_cbox, *variant_cbox;
 
     XKB_Preferences * tmp_prefs;
-} Distribution_Dialog;
+} New_Layout_Dialog;
 
 
 extern void
@@ -59,8 +59,8 @@ showMainWindow(int argc, char** argv);
 About_Tab *
 build_tab_credits();
 
-Distribution_Tab *
-build_tab_distribution();
+Layouts_Tab *
+build_tab_layouts();
 
 Others_Tab *
 build_tab_others();

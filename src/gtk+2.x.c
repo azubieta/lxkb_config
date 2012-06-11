@@ -88,11 +88,11 @@ void showMainWindow(int argc, char** argv) {
      * Adding tabs to the notebook
      */
 
-    Distribution_Tab *tab_distributions = build_tab_distribution();
+    Layouts_Tab *tab_layouts = build_tab_layouts();
     Others_Tab *tab_others = build_tab_others();
     About_Tab *tab_credits = build_tab_credits();
 
-    gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_distributions->tab_content, tab_distributions->tab_name);
+    gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_layouts->tab_content, tab_layouts->tab_name);
     gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_others->tab_content, tab_others->tab_name);
     gtk_notebook_append_page(GTK_NOTEBOOK(tabs), tab_credits->tab_content, tab_credits->tab_name);
     /*

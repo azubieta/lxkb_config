@@ -15,7 +15,7 @@ extern XKB_Rules *rules;
 #define INNER_SPACE 4
 
 /*
- * GTK_DIALOG DISTRIBUTION edit
+ * GTK_DIALOG Layout add
  */
 
 /* Sets data to the variants combo box */
@@ -58,7 +58,7 @@ fill_cbox_variants(GtkWidget *combo, gchar *layout) {
 }
 
 void
-update_tmp_prefs(Distribution_Dialog *dist_dialog) {
+update_tmp_prefs(New_Layout_Dialog *dist_dialog) {
     g_slist_free(dist_dialog->tmp_prefs->layouts);
     g_slist_free(dist_dialog->tmp_prefs->variants);
     dist_dialog->tmp_prefs->layouts = NULL;
@@ -86,7 +86,7 @@ update_tmp_prefs(Distribution_Dialog *dist_dialog) {
 /* Notify to the variants combo box 
  * to switch the data*/
 void
-combo_layout_selected(GtkWidget *widget, Distribution_Dialog *dist_dialog) {
+combo_layout_selected(GtkWidget *widget, New_Layout_Dialog *dist_dialog) {
     gchar *text = gtk_combo_box_get_active_text(GTK_COMBO_BOX(widget));
     dist_dialog->active_layout = text;
 
@@ -97,7 +97,7 @@ combo_layout_selected(GtkWidget *widget, Distribution_Dialog *dist_dialog) {
 }
 
 void
-combo_variant_selected(GtkWidget *widget, Distribution_Dialog *dist_dialog) {
+combo_variant_selected(GtkWidget *widget, New_Layout_Dialog *dist_dialog) {
     gchar *text = gtk_combo_box_get_active_text(GTK_COMBO_BOX(widget));
 
     dist_dialog->active_variant = text;
@@ -124,7 +124,7 @@ fill_cbox_layouts(GtkWidget *combo) {
 
 /* Function to open a dialog box displaying the message provided. */
 GtkWidget *
-build_dialog_layout_variant_management(GtkWidget *parent, Distribution_Dialog *dist_dialog) {
+build_dialog_new_layout(GtkWidget *parent, New_Layout_Dialog *dist_dialog) {
 
 
     /* Create the widgets */
@@ -142,7 +142,7 @@ build_dialog_layout_variant_management(GtkWidget *parent, Distribution_Dialog *d
     dist_dialog->content = gtk_dialog_get_content_area(GTK_DIALOG(dialog));
     gtk_container_set_border_width(GTK_CONTAINER(dialog), 4);
 
-    GtkFrame * frame = GTK_FRAME(gtk_frame_new(_("Distribution:")));
+    GtkFrame * frame = GTK_FRAME(gtk_frame_new(_("Layouts:")));
     gtk_widget_set_size_request(GTK_WIDGET(frame), 300, 50);
     gtk_container_add(GTK_CONTAINER(dist_dialog->content), GTK_WIDGET(frame));
 
@@ -203,7 +203,7 @@ build_dialog_layout_variant_management(GtkWidget *parent, Distribution_Dialog *d
 }
 
 /* 
- * GTK_TREE_VIEW Distributions
+ * GTK_TREE_VIEW Layouts
  */
 
 enum {
@@ -261,11 +261,11 @@ list_store_update(GtkListStore *store) {
 
 void
 button_new_config_callback(GtkWidget *widget, gpointer data) {
-    Distribution_Tab *tab = data;
+    Layouts_Tab *tab = data;
 
-    Distribution_Dialog *dist_dialog = g_slice_alloc0(sizeof (Distribution_Dialog));
+    New_Layout_Dialog *dist_dialog = g_slice_alloc0(sizeof (New_Layout_Dialog));
     dist_dialog->tmp_prefs = g_slice_alloc0(sizeof (XKB_Preferences));
-    GtkWidget *dialog = build_dialog_layout_variant_management(NULL, dist_dialog);
+    GtkWidget *dialog = build_dialog_new_layout(NULL, dist_dialog);
 
     gint result = gtk_dialog_run(GTK_DIALOG(dialog));
 
@@ -291,7 +291,7 @@ button_new_config_callback(GtkWidget *widget, gpointer data) {
 
 void
 button_delete_callback(GtkWidget *widget, gpointer data) {
-    Distribution_Tab *w = data;
+    Layouts_Tab *w = data;
 
     GtkTreeSelection *selection;
     GtkTreeModel *model;
@@ -320,7 +320,7 @@ button_delete_callback(GtkWidget *widget, gpointer data) {
 
 void
 button_default_callback(GtkWidget *widget, gpointer data) {
-    Distribution_Tab *w = data;
+    Layouts_Tab *w = data;
 
     GtkTreeSelection *selection;
     GtkTreeModel *model;
@@ -347,13 +347,13 @@ button_default_callback(GtkWidget *widget, gpointer data) {
 }
 
 /*
- * Tab_Page Distributions
+ * Tab_Page Layouts
  */
-Distribution_Tab *
-build_tab_distribution() {
+Layouts_Tab *
+build_tab_layouts() {
     // Initialization
-    Distribution_Tab *tab = g_slice_new0(Distribution_Tab);
-    tab->tab_name = gtk_label_new(_("Distribution"));
+    Layouts_Tab *tab = g_slice_new0(Layouts_Tab);
+    tab->tab_name = gtk_label_new(_("Layouts"));
     tab->tab_content = gtk_vbox_new(FALSE, INNER_SPACE);
     gtk_container_set_border_width(GTK_CONTAINER(tab->tab_content), 8);
 
