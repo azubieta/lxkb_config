@@ -1,8 +1,7 @@
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
 #include <string.h>
-#include <glib-2.0/glib/glist.h>
-#include <glib-2.0/glib/gstring.h>
+#include <glib-2.0/glib.h>
 
 
 #include "manage_rules.h"
