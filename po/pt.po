@@ -2,112 +2,111 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: lxkb_config 0.9\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-07 22:14+0200\n"
-"PO-Revision-Date: 2012-06-08 09:46+0300\n"
-"Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
-"Language-Team: Lietuvių <>\n"
-"Language: lt\n"
+"PO-Revision-Date: 2012-05-23 13:37+0200\n"
+"Last-Translator: Sérgio <smarquespt@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:132
 msgid "Pick a keyboard layout"
-msgstr "Pasirinkite klaviatūros išdėstymą"
+msgstr "Escolha o esquema do teclado:"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:145
 msgid "Distribution:"
-msgstr "Išdėstymas:"
+msgstr "Distribuição:"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:155
 msgid "Layout:"
-msgstr "Išdėstymas:"
+msgstr "Esquema:"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:156
 msgid "Variant: "
-msgstr "Variantas:"
+msgstr "Variante: "
 
 #. Testa area
 #: .././src/gtk+2.x_tab_page_distribution.c:190
 msgid "Test here:"
-msgstr "Pabandykite:"
+msgstr "Teste aqui:"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:224
 msgid "Layout"
-msgstr "Išdėstymas"
+msgstr "Esquema"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:229
 msgid "Variant"
-msgstr "Variantas"
+msgstr "Variante"
 
 #: .././src/gtk+2.x_tab_page_distribution.c:356
 msgid "Distribution"
-msgstr "Išdėstymas"
+msgstr "Distribuição"
 
 #. apppend None option
 #: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
 msgid "None"
-msgstr "Jokia"
+msgstr "Nenhuma"
 
 #: .././src/gtk+2.x_tab_page_others.c:134
 msgid "Other Options"
-msgstr "Kitos parinktys"
+msgstr "Outras opções"
 
 #. Option Keyboard Switch
 #: .././src/gtk+2.x_tab_page_others.c:139
 msgid "Key(s) to change layout:"
-msgstr "Keisti išdėstymą:"
+msgstr "Tecla(s) para alterar o esquema:"
 
 #: .././src/gtk+2.x_tab_page_others.c:152
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
 msgstr ""
-"Pasirinkite klavišų kombinaciją kuria bus perjungiama tarp \n"
-"išdėstymų arba pasirinkite „Jokia“."
+"Escolha a combinação de teclas para trocar os esquemas de teclado\n"
+"ou escolha Nenhuma"
 
 #. keyboard model frame
 #: .././src/gtk+2.x_tab_page_others.c:172
 msgid "Keyboard Model:"
-msgstr "Klaviatūros modelis:"
+msgstr "Modelo do teclado:"
 
 #: .././src/gtk+2.x_tab_page_others.c:187
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
 msgstr ""
-"ĮSPĖJIMAS: turėkite omenyje jog šių nustatymų keitimas\n"
-"gali privesti prie sistemos sugadinimo."
+"AVISO: tenha em atenção que se alterar estas definições\n"
+"pode danificar o sistema"
 
 #. Global configuration
 #: .././src/gtk+2.x_tab_page_others.c:211
 msgid "Global Configuration:"
-msgstr "Bendra konfigūracija:"
+msgstr "Configuração geral:"
 
 #: .././src/gtk+2.x_tab_page_others.c:229
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
 msgstr ""
-"Šią konfigūraciją pritaikyti ne vien jūsų sesijai,\n"
-"bet visai sistemai."
+"Aplicar esta configuração globalmente\n"
+"e não apenas a esta sessão"
 
 #: .././src/gtk+2.x_tab_page_others.c:234
+#, fuzzy
 msgid "Apply Globally"
-msgstr "Pritaikyti visur"
+msgstr "Aplicar ao sistema"
 
 #: .././src/gtk+2.x_tab_page_about.c:21
 msgid "About"
-msgstr "Apie"
+msgstr "Sobre"
 
 #: .././src/gtk+2.x_tab_page_about.c:25
 msgid ""
@@ -122,42 +121,41 @@ msgid ""
 "Last version:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 msgstr ""
-"Kūrėjai:\n"
+"Programadores:\n"
 "Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
 "\n"
 "Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
-"Saugykla:\n"
+"Repositório:\n"
 "https://github.com/azubieta/lxkb_config\n"
 "\n"
-"Naujausia versija:\n"
+"Versão mais recente:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
 #: .././src/gtk+2.x.c:31
 msgid "The configuration was applied successfully."
-msgstr "Konfigūracija sėkmingai pritaikyta."
+msgstr "A configuração foi aplicada"
 
 #: .././src/gtk+2.x.c:37
 msgid "Error while applying the configuration."
-msgstr "Taikant konfigūraciją įvyko klaida."
+msgstr "Ocorreu um erro ao aplicar a configuração"
 
 #: .././src/gtk+2.x.c:69
 msgid "Keyboard configuration tool"
-msgstr "Klaviatūros konfigūravimo įrankis"
+msgstr "Ferramenta de configuração de teclado"
 
 #: .././src/manage_desktop_preferences.c:39
 msgid "Keyboard Settings setup"
-msgstr "Klaviatūros nustatymas"
+msgstr "Configuração das definições do teclado"
 
 #: .././src/manage_desktop_preferences.c:40
 msgid "Sets up your preferred keyboard settings"
-msgstr "Nustato jūsų pageidaujamus klaviatūros nustatymus"
+msgstr "Configuração das definições preferenciais do teclado"
 
 #: .././src/manage_xorg_rules.c:118
 msgid "Default"
-msgstr "Numatytieji"
+msgstr "Pré-definido"
 
 #: .././src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
-msgstr ""
-"Įveskite savo slaptažodį, kad nustatymai būtų pritaikyti visai sistemai."
+msgstr "Introduza a sua senha para aplicar esta configuração ao sistema"

@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: lxkb_config 0.9\n"
-"Report-Msgid-Bugs-To: azubieta@estudiantes.uci.cu\n"
-"POT-Creation-Date: 2012-05-22 15:40-0400\n"
+"Project-Id-Version: 0.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-07 22:14+0200\n"
 "PO-Revision-Date: 2012-05-16 15:01+0400\n"
 "Last-Translator: Maxim Orlov <uubboo@gmail.com>\n"
 "Language-Team: русский <>\n"
@@ -18,77 +18,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: src/main.c:29
-#, c-format
-msgid ""
-"X-Keyboard rules can't be loaded.\n"
-"Plase check that you have xkb-data installed."
-msgstr ""
-
-#: src/main.c:37
-#, c-format
-msgid ""
-"Keyboard user preferences can't be loaded.\n"
-"Plase check that you have setxkbmap installed."
-msgstr ""
-
-#: src/gtk+2.x.c:31
-msgid "The configuration was applied successfully."
-msgstr "Конфигурация была успешно применена."
-
-#: src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr "Возникла ошибка во время применения конфигурации."
-
-#: src/gtk+2.x.c:70
-msgid "Keyboard configuration tool"
-msgstr "Инструмент настройки клавиатуры"
-
-#: src/gtk+2.x_tab_page_layouts.c:132
+#: .././src/gtk+2.x_tab_page_distribution.c:132
 msgid "Pick a keyboard layout"
 msgstr "Выберите раскладку клавиатуры"
 
-#: src/gtk+2.x_tab_page_layouts.c:145
-msgid "Layouts:"
-msgstr "Раскладка:"
+#: .././src/gtk+2.x_tab_page_distribution.c:145
+msgid "Distribution:"
+msgstr "Раскладки:"
 
-#: src/gtk+2.x_tab_page_layouts.c:155
+#: .././src/gtk+2.x_tab_page_distribution.c:155
 msgid "Layout:"
 msgstr "Раскладка:"
 
-#: src/gtk+2.x_tab_page_layouts.c:156
+#: .././src/gtk+2.x_tab_page_distribution.c:156
 msgid "Variant: "
 msgstr "Вариант:"
 
-#: src/gtk+2.x_tab_page_layouts.c:190
+#. Testa area
+#: .././src/gtk+2.x_tab_page_distribution.c:190
 msgid "Test here:"
 msgstr "Проверьте здесь:"
 
-#: src/gtk+2.x_tab_page_layouts.c:224
+#: .././src/gtk+2.x_tab_page_distribution.c:224
 msgid "Layout"
 msgstr "Раскладка"
 
-#: src/gtk+2.x_tab_page_layouts.c:229
+#: .././src/gtk+2.x_tab_page_distribution.c:229
 msgid "Variant"
 msgstr "Вариант"
 
-#: src/gtk+2.x_tab_page_layouts.c:356
-msgid "Layouts"
-msgstr "Раскладка"
+#: .././src/gtk+2.x_tab_page_distribution.c:356
+msgid "Distribution"
+msgstr "Раскладки"
 
-#: src/gtk+2.x_tab_page_others.c:28 src/gtk+2.x_tab_page_others.c:77
+#. apppend None option
+#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
 msgid "None"
 msgstr "Отсутствует"
 
-#: src/gtk+2.x_tab_page_others.c:133
+#: .././src/gtk+2.x_tab_page_others.c:134
 msgid "Other Options"
 msgstr "Другие опции"
 
-#: src/gtk+2.x_tab_page_others.c:138
+#. Option Keyboard Switch
+#: .././src/gtk+2.x_tab_page_others.c:139
 msgid "Key(s) to change layout:"
 msgstr "Сочетание клавиш:"
 
-#: src/gtk+2.x_tab_page_others.c:151
+#: .././src/gtk+2.x_tab_page_others.c:152
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
@@ -96,11 +73,12 @@ msgstr ""
 "Выберите комбинацию клавиш для переключения между раскладками\n"
 "или просто выберите 'Отсутствует'."
 
-#: src/gtk+2.x_tab_page_others.c:171
+#. keyboard model frame
+#: .././src/gtk+2.x_tab_page_others.c:172
 msgid "Keyboard Model:"
 msgstr "Модель клавиатуры:"
 
-#: src/gtk+2.x_tab_page_others.c:186
+#: .././src/gtk+2.x_tab_page_others.c:187
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
@@ -108,39 +86,32 @@ msgstr ""
 "ВНИМАНИЕ: Помните, что изменение этих параметров может\n"
 "привести систему к неисправности."
 
-#: src/gtk+2.x_tab_page_others.c:210
+#. Global configuration
+#: .././src/gtk+2.x_tab_page_others.c:211
 msgid "Global Configuration:"
 msgstr "Глобальные настройки:"
 
-#: src/gtk+2.x_tab_page_others.c:228
+#: .././src/gtk+2.x_tab_page_others.c:229
 msgid ""
-"Apply this keyboard configuration not only to your\n"
-"session, but also to the whole system."
+"X-Keyboard rules can't be loaded.\n"
+"Plase check that you have xkb-data installed."
 msgstr ""
 "Применить настройки ко всей системе в целом,\n"
 "а не только для текущей сессии."
 
-#: src/gtk+2.x_tab_page_others.c:233
-msgid "Apply Globaly"
+#: .././src/gtk+2.x_tab_page_others.c:234
+#, fuzzy
+msgid "Apply Globally"
 msgstr "Применить ко всей системе"
 
-#: src/gtk+2.x_tab_page_about.c:21
+#: .././src/gtk+2.x_tab_page_about.c:21
 msgid "About"
 msgstr "О программе"
 
-#: src/gtk+2.x_tab_page_about.c:25
-#, fuzzy
+#: .././src/gtk+2.x_tab_page_about.c:25
 msgid ""
-"Developers:\n"
-"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
-"\n"
-"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
-"\n"
-"Repository:\n"
-"https://github.com/azubieta/lxkb_config\n"
-"\n"
-"Last version:\n"
-"https://github.com/azubieta/lxkb_config/downloads"
+"Keyboard user preferences can't be loaded.\n"
+"Plase check that you have setxkbmap installed."
 msgstr ""
 "Разработчики:\n"
 "Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
@@ -153,19 +124,31 @@ msgstr ""
 "Последняя версия:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
-#: src/manage_desktop_preferences.c:40
+#: .././src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Конфигурация была успешно применена."
+
+#: .././src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Возникла ошибка во время применения конфигурации."
+
+#: .././src/gtk+2.x.c:69
+msgid "Keyboard configuration tool"
+msgstr "Инструмент настройки клавиатуры"
+
+#: .././src/manage_desktop_preferences.c:39
 msgid "Keyboard Settings setup"
 msgstr "Настройка параметров клавиатуры"
 
-#: src/manage_desktop_preferences.c:41
+#: .././src/manage_desktop_preferences.c:40
 msgid "Sets up your preferred keyboard settings"
 msgstr "Устанавливает ваши персональные настройки клавиатуры"
 
-#: src/manage_xorg_rules.c:131
+#: .././src/manage_xorg_rules.c:118
 msgid "Default"
 msgstr "По умолчанию"
 
-#: src/manage_xorg_preferences.c:96
+#: .././src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""
 "Введите пароль, чтобы установить конфигурацию для всей системы в целом."
