@@ -6,9 +6,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.9\n"
+"Project-Id-Version: lxkb_config 0.9\n"
 "Report-Msgid-Bugs-To: azubieta@estudiantes.uci.cu\n"
-"POT-Creation-Date: 2012-05-17 21:59-0400\n"
+"POT-Creation-Date: 2012-05-22 15:40-0400\n"
 "PO-Revision-Date: 2012-05-16 15:01+0400\n"
 "Last-Translator: Maxim Orlov <uubboo@gmail.com>\n"
 "Language-Team: русский <>\n"
@@ -18,51 +18,77 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: src/gtk+2.x_tab_page_distribution.c:132
+#: src/main.c:29
+#, c-format
+msgid ""
+"X-Keyboard rules can't be loaded.\n"
+"Plase check that you have xkb-data installed."
+msgstr ""
+
+#: src/main.c:37
+#, c-format
+msgid ""
+"Keyboard user preferences can't be loaded.\n"
+"Plase check that you have setxkbmap installed."
+msgstr ""
+
+#: src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Конфигурация была успешно применена."
+
+#: src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Возникла ошибка во время применения конфигурации."
+
+#: src/gtk+2.x.c:70
+msgid "Keyboard configuration tool"
+msgstr "Инструмент настройки клавиатуры"
+
+#: src/gtk+2.x_tab_page_layouts.c:132
 msgid "Pick a keyboard layout"
 msgstr "Выберите раскладку клавиатуры"
 
-#: src/gtk+2.x_tab_page_distribution.c:145
-msgid "Distribution:"
-msgstr "Раскладки:"
+#: src/gtk+2.x_tab_page_layouts.c:145
+msgid "Layouts:"
+msgstr "Раскладка:"
 
-#: src/gtk+2.x_tab_page_distribution.c:155
+#: src/gtk+2.x_tab_page_layouts.c:155
 msgid "Layout:"
 msgstr "Раскладка:"
 
-#: src/gtk+2.x_tab_page_distribution.c:156
+#: src/gtk+2.x_tab_page_layouts.c:156
 msgid "Variant: "
 msgstr "Вариант:"
 
-#: src/gtk+2.x_tab_page_distribution.c:190
+#: src/gtk+2.x_tab_page_layouts.c:190
 msgid "Test here:"
 msgstr "Проверьте здесь:"
 
-#: src/gtk+2.x_tab_page_distribution.c:224
+#: src/gtk+2.x_tab_page_layouts.c:224
 msgid "Layout"
 msgstr "Раскладка"
 
-#: src/gtk+2.x_tab_page_distribution.c:229
+#: src/gtk+2.x_tab_page_layouts.c:229
 msgid "Variant"
 msgstr "Вариант"
 
-#: src/gtk+2.x_tab_page_distribution.c:356
-msgid "Distribution"
-msgstr "Раскладки"
+#: src/gtk+2.x_tab_page_layouts.c:356
+msgid "Layouts"
+msgstr "Раскладка"
 
-#: src/gtk+2.x_tab_page_others.c:29 src/gtk+2.x_tab_page_others.c:78
+#: src/gtk+2.x_tab_page_others.c:28 src/gtk+2.x_tab_page_others.c:77
 msgid "None"
 msgstr "Отсутствует"
 
-#: src/gtk+2.x_tab_page_others.c:134
+#: src/gtk+2.x_tab_page_others.c:133
 msgid "Other Options"
 msgstr "Другие опции"
 
-#: src/gtk+2.x_tab_page_others.c:139
+#: src/gtk+2.x_tab_page_others.c:138
 msgid "Key(s) to change layout:"
 msgstr "Сочетание клавиш:"
 
-#: src/gtk+2.x_tab_page_others.c:152
+#: src/gtk+2.x_tab_page_others.c:151
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
@@ -70,11 +96,11 @@ msgstr ""
 "Выберите комбинацию клавиш для переключения между раскладками\n"
 "или просто выберите 'Отсутствует'."
 
-#: src/gtk+2.x_tab_page_others.c:172
+#: src/gtk+2.x_tab_page_others.c:171
 msgid "Keyboard Model:"
 msgstr "Модель клавиатуры:"
 
-#: src/gtk+2.x_tab_page_others.c:187
+#: src/gtk+2.x_tab_page_others.c:186
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
@@ -82,11 +108,11 @@ msgstr ""
 "ВНИМАНИЕ: Помните, что изменение этих параметров может\n"
 "привести систему к неисправности."
 
-#: src/gtk+2.x_tab_page_others.c:211
+#: src/gtk+2.x_tab_page_others.c:210
 msgid "Global Configuration:"
 msgstr "Глобальные настройки:"
 
-#: src/gtk+2.x_tab_page_others.c:229
+#: src/gtk+2.x_tab_page_others.c:228
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
@@ -94,7 +120,7 @@ msgstr ""
 "Применить настройки ко всей системе в целом,\n"
 "а не только для текущей сессии."
 
-#: src/gtk+2.x_tab_page_others.c:234
+#: src/gtk+2.x_tab_page_others.c:233
 msgid "Apply Globaly"
 msgstr "Применить ко всей системе"
 
@@ -127,27 +153,15 @@ msgstr ""
 "Последняя версия:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
-#: src/gtk+2.x.c:31
-msgid "The configuration was applied successfully."
-msgstr "Конфигурация была успешно применена."
-
-#: src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr "Возникла ошибка во время применения конфигурации."
-
-#: src/gtk+2.x.c:69
-msgid "Keyboard configuration tool"
-msgstr "Инструмент настройки клавиатуры"
-
-#: src/manage_desktop_preferences.c:39
+#: src/manage_desktop_preferences.c:40
 msgid "Keyboard Settings setup"
 msgstr "Настройка параметров клавиатуры"
 
-#: src/manage_desktop_preferences.c:40
+#: src/manage_desktop_preferences.c:41
 msgid "Sets up your preferred keyboard settings"
 msgstr "Устанавливает ваши персональные настройки клавиатуры"
 
-#: src/manage_xorg_rules.c:118
+#: src/manage_xorg_rules.c:131
 msgid "Default"
 msgstr "По умолчанию"
 

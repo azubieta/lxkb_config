@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lxkb_config 0.9\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-16 22:03-0400\n"
+"Report-Msgid-Bugs-To: azubieta@estudiantes.uci.cu\n"
+"POT-Creation-Date: 2012-05-22 15:40-0400\n"
 "PO-Revision-Date: 2012-05-20 19:30+0300\n"
 "Last-Translator: Andriy Grytsenko <andrej@rep.kiev.ua>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -16,15 +16,102 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/gtk+2.x_tab_page_about.c:21
-msgid "About"
-msgstr "Про програму"
+#: src/main.c:29
+#, c-format
+msgid ""
+"X-Keyboard rules can't be loaded.\n"
+"Plase check that you have xkb-data installed."
+msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:234
-msgid "Apply Globaly"
-msgstr "Застосувати загально"
+#: src/main.c:37
+#, c-format
+msgid ""
+"Keyboard user preferences can't be loaded.\n"
+"Plase check that you have setxkbmap installed."
+msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:229
+#: src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Конфігурацію застосовано."
+
+#: src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Помилка при застосуванні конфігурації."
+
+#: src/gtk+2.x.c:70
+msgid "Keyboard configuration tool"
+msgstr "Засіб налаштування клавіатури"
+
+#: src/gtk+2.x_tab_page_layouts.c:132
+msgid "Pick a keyboard layout"
+msgstr "Виберіть розкладку"
+
+#: src/gtk+2.x_tab_page_layouts.c:145
+#, fuzzy
+msgid "Layouts:"
+msgstr "Розкладка:"
+
+#: src/gtk+2.x_tab_page_layouts.c:155
+msgid "Layout:"
+msgstr "Розкладка:"
+
+#: src/gtk+2.x_tab_page_layouts.c:156
+msgid "Variant: "
+msgstr "Варіант: "
+
+#: src/gtk+2.x_tab_page_layouts.c:190
+msgid "Test here:"
+msgstr "Перевірте отут:"
+
+#: src/gtk+2.x_tab_page_layouts.c:224
+msgid "Layout"
+msgstr "Розкладка"
+
+#: src/gtk+2.x_tab_page_layouts.c:229
+msgid "Variant"
+msgstr "Варіант"
+
+#: src/gtk+2.x_tab_page_layouts.c:356
+msgid "Layouts"
+msgstr "Розкладка"
+
+#: src/gtk+2.x_tab_page_others.c:28 src/gtk+2.x_tab_page_others.c:77
+msgid "None"
+msgstr "Жодної"
+
+#: src/gtk+2.x_tab_page_others.c:133
+msgid "Other Options"
+msgstr "Інші параметри"
+
+#: src/gtk+2.x_tab_page_others.c:138
+msgid "Key(s) to change layout:"
+msgstr "Комбінація для зміни розкладок:"
+
+#: src/gtk+2.x_tab_page_others.c:151
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"Виберіть комбінацію клавіш для зміни розкладок\n"
+"або виберіть 'Жодної'."
+
+#: src/gtk+2.x_tab_page_others.c:171
+msgid "Keyboard Model:"
+msgstr "Модель клавіатури:"
+
+#: src/gtk+2.x_tab_page_others.c:186
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+"ПОПЕРЕДЖЕННЯ: зміна цих налаштувань може\n"
+"призвести до втрати керування системою."
+
+#: src/gtk+2.x_tab_page_others.c:210
+msgid "Global Configuration:"
+msgstr "Загальна конфігурація:"
+
+#: src/gtk+2.x_tab_page_others.c:228
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
@@ -32,16 +119,21 @@ msgstr ""
 "Застосувати цю конфігурацію не лише до вашої сесії,\n"
 "але до всієї системи."
 
-#: src/manage_xorg_rules.c:118
-msgid "Default"
-msgstr "За змовчанням"
+#: src/gtk+2.x_tab_page_others.c:233
+msgid "Apply Globaly"
+msgstr "Застосувати загально"
+
+#: src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "Про програму"
 
 #: src/gtk+2.x_tab_page_about.c:25
+#, fuzzy
 msgid ""
 "Developers:\n"
-"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
 "\n"
-"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
 "Repository:\n"
 "https://github.com/azubieta/lxkb_config\n"
@@ -60,94 +152,19 @@ msgstr ""
 "Остання версія:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
-#: src/gtk+2.x_tab_page_distribution.c:356
-msgid "Distribution"
-msgstr "Розміщення"
-
-#: src/gtk+2.x_tab_page_distribution.c:145
-msgid "Distribution:"
-msgstr "Розміщення:"
-
-#: src/gtk+2.x_tab_page_others.c:116 src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr "Помилка при застосуванні конфігурації."
-
-#: src/gtk+2.x_tab_page_others.c:211
-msgid "Global Configuration:"
-msgstr "Загальна конфігурація:"
-
-#: src/manage_xorg_preferences.c:96
-msgid "Introduce your password to set this configuration to the whole system."
-msgstr "Для застосування цієї конфігурації до всієї системи введіть ваш пароль."
-
-#: src/gtk+2.x_tab_page_others.c:139
-msgid "Key(s) to change layout:"
-msgstr "Комбінація для зміни розкладок:"
-
-#: src/gtk+2.x_tab_page_others.c:172
-msgid "Keyboard Model:"
-msgstr "Модель клавіатури:"
-
-#: src/manage_desktop_preferences.c:39
+#: src/manage_desktop_preferences.c:40
 msgid "Keyboard Settings setup"
 msgstr "Налаштування клавіатури"
 
-#: src/gtk+2.x.c:69
-msgid "Keyboard configuration tool"
-msgstr "Засіб налаштування клавіатури"
-
-#: src/gtk+2.x_tab_page_distribution.c:224
-msgid "Layout"
-msgstr "Розкладка"
-
-#: src/gtk+2.x_tab_page_distribution.c:155
-msgid "Layout:"
-msgstr "Розкладка:"
-
-#: src/gtk+2.x_tab_page_others.c:29 src/gtk+2.x_tab_page_others.c:78
-msgid "None"
-msgstr "Жодної"
-
-#: src/gtk+2.x_tab_page_others.c:134
-msgid "Other Options"
-msgstr "Інші параметри"
-
-#: src/gtk+2.x_tab_page_distribution.c:132
-msgid "Pick a keyboard layout"
-msgstr "Виберіть розкладку"
-
-#: src/gtk+2.x_tab_page_others.c:152
-msgid ""
-"Select a key combination to switch between layouts\n"
-"or just select 'None'."
-msgstr ""
-"Виберіть комбінацію клавіш для зміни розкладок\n"
-"або виберіть 'Жодної'."
-
-#: src/manage_desktop_preferences.c:40
+#: src/manage_desktop_preferences.c:41
 msgid "Sets up your preferred keyboard settings"
 msgstr "Налаштуйте клавіатуру до вподоби"
 
-#: src/gtk+2.x_tab_page_distribution.c:190
-msgid "Test here:"
-msgstr "Перевірте отут:"
+#: src/manage_xorg_rules.c:131
+msgid "Default"
+msgstr "За змовчанням"
 
-#: src/gtk+2.x_tab_page_others.c:110 src/gtk+2.x.c:31
-msgid "The configuration was applied successfully."
-msgstr "Конфігурацію застосовано."
-
-#: src/gtk+2.x_tab_page_distribution.c:229
-msgid "Variant"
-msgstr "Варіант"
-
-#: src/gtk+2.x_tab_page_distribution.c:156
-msgid "Variant: "
-msgstr "Варіант: "
-
-#: src/gtk+2.x_tab_page_others.c:187
-msgid ""
-"WARNING: Be aware that changing these settings may\n"
-"result in system malfunction."
+#: src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""
-"ПОПЕРЕДЖЕННЯ: зміна цих налаштувань може\n"
-"призвести до втрати керування системою."
+"Для застосування цієї конфігурації до всієї системи введіть ваш пароль."

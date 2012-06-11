@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lxkb-config 0.9.1\n"
 "Report-Msgid-Bugs-To: azubieta@estudiantes.uci.cu\n"
-"POT-Creation-Date: 2012-05-17 21:59-0400\n"
+"POT-Creation-Date: 2012-05-22 15:40-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,77 +17,103 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/gtk+2.x_tab_page_distribution.c:132
+#: src/main.c:29
+#, c-format
+msgid ""
+"X-Keyboard rules can't be loaded.\n"
+"Plase check that you have xkb-data installed."
+msgstr ""
+
+#: src/main.c:37
+#, c-format
+msgid ""
+"Keyboard user preferences can't be loaded.\n"
+"Plase check that you have setxkbmap installed."
+msgstr ""
+
+#: src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr ""
+
+#: src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr ""
+
+#: src/gtk+2.x.c:70
+msgid "Keyboard configuration tool"
+msgstr ""
+
+#: src/gtk+2.x_tab_page_layouts.c:132
 msgid "Pick a keyboard layout"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_distribution.c:145
-msgid "Distribution:"
+#: src/gtk+2.x_tab_page_layouts.c:145
+msgid "Layouts:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_distribution.c:155
+#: src/gtk+2.x_tab_page_layouts.c:155
 msgid "Layout:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_distribution.c:156
+#: src/gtk+2.x_tab_page_layouts.c:156
 msgid "Variant: "
 msgstr ""
 
-#: src/gtk+2.x_tab_page_distribution.c:190
+#: src/gtk+2.x_tab_page_layouts.c:190
 msgid "Test here:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_distribution.c:224
+#: src/gtk+2.x_tab_page_layouts.c:224
 msgid "Layout"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_distribution.c:229
+#: src/gtk+2.x_tab_page_layouts.c:229
 msgid "Variant"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_distribution.c:356
-msgid "Distribution"
+#: src/gtk+2.x_tab_page_layouts.c:356
+msgid "Layouts"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:29 src/gtk+2.x_tab_page_others.c:78
+#: src/gtk+2.x_tab_page_others.c:28 src/gtk+2.x_tab_page_others.c:77
 msgid "None"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:134
+#: src/gtk+2.x_tab_page_others.c:133
 msgid "Other Options"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:139
+#: src/gtk+2.x_tab_page_others.c:138
 msgid "Key(s) to change layout:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:152
+#: src/gtk+2.x_tab_page_others.c:151
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:172
+#: src/gtk+2.x_tab_page_others.c:171
 msgid "Keyboard Model:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:187
+#: src/gtk+2.x_tab_page_others.c:186
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:211
+#: src/gtk+2.x_tab_page_others.c:210
 msgid "Global Configuration:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:229
+#: src/gtk+2.x_tab_page_others.c:228
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:234
+#: src/gtk+2.x_tab_page_others.c:233
 msgid "Apply Globaly"
 msgstr ""
 
@@ -109,27 +135,15 @@ msgid ""
 "https://github.com/azubieta/lxkb_config/downloads"
 msgstr ""
 
-#: src/gtk+2.x.c:31
-msgid "The configuration was applied successfully."
-msgstr ""
-
-#: src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr ""
-
-#: src/gtk+2.x.c:69
-msgid "Keyboard configuration tool"
-msgstr ""
-
-#: src/manage_desktop_preferences.c:39
+#: src/manage_desktop_preferences.c:40
 msgid "Keyboard Settings setup"
 msgstr ""
 
-#: src/manage_desktop_preferences.c:40
+#: src/manage_desktop_preferences.c:41
 msgid "Sets up your preferred keyboard settings"
 msgstr ""
 
-#: src/manage_xorg_rules.c:118
+#: src/manage_xorg_rules.c:131
 msgid "Default"
 msgstr ""
 
