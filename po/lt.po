@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lxkb_config 0.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-07 22:14+0200\n"
-"PO-Revision-Date: 2012-06-08 09:46+0300\n"
+"POT-Creation-Date: 2012-06-12 08:14+0300\n"
+"PO-Revision-Date: 2012-06-12 08:23+0300\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "Language: lt\n"
@@ -20,54 +20,84 @@ msgstr ""
 "%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:132
+#: ../src/main.c:29
+#, c-format
+msgid ""
+"X-Keyboard rules can't be loaded.\n"
+"Plase check that you have xkb-data installed."
+msgstr ""
+"X-Keyboard taisyklių įkrauti nepavyko.\n"
+"Įsitikinkite jog esate įdiegę „xkb-data“."
+
+#: ../src/main.c:37
+#, c-format
+msgid ""
+"Keyboard user preferences can't be loaded.\n"
+"Plase check that you have setxkbmap installed."
+msgstr ""
+"Įkrauti naudotojo klaviatūros nustatymų nepavyko.\n"
+"Įsitikinkite jog esate įdiegę „setxkbmap“."
+
+#: ../src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Konfigūracija sėkmingai pritaikyta."
+
+#: ../src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Taikant konfigūraciją įvyko klaida."
+
+#: ../src/gtk+2.x.c:70
+msgid "Keyboard configuration tool"
+msgstr "Klaviatūros konfigūravimo įrankis"
+
+#: ../src/gtk+2.x_tab_page_layouts.c:132
 msgid "Pick a keyboard layout"
 msgstr "Pasirinkite klaviatūros išdėstymą"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:145
-msgid "Distribution:"
-msgstr "Išdėstymas:"
+#: ../src/gtk+2.x_tab_page_layouts.c:145
+msgid "Layouts:"
+msgstr "Išdėstymai:"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:155
+#: ../src/gtk+2.x_tab_page_layouts.c:155
 msgid "Layout:"
 msgstr "Išdėstymas:"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:156
+#: ../src/gtk+2.x_tab_page_layouts.c:156
 msgid "Variant: "
 msgstr "Variantas:"
 
 #. Testa area
-#: .././src/gtk+2.x_tab_page_distribution.c:190
+#: ../src/gtk+2.x_tab_page_layouts.c:190
 msgid "Test here:"
 msgstr "Pabandykite:"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:224
+#: ../src/gtk+2.x_tab_page_layouts.c:224
 msgid "Layout"
 msgstr "Išdėstymas"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:229
+#: ../src/gtk+2.x_tab_page_layouts.c:229
 msgid "Variant"
 msgstr "Variantas"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:356
-msgid "Distribution"
-msgstr "Išdėstymas"
+#: ../src/gtk+2.x_tab_page_layouts.c:361
+msgid "Layouts"
+msgstr "Išdėstymai"
 
 #. apppend None option
-#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
+#: ../src/gtk+2.x_tab_page_others.c:28 ../src/gtk+2.x_tab_page_others.c:77
 msgid "None"
 msgstr "Jokia"
 
-#: .././src/gtk+2.x_tab_page_others.c:134
+#: ../src/gtk+2.x_tab_page_others.c:133
 msgid "Other Options"
 msgstr "Kitos parinktys"
 
 #. Option Keyboard Switch
-#: .././src/gtk+2.x_tab_page_others.c:139
+#: ../src/gtk+2.x_tab_page_others.c:138
 msgid "Key(s) to change layout:"
 msgstr "Keisti išdėstymą:"
 
-#: .././src/gtk+2.x_tab_page_others.c:152
+#: ../src/gtk+2.x_tab_page_others.c:151
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
@@ -76,11 +106,11 @@ msgstr ""
 "išdėstymų arba pasirinkite „Jokia“."
 
 #. keyboard model frame
-#: .././src/gtk+2.x_tab_page_others.c:172
+#: ../src/gtk+2.x_tab_page_others.c:171
 msgid "Keyboard Model:"
 msgstr "Klaviatūros modelis:"
 
-#: .././src/gtk+2.x_tab_page_others.c:187
+#: ../src/gtk+2.x_tab_page_others.c:186
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
@@ -89,11 +119,11 @@ msgstr ""
 "gali privesti prie sistemos sugadinimo."
 
 #. Global configuration
-#: .././src/gtk+2.x_tab_page_others.c:211
+#: ../src/gtk+2.x_tab_page_others.c:210
 msgid "Global Configuration:"
 msgstr "Bendra konfigūracija:"
 
-#: .././src/gtk+2.x_tab_page_others.c:229
+#: ../src/gtk+2.x_tab_page_others.c:228
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
@@ -101,20 +131,20 @@ msgstr ""
 "Šią konfigūraciją pritaikyti ne vien jūsų sesijai,\n"
 "bet visai sistemai."
 
-#: .././src/gtk+2.x_tab_page_others.c:234
+#: ../src/gtk+2.x_tab_page_others.c:233
 msgid "Apply Globally"
 msgstr "Pritaikyti visur"
 
-#: .././src/gtk+2.x_tab_page_about.c:21
+#: ../src/gtk+2.x_tab_page_about.c:21
 msgid "About"
 msgstr "Apie"
 
-#: .././src/gtk+2.x_tab_page_about.c:25
+#: ../src/gtk+2.x_tab_page_about.c:25
 msgid ""
 "Developers:\n"
-"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
 "\n"
-"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
 "Repository:\n"
 "https://github.com/azubieta/lxkb_config\n"
@@ -133,31 +163,25 @@ msgstr ""
 "Naujausia versija:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
-#: .././src/gtk+2.x.c:31
-msgid "The configuration was applied successfully."
-msgstr "Konfigūracija sėkmingai pritaikyta."
-
-#: .././src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr "Taikant konfigūraciją įvyko klaida."
-
-#: .././src/gtk+2.x.c:69
-msgid "Keyboard configuration tool"
-msgstr "Klaviatūros konfigūravimo įrankis"
-
-#: .././src/manage_desktop_preferences.c:39
+#: ../src/manage_desktop_preferences.c:40
 msgid "Keyboard Settings setup"
 msgstr "Klaviatūros nustatymas"
 
-#: .././src/manage_desktop_preferences.c:40
+#: ../src/manage_desktop_preferences.c:41
 msgid "Sets up your preferred keyboard settings"
 msgstr "Nustato jūsų pageidaujamus klaviatūros nustatymus"
 
-#: .././src/manage_xorg_rules.c:118
+#: ../src/manage_xorg_rules.c:131
 msgid "Default"
 msgstr "Numatytieji"
 
-#: .././src/manage_xorg_preferences.c:96
+#: ../src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""
 "Įveskite savo slaptažodį, kad nustatymai būtų pritaikyti visai sistemai."
+
+#~ msgid "Distribution:"
+#~ msgstr "Išdėstymas:"
+
+#~ msgid "Distribution"
+#~ msgstr "Išdėstymas"
