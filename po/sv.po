@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-12 08:23+0200\n"
-"PO-Revision-Date: 2012-06-07 22:13+0200\n"
+"PO-Revision-Date: 2012-06-12 08:27+0200\n"
 "Last-Translator: Martin <brother@bsnet.se>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sv\n"
@@ -24,6 +24,8 @@ msgid ""
 "X-Keyboard rules can't be loaded.\n"
 "Plase check that you have xkb-data installed."
 msgstr ""
+"X-Keyboard-regler kan inte läsas in.\n"
+"Kontrollera att du har xkb-data installerat."
 
 #: ../src/main.c:37
 #, c-format
@@ -31,6 +33,8 @@ msgid ""
 "Keyboard user preferences can't be loaded.\n"
 "Plase check that you have setxkbmap installed."
 msgstr ""
+"Användarinställningar för tangentbordet kunde inte läsas in.\n"
+"Kontrollera att du har setxkbmap installerat."
 
 #: ../src/gtk+2.x.c:31
 msgid "The configuration was applied successfully."
@@ -49,9 +53,8 @@ msgid "Pick a keyboard layout"
 msgstr "Välj tangentbordsupplägg"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:145
-#, fuzzy
 msgid "Layouts:"
-msgstr "Utseende:"
+msgstr "Upplägg:"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:155
 msgid "Layout:"
@@ -75,9 +78,8 @@ msgid "Variant"
 msgstr "Variant"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:361
-#, fuzzy
 msgid "Layouts"
-msgstr "Utseende"
+msgstr "Upplägg"
 
 #. apppend None option
 #: ../src/gtk+2.x_tab_page_others.c:28 ../src/gtk+2.x_tab_page_others.c:77
@@ -137,7 +139,6 @@ msgstr "Om"
 
 # PROTEST!
 #: ../src/gtk+2.x_tab_page_about.c:25
-#, fuzzy
 msgid ""
 "Developers:\n"
 "Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
@@ -152,6 +153,7 @@ msgid ""
 msgstr ""
 "Utvecklare:\n"
 "Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
 "Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
 "Kodförråd:\n"
