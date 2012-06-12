@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-07 22:14+0200\n"
+"POT-Creation-Date: 2012-06-12 08:23+0200\n"
 "PO-Revision-Date: 2012-05-23 13:25+0200\n"
 "Last-Translator: Wylmer <wantinghard@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,54 +18,82 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:132
+#: ../src/main.c:29
+#, c-format
+msgid ""
+"X-Keyboard rules can't be loaded.\n"
+"Plase check that you have xkb-data installed."
+msgstr ""
+
+#: ../src/main.c:37
+#, c-format
+msgid ""
+"Keyboard user preferences can't be loaded.\n"
+"Plase check that you have setxkbmap installed."
+msgstr ""
+
+#: ../src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "成功应用了配置。"
+
+#: ../src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "应用配置时出错。"
+
+#: ../src/gtk+2.x.c:70
+msgid "Keyboard configuration tool"
+msgstr "键盘配置工具"
+
+#: ../src/gtk+2.x_tab_page_layouts.c:132
 msgid "Pick a keyboard layout"
 msgstr "选择一种键盘布局"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:145
-msgid "Distribution:"
-msgstr "分布："
+#: ../src/gtk+2.x_tab_page_layouts.c:145
+#, fuzzy
+msgid "Layouts:"
+msgstr "布局："
 
-#: .././src/gtk+2.x_tab_page_distribution.c:155
+#: ../src/gtk+2.x_tab_page_layouts.c:155
 msgid "Layout:"
 msgstr "布局："
 
-#: .././src/gtk+2.x_tab_page_distribution.c:156
+#: ../src/gtk+2.x_tab_page_layouts.c:156
 msgid "Variant: "
 msgstr "变体："
 
 #. Testa area
-#: .././src/gtk+2.x_tab_page_distribution.c:190
+#: ../src/gtk+2.x_tab_page_layouts.c:190
 msgid "Test here:"
 msgstr "在此测试："
 
-#: .././src/gtk+2.x_tab_page_distribution.c:224
+#: ../src/gtk+2.x_tab_page_layouts.c:224
 msgid "Layout"
 msgstr "布局"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:229
+#: ../src/gtk+2.x_tab_page_layouts.c:229
 msgid "Variant"
 msgstr "变体"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:356
-msgid "Distribution"
-msgstr "分布"
+#: ../src/gtk+2.x_tab_page_layouts.c:361
+#, fuzzy
+msgid "Layouts"
+msgstr "布局"
 
 #. apppend None option
-#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
+#: ../src/gtk+2.x_tab_page_others.c:28 ../src/gtk+2.x_tab_page_others.c:77
 msgid "None"
 msgstr "无"
 
-#: .././src/gtk+2.x_tab_page_others.c:134
+#: ../src/gtk+2.x_tab_page_others.c:133
 msgid "Other Options"
 msgstr "其他选项"
 
 #. Option Keyboard Switch
-#: .././src/gtk+2.x_tab_page_others.c:139
+#: ../src/gtk+2.x_tab_page_others.c:138
 msgid "Key(s) to change layout:"
 msgstr "更改布局的按键："
 
-#: .././src/gtk+2.x_tab_page_others.c:152
+#: ../src/gtk+2.x_tab_page_others.c:151
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
@@ -74,11 +102,11 @@ msgstr ""
 "或直接选择“无”"
 
 #. keyboard model frame
-#: .././src/gtk+2.x_tab_page_others.c:172
+#: ../src/gtk+2.x_tab_page_others.c:171
 msgid "Keyboard Model:"
 msgstr "键盘型号："
 
-#: .././src/gtk+2.x_tab_page_others.c:187
+#: ../src/gtk+2.x_tab_page_others.c:186
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
@@ -87,11 +115,11 @@ msgstr ""
 "系统功能异常。"
 
 #. Global configuration
-#: .././src/gtk+2.x_tab_page_others.c:211
+#: ../src/gtk+2.x_tab_page_others.c:210
 msgid "Global Configuration:"
 msgstr "全局配置："
 
-#: .././src/gtk+2.x_tab_page_others.c:229
+#: ../src/gtk+2.x_tab_page_others.c:228
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
@@ -99,21 +127,22 @@ msgstr ""
 "将此键盘配置同时应用于您的会话\n"
 "及整个系统。"
 
-#: .././src/gtk+2.x_tab_page_others.c:234
+#: ../src/gtk+2.x_tab_page_others.c:233
 #, fuzzy
 msgid "Apply Globally"
 msgstr "应用到全局"
 
-#: .././src/gtk+2.x_tab_page_about.c:21
+#: ../src/gtk+2.x_tab_page_about.c:21
 msgid "About"
 msgstr "关于"
 
-#: .././src/gtk+2.x_tab_page_about.c:25
+#: ../src/gtk+2.x_tab_page_about.c:25
+#, fuzzy
 msgid ""
 "Developers:\n"
-"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
 "\n"
-"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
 "Repository:\n"
 "https://github.com/azubieta/lxkb_config\n"
@@ -132,30 +161,24 @@ msgstr ""
 "上个版本：\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
-#: .././src/gtk+2.x.c:31
-msgid "The configuration was applied successfully."
-msgstr "成功应用了配置。"
-
-#: .././src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr "应用配置时出错。"
-
-#: .././src/gtk+2.x.c:69
-msgid "Keyboard configuration tool"
-msgstr "键盘配置工具"
-
-#: .././src/manage_desktop_preferences.c:39
+#: ../src/manage_desktop_preferences.c:40
 msgid "Keyboard Settings setup"
 msgstr "键盘选项设置"
 
-#: .././src/manage_desktop_preferences.c:40
+#: ../src/manage_desktop_preferences.c:41
 msgid "Sets up your preferred keyboard settings"
 msgstr "设置您偏好的键盘选项"
 
-#: .././src/manage_xorg_rules.c:118
+#: ../src/manage_xorg_rules.c:131
 msgid "Default"
 msgstr "默认"
 
-#: .././src/manage_xorg_preferences.c:96
+#: ../src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
 msgstr "请提供您的密码以将该配置设置到整个系统。"
+
+#~ msgid "Distribution:"
+#~ msgstr "分布："
+
+#~ msgid "Distribution"
+#~ msgstr "分布"

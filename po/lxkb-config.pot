@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: lxkb-config 0.9.1\n"
-"Report-Msgid-Bugs-To: azubieta@estudiantes.uci.cu\n"
-"POT-Creation-Date: 2012-05-22 15:40-0400\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-12 08:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,111 +17,116 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/main.c:29
+#: ../src/main.c:29
 #, c-format
 msgid ""
 "X-Keyboard rules can't be loaded.\n"
 "Plase check that you have xkb-data installed."
 msgstr ""
 
-#: src/main.c:37
+#: ../src/main.c:37
 #, c-format
 msgid ""
 "Keyboard user preferences can't be loaded.\n"
 "Plase check that you have setxkbmap installed."
 msgstr ""
 
-#: src/gtk+2.x.c:31
+#: ../src/gtk+2.x.c:31
 msgid "The configuration was applied successfully."
 msgstr ""
 
-#: src/gtk+2.x.c:37
+#: ../src/gtk+2.x.c:37
 msgid "Error while applying the configuration."
 msgstr ""
 
-#: src/gtk+2.x.c:70
+#: ../src/gtk+2.x.c:70
 msgid "Keyboard configuration tool"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_layouts.c:132
+#: ../src/gtk+2.x_tab_page_layouts.c:132
 msgid "Pick a keyboard layout"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_layouts.c:145
+#: ../src/gtk+2.x_tab_page_layouts.c:145
 msgid "Layouts:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_layouts.c:155
+#: ../src/gtk+2.x_tab_page_layouts.c:155
 msgid "Layout:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_layouts.c:156
+#: ../src/gtk+2.x_tab_page_layouts.c:156
 msgid "Variant: "
 msgstr ""
 
-#: src/gtk+2.x_tab_page_layouts.c:190
+#. Testa area
+#: ../src/gtk+2.x_tab_page_layouts.c:190
 msgid "Test here:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_layouts.c:224
+#: ../src/gtk+2.x_tab_page_layouts.c:224
 msgid "Layout"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_layouts.c:229
+#: ../src/gtk+2.x_tab_page_layouts.c:229
 msgid "Variant"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_layouts.c:356
+#: ../src/gtk+2.x_tab_page_layouts.c:361
 msgid "Layouts"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:28 src/gtk+2.x_tab_page_others.c:77
+#. apppend None option
+#: ../src/gtk+2.x_tab_page_others.c:28 ../src/gtk+2.x_tab_page_others.c:77
 msgid "None"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:133
+#: ../src/gtk+2.x_tab_page_others.c:133
 msgid "Other Options"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:138
+#. Option Keyboard Switch
+#: ../src/gtk+2.x_tab_page_others.c:138
 msgid "Key(s) to change layout:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:151
+#: ../src/gtk+2.x_tab_page_others.c:151
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:171
+#. keyboard model frame
+#: ../src/gtk+2.x_tab_page_others.c:171
 msgid "Keyboard Model:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:186
+#: ../src/gtk+2.x_tab_page_others.c:186
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:210
+#. Global configuration
+#: ../src/gtk+2.x_tab_page_others.c:210
 msgid "Global Configuration:"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:228
+#: ../src/gtk+2.x_tab_page_others.c:228
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
 msgstr ""
 
-#: src/gtk+2.x_tab_page_others.c:233
-msgid "Apply Globaly"
+#: ../src/gtk+2.x_tab_page_others.c:233
+msgid "Apply Globally"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_about.c:21
+#: ../src/gtk+2.x_tab_page_about.c:21
 msgid "About"
 msgstr ""
 
-#: src/gtk+2.x_tab_page_about.c:25
+#: ../src/gtk+2.x_tab_page_about.c:25
 msgid ""
 "Developers:\n"
 "Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
@@ -135,18 +140,18 @@ msgid ""
 "https://github.com/azubieta/lxkb_config/downloads"
 msgstr ""
 
-#: src/manage_desktop_preferences.c:40
+#: ../src/manage_desktop_preferences.c:40
 msgid "Keyboard Settings setup"
 msgstr ""
 
-#: src/manage_desktop_preferences.c:41
+#: ../src/manage_desktop_preferences.c:41
 msgid "Sets up your preferred keyboard settings"
 msgstr ""
 
-#: src/manage_xorg_rules.c:131
+#: ../src/manage_xorg_rules.c:131
 msgid "Default"
 msgstr ""
 
-#: src/manage_xorg_preferences.c:96
+#: ../src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-07 22:14+0200\n"
+"POT-Creation-Date: 2012-06-12 08:23+0200\n"
 "PO-Revision-Date: 2012-06-10 15:29+0200\n"
 "Last-Translator: Yaron <sh.yaron@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,54 +18,82 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:132
+#: ../src/main.c:29
+#, c-format
+msgid ""
+"X-Keyboard rules can't be loaded.\n"
+"Plase check that you have xkb-data installed."
+msgstr ""
+
+#: ../src/main.c:37
+#, c-format
+msgid ""
+"Keyboard user preferences can't be loaded.\n"
+"Plase check that you have setxkbmap installed."
+msgstr ""
+
+#: ../src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "התצורה חלה בהצלחה."
+
+#: ../src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "אירעה שגיאה בעת החלת התצורה."
+
+#: ../src/gtk+2.x.c:70
+msgid "Keyboard configuration tool"
+msgstr "כלי תצורת המקלדת"
+
+#: ../src/gtk+2.x_tab_page_layouts.c:132
 msgid "Pick a keyboard layout"
 msgstr "נא לבחור בפריסת מקלדת"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:145
-msgid "Distribution:"
-msgstr "פיזור:"
+#: ../src/gtk+2.x_tab_page_layouts.c:145
+#, fuzzy
+msgid "Layouts:"
+msgstr "פריסה:"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:155
+#: ../src/gtk+2.x_tab_page_layouts.c:155
 msgid "Layout:"
 msgstr "פריסה:"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:156
+#: ../src/gtk+2.x_tab_page_layouts.c:156
 msgid "Variant: "
 msgstr "הגוון:"
 
 #. Testa area
-#: .././src/gtk+2.x_tab_page_distribution.c:190
+#: ../src/gtk+2.x_tab_page_layouts.c:190
 msgid "Test here:"
 msgstr "ניתן לבדוק כאן:"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:224
+#: ../src/gtk+2.x_tab_page_layouts.c:224
 msgid "Layout"
 msgstr "פריסה"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:229
+#: ../src/gtk+2.x_tab_page_layouts.c:229
 msgid "Variant"
 msgstr "הגוון"
 
-#: .././src/gtk+2.x_tab_page_distribution.c:356
-msgid "Distribution"
-msgstr "פיזור"
+#: ../src/gtk+2.x_tab_page_layouts.c:361
+#, fuzzy
+msgid "Layouts"
+msgstr "פריסה"
 
 #. apppend None option
-#: .././src/gtk+2.x_tab_page_others.c:29 .././src/gtk+2.x_tab_page_others.c:78
+#: ../src/gtk+2.x_tab_page_others.c:28 ../src/gtk+2.x_tab_page_others.c:77
 msgid "None"
 msgstr "ללא"
 
-#: .././src/gtk+2.x_tab_page_others.c:134
+#: ../src/gtk+2.x_tab_page_others.c:133
 msgid "Other Options"
 msgstr "אפשרויות אחרות"
 
 #. Option Keyboard Switch
-#: .././src/gtk+2.x_tab_page_others.c:139
+#: ../src/gtk+2.x_tab_page_others.c:138
 msgid "Key(s) to change layout:"
 msgstr "מקש/ים להחלפת הפריסה:"
 
-#: .././src/gtk+2.x_tab_page_others.c:152
+#: ../src/gtk+2.x_tab_page_others.c:151
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
@@ -74,11 +102,11 @@ msgstr ""
 "או שבאפשרותך פשוט לבחור ב„ללא“."
 
 #. keyboard model frame
-#: .././src/gtk+2.x_tab_page_others.c:172
+#: ../src/gtk+2.x_tab_page_others.c:171
 msgid "Keyboard Model:"
 msgstr "דגם המקלדת:"
 
-#: .././src/gtk+2.x_tab_page_others.c:187
+#: ../src/gtk+2.x_tab_page_others.c:186
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
@@ -87,11 +115,11 @@ msgstr ""
 "לפגיעה בתקינות המערכת."
 
 #. Global configuration
-#: .././src/gtk+2.x_tab_page_others.c:211
+#: ../src/gtk+2.x_tab_page_others.c:210
 msgid "Global Configuration:"
 msgstr "תצורה כללית:"
 
-#: .././src/gtk+2.x_tab_page_others.c:229
+#: ../src/gtk+2.x_tab_page_others.c:228
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
@@ -99,20 +127,21 @@ msgstr ""
 "החלת הגדרות אלו לא רק על ההפעלה שלך אלא על\n"
 "כל המערכת."
 
-#: .././src/gtk+2.x_tab_page_others.c:234
+#: ../src/gtk+2.x_tab_page_others.c:233
 msgid "Apply Globally"
 msgstr "החלה כללית"
 
-#: .././src/gtk+2.x_tab_page_about.c:21
+#: ../src/gtk+2.x_tab_page_about.c:21
 msgid "About"
 msgstr "על אודות"
 
-#: .././src/gtk+2.x_tab_page_about.c:25
+#: ../src/gtk+2.x_tab_page_about.c:25
+#, fuzzy
 msgid ""
 "Developers:\n"
-"Alexis López Zubieta --> azubieta@estudiantes.uci.cu\n"
+"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
 "\n"
-"Dairelys García Rivas --> dgrivas@estudiantes.uci.cu\n"
+"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
 "Repository:\n"
 "https://github.com/azubieta/lxkb_config\n"
@@ -121,35 +150,29 @@ msgid ""
 "https://github.com/azubieta/lxkb_config/downloads"
 msgstr ""
 "מתכנתים:\n"
-"Alexis López Zubieta --> azubieta@estudiantes.uci.cuDairelys García Rivas "
-"--> "
-"dgrivas@estudiantes.uci.cuמאגר:https://github.com/azubieta/lxkb_configהגרסה "
-"העדכנית ביותר:https://github.com/azubieta/lxkb_config/downloads"
+"Alexis López Zubieta --> azubieta@estudiantes.uci.cuDairelys García Rivas --"
+"> dgrivas@estudiantes.uci.cuמאגר:https://github.com/azubieta/"
+"lxkb_configהגרסה העדכנית ביותר:https://github.com/azubieta/lxkb_config/"
+"downloads"
 
-#: .././src/gtk+2.x.c:31
-msgid "The configuration was applied successfully."
-msgstr "התצורה חלה בהצלחה."
-
-#: .././src/gtk+2.x.c:37
-msgid "Error while applying the configuration."
-msgstr "אירעה שגיאה בעת החלת התצורה."
-
-#: .././src/gtk+2.x.c:69
-msgid "Keyboard configuration tool"
-msgstr "כלי תצורת המקלדת"
-
-#: .././src/manage_desktop_preferences.c:39
+#: ../src/manage_desktop_preferences.c:40
 msgid "Keyboard Settings setup"
 msgstr "הגדרות מקלדת"
 
-#: .././src/manage_desktop_preferences.c:40
+#: ../src/manage_desktop_preferences.c:41
 msgid "Sets up your preferred keyboard settings"
 msgstr "תכנית לסיוע בהגדרות המקלדת המועדפות עליך"
 
-#: .././src/manage_xorg_rules.c:118
+#: ../src/manage_xorg_rules.c:131
 msgid "Default"
 msgstr "בררת מחדל"
 
-#: .././src/manage_xorg_preferences.c:96
+#: ../src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
 msgstr "עליך להציג את הססמה שלך כדי להגדיר תצורה זו לכל המערכת."
+
+#~ msgid "Distribution:"
+#~ msgstr "פיזור:"
+
+#~ msgid "Distribution"
+#~ msgstr "פיזור"
