@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-12 08:23+0200\n"
-"PO-Revision-Date: 2012-05-25 23:27+0200\n"
+"PO-Revision-Date: 2012-06-13 02:31+0200\n"
 "Last-Translator: Hugo <sysadmin@cips.cu>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -24,8 +24,8 @@ msgid ""
 "X-Keyboard rules can't be loaded.\n"
 "Plase check that you have xkb-data installed."
 msgstr ""
-"Aplicar esta configuración a todo el sistema.\n"
-" "
+"Imposible cargar las reglas de X-Keyboard.\n"
+"Por favor, verifique que tiene instalado xkb-data. "
 
 #: ../src/main.c:37
 #, c-format
@@ -33,14 +33,16 @@ msgid ""
 "Keyboard user preferences can't be loaded.\n"
 "Plase check that you have setxkbmap installed."
 msgstr ""
+"Imposible cargar las preferencias de usuario del teclado.\n"
+"Por favor, verifique que tiene instalado setxkbmap."
 
 #: ../src/gtk+2.x.c:31
 msgid "The configuration was applied successfully."
-msgstr "La configuración fue aplicada con éxito."
+msgstr "La configuración se aplicó exitosamente."
 
 #: ../src/gtk+2.x.c:37
 msgid "Error while applying the configuration."
-msgstr "Error miestras se aplicaba la configuración."
+msgstr "Error al aplicar la configuración."
 
 #: ../src/gtk+2.x.c:70
 msgid "Keyboard configuration tool"
@@ -51,9 +53,8 @@ msgid "Pick a keyboard layout"
 msgstr "Elija una distribución de teclado"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:145
-#, fuzzy
 msgid "Layouts:"
-msgstr "Distribución:"
+msgstr "Distribuciones:"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:155
 msgid "Layout:"
@@ -77,9 +78,8 @@ msgid "Variant"
 msgstr "Variante"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:361
-#, fuzzy
 msgid "Layouts"
-msgstr "Distribución"
+msgstr "Distribuciones"
 
 #. apppend None option
 #: ../src/gtk+2.x_tab_page_others.c:28 ../src/gtk+2.x_tab_page_others.c:77
@@ -126,11 +126,12 @@ msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
 msgstr ""
+"Aplicar esta configuración del teclado no solo a su\n"
+"sesión, sino también a todo el sistema."
 
 #: ../src/gtk+2.x_tab_page_others.c:233
-#, fuzzy
 msgid "Apply Globally"
-msgstr "Aplicar a todo el sistema"
+msgstr "Aplicar globalmente"
 
 #: ../src/gtk+2.x_tab_page_about.c:21
 msgid "About"
@@ -149,6 +150,16 @@ msgid ""
 "Last version:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 msgstr ""
+"Desarrolladores:\n"
+"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Repositorio:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Última versión:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
 
 #: ../src/manage_desktop_preferences.c:40
 msgid "Keyboard Settings setup"
@@ -165,7 +176,8 @@ msgstr "Predefinida"
 #: ../src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
 msgstr ""
-"Entre su constraseña para establecer esta configuración a todo el sistema."
+"Introduzca su contraseña para establecer esta configuración a todo el "
+"sistema."
 
 #~ msgid "Distribution:"
 #~ msgstr "Distribución"
