@@ -54,5 +54,5 @@ AC_FUNC_MALLOC
 AC_CHECK_FUNCS([memset setlocale strdup])
 
 AC_CONFIG_FILES([Makefile po/Makefile.in
-                 src/Makefile data/keyboard.desktop])
+                 src/Makefile data/lxkb-config.desktop])
 AC_OUTPUT
