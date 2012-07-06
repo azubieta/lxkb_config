@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-12 08:23+0200\n"
-"PO-Revision-Date: 2012-07-06 10:04+0200\n"
+"PO-Revision-Date: 2012-07-06 10:09+0200\n"
 "Last-Translator: Klemen <klemen.kosir@gmx.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sl\n"
@@ -68,7 +68,7 @@ msgstr "Različica:"
 #. Testa area
 #: ../src/gtk+2.x_tab_page_layouts.c:190
 msgid "Test here:"
-msgstr ""
+msgstr "Preizkus razporeditve tipk:"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:224
 msgid "Layout"
@@ -94,14 +94,14 @@ msgstr "Možnosti"
 #. Option Keyboard Switch
 #: ../src/gtk+2.x_tab_page_others.c:138
 msgid "Key(s) to change layout:"
-msgstr ""
+msgstr "Bližnjica:"
 
 #: ../src/gtk+2.x_tab_page_others.c:151
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
 msgstr ""
-"Izberite kombinacijo tipk, s katero lahko spreminjate\n"
+"Izberite bližnjico, s katero lahko spreminjate\n"
 "razporeditev tipk."
 
 #. keyboard model frame
@@ -114,6 +114,8 @@ msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
 msgstr ""
+"OPOZORILO: Spreminjanje teh nastavitev lahko\n"
+"močno vpliva na delovanje sistema."
 
 #. Global configuration
 #: ../src/gtk+2.x_tab_page_others.c:210
@@ -124,11 +126,11 @@ msgstr "Splošne nastavitve:"
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
-msgstr ""
+msgstr "Uveljavite nastavitve tipkovnice za celoten sistem."
 
 #: ../src/gtk+2.x_tab_page_others.c:233
 msgid "Apply Globally"
-msgstr ""
+msgstr "Uveljavi"
 
 #: ../src/gtk+2.x_tab_page_about.c:21
 msgid "About"
@@ -164,7 +166,7 @@ msgstr "Nastavitve tipkovnice"
 
 #: ../src/manage_desktop_preferences.c:41
 msgid "Sets up your preferred keyboard settings"
-msgstr ""
+msgstr "Nastavite razporeditev tipk in model tipkovnice."
 
 #: ../src/manage_xorg_rules.c:131
 msgid "Default"
@@ -172,4 +174,4 @@ msgstr "Privzeto"
 
 #: ../src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
-msgstr ""
+msgstr "Prosimo, vnesite geslo."
