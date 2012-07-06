@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-12 08:23+0200\n"
+"PO-Revision-Date: 2012-07-06 10:04+0200\n"
+"Last-Translator: Klemen <klemen.kosir@gmx.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#: ../src/main.c:29
+#, c-format
+msgid ""
+"X-Keyboard rules can't be loaded.\n"
+"Plase check that you have xkb-data installed."
+msgstr ""
+"Pravil X-Keyboard ni mogoče naložiti.\n"
+"Prosimo, namestite paket »xkb-data«."
+
+#: ../src/main.c:37
+#, c-format
+msgid ""
+"Keyboard user preferences can't be loaded.\n"
+"Plase check that you have setxkbmap installed."
+msgstr ""
+"Nastavitev tipkovnice ni mogoče naložiti.\n"
+"Prosimo, namestite paket »setxkbmap«."
+
+#: ../src/gtk+2.x.c:31
+msgid "The configuration was applied successfully."
+msgstr "Nastavitve so bile uspešno shranjene."
+
+#: ../src/gtk+2.x.c:37
+msgid "Error while applying the configuration."
+msgstr "Med shranjevanjem nastavitev je prišlo do napake."
+
+#: ../src/gtk+2.x.c:70
+msgid "Keyboard configuration tool"
+msgstr "Nastavitve tipkovnice"
+
+#: ../src/gtk+2.x_tab_page_layouts.c:132
+msgid "Pick a keyboard layout"
+msgstr "Izberite razporeditev tipk"
+
+#: ../src/gtk+2.x_tab_page_layouts.c:145
+msgid "Layouts:"
+msgstr "Razporeditve tipk:"
+
+#: ../src/gtk+2.x_tab_page_layouts.c:155
+msgid "Layout:"
+msgstr "Razporeditev tipk:"
+
+#: ../src/gtk+2.x_tab_page_layouts.c:156
+msgid "Variant: "
+msgstr "Različica:"
+
+#. Testa area
+#: ../src/gtk+2.x_tab_page_layouts.c:190
+msgid "Test here:"
+msgstr ""
+
+#: ../src/gtk+2.x_tab_page_layouts.c:224
+msgid "Layout"
+msgstr "Razporeditev tipk"
+
+#: ../src/gtk+2.x_tab_page_layouts.c:229
+msgid "Variant"
+msgstr "Različica"
+
+#: ../src/gtk+2.x_tab_page_layouts.c:361
+msgid "Layouts"
+msgstr "Razporeditve tipk"
+
+#. apppend None option
+#: ../src/gtk+2.x_tab_page_others.c:28 ../src/gtk+2.x_tab_page_others.c:77
+msgid "None"
+msgstr "Brez"
+
+#: ../src/gtk+2.x_tab_page_others.c:133
+msgid "Other Options"
+msgstr "Možnosti"
+
+#. Option Keyboard Switch
+#: ../src/gtk+2.x_tab_page_others.c:138
+msgid "Key(s) to change layout:"
+msgstr ""
+
+#: ../src/gtk+2.x_tab_page_others.c:151
+msgid ""
+"Select a key combination to switch between layouts\n"
+"or just select 'None'."
+msgstr ""
+"Izberite kombinacijo tipk, s katero lahko spreminjate\n"
+"razporeditev tipk."
+
+#. keyboard model frame
+#: ../src/gtk+2.x_tab_page_others.c:171
+msgid "Keyboard Model:"
+msgstr "Model tipkovnice:"
+
+#: ../src/gtk+2.x_tab_page_others.c:186
+msgid ""
+"WARNING: Be aware that changing these settings may\n"
+"result in system malfunction."
+msgstr ""
+
+#. Global configuration
+#: ../src/gtk+2.x_tab_page_others.c:210
+msgid "Global Configuration:"
+msgstr "Splošne nastavitve:"
+
+#: ../src/gtk+2.x_tab_page_others.c:228
+msgid ""
+"Apply this keyboard configuration not only to your\n"
+"session, but also to the whole system."
+msgstr ""
+
+#: ../src/gtk+2.x_tab_page_others.c:233
+msgid "Apply Globally"
+msgstr ""
+
+#: ../src/gtk+2.x_tab_page_about.c:21
+msgid "About"
+msgstr "O programu"
+
+#: ../src/gtk+2.x_tab_page_about.c:25
+msgid ""
+"Developers:\n"
+"Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
+"\n"
+"Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
+"\n"
+"Repository:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Last version:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+msgstr ""
+"Razvijalci:\n"
+"Alexis Lopez Zubieta <azubieta@estudiantes.uci.cu>\n"
+"\n"
+"Dairelys Garcia Rivas <dgrivas@estudiantes.uci.cu>\n"
+"\n"
+"Skladišče:\n"
+"https://github.com/azubieta/lxkb_config\n"
+"\n"
+"Najnovejša različica:\n"
+"https://github.com/azubieta/lxkb_config/downloads"
+
+#: ../src/manage_desktop_preferences.c:40
+msgid "Keyboard Settings setup"
+msgstr "Nastavitve tipkovnice"
+
+#: ../src/manage_desktop_preferences.c:41
+msgid "Sets up your preferred keyboard settings"
+msgstr ""
+
+#: ../src/manage_xorg_rules.c:131
+msgid "Default"
+msgstr "Privzeto"
+
+#: ../src/manage_xorg_preferences.c:96
+msgid "Introduce your password to set this configuration to the whole system."
+msgstr ""
