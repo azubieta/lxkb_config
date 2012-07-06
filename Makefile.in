@@ -37,7 +37,7 @@ host_triplet = @host@
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(top_srcdir)/configure \
-	$(top_srcdir)/data/keyboard.desktop.in ABOUT-NLS AUTHORS \
+	$(top_srcdir)/data/lxkb-config.desktop.in ABOUT-NLS AUTHORS \
 	COPYING ChangeLog INSTALL NEWS config.guess config.rpath \
 	config.sub depcomp install-sh missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -48,7 +48,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/src/config.h
-CONFIG_CLEAN_FILES = data/keyboard.desktop
+CONFIG_CLEAN_FILES = data/lxkb-config.desktop
 CONFIG_CLEAN_VPATH_FILES =
 SOURCES =
 DIST_SOURCES =
@@ -260,9 +260,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = src po
-EXTRA_DIST = config.rpath README NEWS COPYING data/keyboard.desktop.in
+EXTRA_DIST = config.rpath README NEWS COPYING data/lxkb-config.desktop.in
 desktopfiledir = $(datadir)/applications
-desktopfile_DATA = data/keyboard.desktop
+desktopfile_DATA = data/lxkb-config.desktop
 ACLOCAL_AMFLAGS = -I m4
 all: all-recursive
 
@@ -301,7 +301,7 @@ $(top_srcdir)/configure:  $(am__configure_deps)
 $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
-data/keyboard.desktop: $(top_builddir)/config.status $(top_srcdir)/data/keyboard.desktop.in
+data/lxkb-config.desktop: $(top_builddir)/config.status $(top_srcdir)/data/lxkb-config.desktop.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 install-desktopfileDATA: $(desktopfile_DATA)
 	@$(NORMAL_INSTALL)
