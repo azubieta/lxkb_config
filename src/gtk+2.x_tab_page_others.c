@@ -99,7 +99,7 @@ void
 button_global_callback(GtkWidget *widget, gpointer data) {
     gboolean result;
     GtkDialog * dialog;
-    result = xkb_preferences_write_xorg_config(user_prefs);
+    result = xkb_preferences_write_system_config(user_prefs);
     /*
         if (result) {
             dialog = gtk_message_dialog_new(NULL,

@@ -13,7 +13,7 @@ lxkb_config_SOURCES=\
     manage_xorg_rules.c \
     data_structures.h \
     manage_user_preferences.h \
-    manage_xorg_preferences.c \
+    manage_system_preferences.c \
     setxkbmap_interface.h \
     gtk+2.x_tab_page_layouts.c \
     gtk+2.x.h \
