@@ -6,6 +6,7 @@ Dependecies:
     - libxml-2.0
     - x11-xkb-utils
     - xkb-data
+    - gksu          // Needed at runtime
 
 Follow theese steeps in order to install it. For more options read
 the INSTALL file.
