@@ -1,8 +1,9 @@
 *~
-autom4te.cache/*
+/autom4te.cache
 /build/Release/
 /dist/Release/
-/nbproject/private/
+/nbproject
 /build/Debug/
 /dist/Debug/
 /src/.deps/
+/build/
