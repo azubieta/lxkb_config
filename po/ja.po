@@ -1,22 +1,21 @@
-# Spanish translations for PACKAGE package.
-# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.9\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-12 08:23+0200\n"
-"PO-Revision-Date: 2012-06-13 02:31+0200\n"
-"Last-Translator: Hugo <sysadmin@cips.cu>\n"
-"Language-Team: none\n"
-"Language: es\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
 
 #: ../src/main.c:29
 #, c-format
@@ -24,8 +23,8 @@ msgid ""
 "X-Keyboard rules can't be loaded.\n"
 "Plase check that you have xkb-data installed."
 msgstr ""
-"Imposible cargar las reglas de X-Keyboard.\n"
-"Por favor, verifique que tiene instalado xkb-data. "
+"X-Keyboard のルールがロードできません。\n"
+"xkb-data がインストールされているかご確認ください。"
 
 #: ../src/main.c:37
 #, c-format
@@ -33,109 +32,109 @@ msgid ""
 "Keyboard user preferences can't be loaded.\n"
 "Plase check that you have setxkbmap installed."
 msgstr ""
-"Imposible cargar las preferencias de usuario del teclado.\n"
-"Por favor, verifique que tiene instalado setxkbmap."
+"キーボードのユーザ設定がロードできません。\n"
+"setxkbmap がインストールされているかご確認ください。"
 
 #: ../src/gtk+2.x.c:31
 msgid "The configuration was applied successfully."
-msgstr "La configuración se aplicó exitosamente."
+msgstr "設定の適用に成功しました。"
 
 #: ../src/gtk+2.x.c:37
 msgid "Error while applying the configuration."
-msgstr "Error al aplicar la configuración."
+msgstr "設定の適用でエラーがありました。"
 
 #: ../src/gtk+2.x.c:70
 msgid "Keyboard configuration tool"
-msgstr "Herramienta de configuración de teclado"
+msgstr "キーボード設定ツール"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:132
 msgid "Pick a keyboard layout"
-msgstr "Elija una distribución de teclado"
+msgstr "キーボードレイアウトを選択してください"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:145
 msgid "Layouts:"
-msgstr "Distribuciones:"
+msgstr "レイアウト:"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:155
 msgid "Layout:"
-msgstr "Distribución:"
+msgstr "レイアウト:"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:156
 msgid "Variant: "
-msgstr "Variante:"
+msgstr "変種:"
 
 #. Testa area
 #: ../src/gtk+2.x_tab_page_layouts.c:190
 msgid "Test here:"
-msgstr "Pruebe aquí:"
+msgstr "試し打ち:"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:224
 msgid "Layout"
-msgstr "Distribución"
+msgstr "レイアウト"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:229
 msgid "Variant"
-msgstr "Variante"
+msgstr "変種"
 
 #: ../src/gtk+2.x_tab_page_layouts.c:361
 msgid "Layouts"
-msgstr "Distribuciones"
+msgstr "レイアウト"
 
 #. apppend None option
 #: ../src/gtk+2.x_tab_page_others.c:28 ../src/gtk+2.x_tab_page_others.c:77
 msgid "None"
-msgstr "Ninguna"
+msgstr "なし"
 
 #: ../src/gtk+2.x_tab_page_others.c:133
 msgid "Other Options"
-msgstr "Otras opciones"
+msgstr "その他のオプション"
 
 #. Option Keyboard Switch
 #: ../src/gtk+2.x_tab_page_others.c:138
 msgid "Key(s) to change layout:"
-msgstr "Tecla(s) para cambiar la distribución:"
+msgstr "レイアウトを変更するキー:"
 
 #: ../src/gtk+2.x_tab_page_others.c:151
 msgid ""
 "Select a key combination to switch between layouts\n"
 "or just select 'None'."
 msgstr ""
-"Elija una combinación de teclas para alternar entre\n"
-"diferentes distribuciones o solo elija 'Ninguna'"
+"レイアウトを切り替えるキーの組、\n"
+"あるいは 'なし' を選んでください。"
 
 #. keyboard model frame
 #: ../src/gtk+2.x_tab_page_others.c:171
 msgid "Keyboard Model:"
-msgstr "Modelo de taclado:"
+msgstr "キーボードモデル:"
 
 #: ../src/gtk+2.x_tab_page_others.c:186
 msgid ""
 "WARNING: Be aware that changing these settings may\n"
 "result in system malfunction."
 msgstr ""
-"ALERTA: Sepa usted que el cambio de estas opciones\n"
-"puede provocar un mal funcionamiento del sistema."
+"警告: この設定を変更すると\n"
+"システムが誤作動する危険があります。"
 
 #. Global configuration
 #: ../src/gtk+2.x_tab_page_others.c:210
 msgid "Global Configuration:"
-msgstr "Configuración global"
+msgstr "グローバル設定:"
 
 #: ../src/gtk+2.x_tab_page_others.c:228
 msgid ""
 "Apply this keyboard configuration not only to your\n"
 "session, but also to the whole system."
 msgstr ""
-"Aplicar esta configuración del teclado no solo a su\n"
-"sesión, sino también a todo el sistema."
+"このキーボード設定をあなたのセッションだけでなく\n"
+"システム全体に適用します。"
 
 #: ../src/gtk+2.x_tab_page_others.c:233
 msgid "Apply Globally"
-msgstr "Aplicar globalmente"
+msgstr "グローバルに適用"
 
 #: ../src/gtk+2.x_tab_page_about.c:21
 msgid "About"
-msgstr "Acerca de"
+msgstr "情報"
 
 #: ../src/gtk+2.x_tab_page_about.c:25
 msgid ""
@@ -150,37 +149,29 @@ msgid ""
 "Last version:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 msgstr ""
-"Desarrolladores:\n"
+"開発:\n"
 "Alexis Lopez Zubieta --> azubieta@estudiantes.uci.cu\n"
 "\n"
 "Dairelys Garcia Rivas --> dgrivas@estudiantes.uci.cu\n"
 "\n"
-"Repositorio:\n"
+"リポジトリ:\n"
 "https://github.com/azubieta/lxkb_config\n"
 "\n"
-"Última versión:\n"
+"最新バージョン:\n"
 "https://github.com/azubieta/lxkb_config/downloads"
 
 #: ../src/manage_desktop_preferences.c:40
 msgid "Keyboard Settings setup"
-msgstr "Configuración de teclado."
+msgstr "キーボード設定のセットアップ"
 
 #: ../src/manage_desktop_preferences.c:41
 msgid "Sets up your preferred keyboard settings"
-msgstr "Establece su configuración de teclado preferida."
+msgstr "あなたのキーボードの設定を行います"
 
 #: ../src/manage_xorg_rules.c:131
 msgid "Default"
-msgstr "Predefinida"
+msgstr "デフォルト"
 
 #: ../src/manage_xorg_preferences.c:96
 msgid "Introduce your password to set this configuration to the whole system."
-msgstr ""
-"Introduzca su contraseña para establecer esta configuración a todo el "
-"sistema."
-
-#~ msgid "Distribution:"
-#~ msgstr "Distribución"
-
-#~ msgid "Distribution"
-#~ msgstr "Distribución"
+msgstr "設定をシステム全体に適用させるため、あなたのパスワードを必要とします。"
